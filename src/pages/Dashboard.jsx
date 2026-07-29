@@ -73,7 +73,7 @@ const AdminDashboard = ({ user }) => {
     <div className="w-full flex flex-col 2xl:flex-row gap-[24px] animate-in fade-in duration-500 pb-10">
 
       {/* LEFT COLUMN (Flexible) */}
-      <div className="flex-1 flex flex-col gap-[24px]">
+      <div className="flex-1 min-w-0 flex flex-col gap-[24px]">
 
         {/* Greetings */}
         <div className="w-full h-[248px] bg-[#FFFFFF] rounded-[24px] shadow-sm relative overflow-hidden flex items-center p-8">
@@ -187,9 +187,9 @@ const AdminDashboard = ({ user }) => {
         </div>
 
         {/* Earnings Chart */}
-        <div className="w-full h-[448px] bg-[#FFFFFF] rounded-[24px] shadow-sm relative pt-[24px] px-[24px] pb-[16px] flex flex-col">
+        <div className="w-full h-[448px] bg-[#FFFFFF] rounded-[24px] shadow-sm relative pt-[24px] px-[24px] pb-[16px] flex flex-col min-w-0">
 
-          <div className="relative w-full h-[40px] mb-[15px] flex items-center">
+          <div className="relative w-full h-[40px] mb-[15px] flex items-center shrink-0">
             {/* Title */}
             <div className="absolute left-0">
               <span style={{ fontFamily: 'Inter, sans-serif', fontWeight: 500, fontSize: '20px', color: '#334155' }}>Earnings</span>
@@ -216,7 +216,7 @@ const AdminDashboard = ({ user }) => {
               </div>
             </div>
           </div>
-          <div className="w-full flex-1">
+          <div className="w-full flex-1 min-w-0 min-h-0">
             <ResponsiveContainer width="100%" height="100%">
               <LineChart data={earningsData} margin={{ top: 10, right: 10, left: -20, bottom: 0 }} style={{ outline: 'none' }}>
                 <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#F4F6FB" />
@@ -232,7 +232,7 @@ const AdminDashboard = ({ user }) => {
       </div>
 
       {/* RIGHT COLUMN (Fixed Width) */}
-      <div className="w-full 2xl:w-[505px] shrink-0 flex flex-col items-center 2xl:items-start gap-[24px]">
+      <div className="w-full 2xl:w-[546px] shrink-0 flex flex-col items-center 2xl:items-start gap-[24px]">
 
         {/* Row: Head Count & Calendar */}
         <div className="flex flex-row flex-wrap justify-center 2xl:justify-start gap-[14px]">
