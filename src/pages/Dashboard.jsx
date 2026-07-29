@@ -298,8 +298,10 @@ const AdminDashboard = ({ user }) => {
             {/* Income Box */}
             <div className="w-[226px] h-[106px] bg-[#C3EBFA] rounded-[13px] relative flex-1">
               <div className="absolute left-[18px] top-[14px] right-[15px] h-[22px] flex justify-between items-center">
-                {/* Simulated image.png for mini chart */}
-                <div className="w-[49px] h-[22px] bg-black/5 rounded-sm"></div>
+                {/* Sparkline chart SVG */}
+                <svg width="49" height="22" viewBox="0 0 49 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M1.5 19.5C9.5 19.5 14.5 8.5 21.5 11.5C28.5 14.5 35.5 3.5 47.5 2.5" stroke="#00997E" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
                 <div className="w-[43px] h-[16px] bg-[#FFFFFF] rounded-[32px] flex items-center justify-center gap-[2px]">
                   <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="#00997E" strokeWidth="2.5"><path d="M12 19V5M5 12l7-7 7 7" /></svg>
                   <span style={{ fontFamily: 'Inter, sans-serif', fontWeight: 500, fontSize: '8px', color: '#00997E' }}>12%</span>
@@ -318,8 +320,10 @@ const AdminDashboard = ({ user }) => {
             {/* Expense Box */}
             <div className="w-[226px] h-[106px] bg-[#C3EBFA] rounded-[13px] relative flex-1">
               <div className="absolute left-[18px] top-[14px] right-[15px] h-[22px] flex justify-between items-center">
-                {/* Simulated image.png for mini chart */}
-                <div className="w-[49px] h-[22px] bg-black/5 rounded-sm"></div>
+                {/* Sparkline chart SVG */}
+                <svg width="49" height="22" viewBox="0 0 49 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M1.5 18.5C9.5 18.5 14.5 9.5 21.5 13.5C28.5 17.5 35.5 5.5 47.5 3.5" stroke="#00997E" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
                 <div className="w-[43px] h-[16px] bg-[#FFFFFF] rounded-[32px] flex items-center justify-center gap-[2px]">
                   <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="#00997E" strokeWidth="2.5"><path d="M12 19V5M5 12l7-7 7 7" /></svg>
                   <span style={{ fontFamily: 'Inter, sans-serif', fontWeight: 500, fontSize: '8px', color: '#00997E' }}>3.5%</span>
