@@ -78,7 +78,7 @@ const AdminDashboard = ({ user }) => {
         {/* Greetings */}
         <div className="w-full h-[248px] bg-[#FFFFFF] rounded-[24px] shadow-sm relative overflow-hidden flex items-center p-8">
           <div className="w-3/5 z-10">
-            <h2 className="font-medium text-[#000000] tracking-tight mb-2" style={{ fontFamily: 'Poppins, sans-serif', fontSize: '24px', lineHeight: '36px' }}>
+            <h2 className="font-medium text-[#334155] tracking-tight mb-2" style={{ fontFamily: 'Poppins, sans-serif', fontSize: '24px', lineHeight: '36px' }}>
               Welcome, Laurel Higher Secondary School Team!
             </h2>
             <p className="font-light text-[#8F8F8F]" style={{ fontFamily: 'Poppins, sans-serif', fontSize: '16px', lineHeight: '24px' }}>
@@ -91,10 +91,10 @@ const AdminDashboard = ({ user }) => {
         {/* Row: Students & Notice Board */}
         <div className="w-full flex flex-row gap-[24px]">
           {/* Students */}
-          <div className="w-[415px] shrink-0 h-[280px] bg-[#FFFFFF] rounded-[24px] shadow-sm relative">
+          <div className="w-[415px] shrink-0 h-[280px] bg-[#E0F2FE] rounded-[24px] shadow-sm relative">
             <div className="absolute left-[21px] top-[18px] w-[365px] h-[24px]">
               <div className="absolute left-0 top-0 h-[24px] flex items-center">
-                <span style={{ fontFamily: 'Inter, sans-serif', fontWeight: 500, fontSize: '20px', lineHeight: '24px', color: '#000000' }}>Students</span>
+                <span style={{ fontFamily: 'Inter, sans-serif', fontWeight: 500, fontSize: '20px', lineHeight: '24px', color: '#334155' }}>Students</span>
               </div>
               <div className="absolute left-[349px] top-[10px] w-[16px] h-[4px] flex justify-between">
                 <div className="w-[4px] h-[4px] bg-[#121212] rounded-full"></div>
@@ -115,7 +115,7 @@ const AdminDashboard = ({ user }) => {
                   </svg>
                 </div>
                 <div className="absolute left-[70px] top-[69px] flex items-center">
-                  <span style={{ fontFamily: 'Inter, sans-serif', fontWeight: 600, fontSize: '30px', lineHeight: '36px', color: '#000000' }}>53%</span>
+                  <span style={{ fontFamily: 'Inter, sans-serif', fontWeight: 600, fontSize: '30px', lineHeight: '36px', color: '#334155' }}>53%</span>
                 </div>
               </div>
               <div className="absolute left-[197px] top-0 w-[159px] h-[159px]">
@@ -130,7 +130,7 @@ const AdminDashboard = ({ user }) => {
                   </svg>
                 </div>
                 <div className="absolute left-[70px] top-[68px] flex items-center">
-                  <span style={{ fontFamily: 'Inter, sans-serif', fontWeight: 600, fontSize: '30px', lineHeight: '36px', color: '#000000' }}>47%</span>
+                  <span style={{ fontFamily: 'Inter, sans-serif', fontWeight: 600, fontSize: '30px', lineHeight: '36px', color: '#334155' }}>47%</span>
                 </div>
               </div>
               <div className="absolute left-[26px] top-[181px] w-[304px] h-[19px]">
@@ -149,7 +149,7 @@ const AdminDashboard = ({ user }) => {
           {/* Notice Board */}
           <div className="flex-1 min-w-[333px] h-[280px] bg-[#FFFFFF] rounded-[24px] shadow-sm relative">
             <div className="absolute left-[16px] top-[19px] right-[16px] h-[26px] flex justify-between items-center">
-              <span style={{ fontFamily: 'Inter, sans-serif', fontWeight: 500, fontSize: '20px', lineHeight: '24px', color: '#000000' }}>Notice Board</span>
+              <span style={{ fontFamily: 'Inter, sans-serif', fontWeight: 500, fontSize: '20px', lineHeight: '24px', color: '#334155' }}>Notice Board</span>
               <button className="text-[10px] text-[#969696] underline hover:text-slate-600">view all</button>
             </div>
             <div className="absolute left-[16px] top-[62px] right-[16px] h-[153px] flex flex-col gap-[14px] overflow-y-auto custom-scrollbar">
@@ -157,7 +157,7 @@ const AdminDashboard = ({ user }) => {
                 <div className="absolute left-[11px] top-[10px] w-[42px] h-[48px] bg-[#FFED9F] rounded-[5px] flex items-center justify-center text-[#FCA52B]">
                   <Bell size={24} />
                 </div>
-                <div className="absolute left-[64px] top-[9px] font-normal text-[14px] leading-[17px] text-[#000000]">Sports Day Announcement</div>
+                <div className="absolute left-[64px] top-[9px] font-normal text-[14px] leading-[17px] text-[#334155]">Sports Day Announcement</div>
                 <div className="absolute left-[64px] top-[33px] right-[10px] font-normal text-[10px] leading-[12px] text-[#969696]">
                   The school's Annual Sports Day will be held on May 12, 2024. Mark your calendars!
                 </div>
@@ -166,7 +166,7 @@ const AdminDashboard = ({ user }) => {
                 <div className="absolute left-[11px] top-[10px] w-[42px] h-[47px] bg-[#D6DAFF] rounded-[5px] flex items-center justify-center text-[#696FC1]">
                   <Bell size={24} />
                 </div>
-                <div className="absolute left-[64px] top-[9px] font-normal text-[14px] leading-[17px] text-[#000000]">Summer Break Start Date</div>
+                <div className="absolute left-[64px] top-[9px] font-normal text-[14px] leading-[17px] text-[#334155]">Summer Break Start Date</div>
                 <div className="absolute left-[64px] top-[32px] right-[10px] font-normal text-[10px] leading-[12px] text-[#969696]">
                   Summer break begins on May 25, 2024. Have a wonderful holiday!
                 </div>
@@ -192,7 +192,7 @@ const AdminDashboard = ({ user }) => {
           <div className="relative w-full h-[40px] mb-[15px] flex items-center">
             {/* Title */}
             <div className="absolute left-0">
-              <span style={{ fontFamily: 'Inter, sans-serif', fontWeight: 500, fontSize: '20px', color: '#000000' }}>Earnings</span>
+              <span style={{ fontFamily: 'Inter, sans-serif', fontWeight: 500, fontSize: '20px', color: '#334155' }}>Earnings</span>
             </div>
             
             {/* Legends (Centered) */}
@@ -239,31 +239,31 @@ const AdminDashboard = ({ user }) => {
           {/* Head Count */}
           <div className="w-[185px] flex flex-col gap-[11px]">
             <div className="bg-[#F8E38D] rounded-[20px] w-full h-[108px] relative">
-              <span className="absolute left-[17px] top-[17px] font-light text-[20px] text-[#000000] leading-[24px]">Students</span>
+              <span className="absolute left-[17px] top-[17px] font-light text-[20px] text-[#334155] leading-[24px]">Students</span>
               <div className="absolute right-[18px] top-[25px] w-[16px] h-[4px] flex justify-between">
                 <div className="w-[4px] h-[4px] bg-[#121212] rounded-full"></div>
                 <div className="w-[4px] h-[4px] bg-[#121212] rounded-full"></div>
                 <div className="w-[4px] h-[4px] bg-[#121212] rounded-full"></div>
               </div>
-              <div className="absolute left-[17px] top-[53px] font-medium text-[34px] text-[#000000] leading-[41px]">5,909</div>
+              <div className="absolute left-[17px] top-[53px] font-medium text-[34px] text-[#334155] leading-[41px]">5,909</div>
             </div>
             <div className="bg-[#E2D8FC] rounded-[20px] w-full h-[108px] relative">
-              <span className="absolute left-[13px] top-[18px] font-light text-[20px] text-[#000000] leading-[24px]">Teachers</span>
+              <span className="absolute left-[13px] top-[18px] font-light text-[20px] text-[#334155] leading-[24px]">Teachers</span>
               <div className="absolute right-[12px] top-[25px] w-[16px] h-[4px] flex justify-between">
                 <div className="w-[4px] h-[4px] bg-[#121212] rounded-full"></div>
                 <div className="w-[4px] h-[4px] bg-[#121212] rounded-full"></div>
                 <div className="w-[4px] h-[4px] bg-[#121212] rounded-full"></div>
               </div>
-              <div className="absolute left-[13px] top-[54px] font-medium text-[34px] text-[#000000] leading-[41px]">60</div>
+              <div className="absolute left-[13px] top-[54px] font-medium text-[34px] text-[#334155] leading-[41px]">60</div>
             </div>
             <div className="bg-[#F8E38D] rounded-[20px] w-full h-[108px] relative">
-              <span className="absolute left-[17px] top-[17px] font-light text-[20px] text-[#000000] leading-[24px]">Employee</span>
+              <span className="absolute left-[17px] top-[17px] font-light text-[20px] text-[#334155] leading-[24px]">Employee</span>
               <div className="absolute right-[18px] top-[25px] w-[16px] h-[4px] flex justify-between">
                 <div className="w-[4px] h-[4px] bg-[#121212] rounded-full"></div>
                 <div className="w-[4px] h-[4px] bg-[#121212] rounded-full"></div>
                 <div className="w-[4px] h-[4px] bg-[#121212] rounded-full"></div>
               </div>
-              <div className="absolute left-[17px] top-[54px] font-medium text-[34px] text-[#000000] leading-[41px]">100</div>
+              <div className="absolute left-[17px] top-[54px] font-medium text-[34px] text-[#334155] leading-[41px]">100</div>
             </div>
           </div>
 
@@ -330,7 +330,7 @@ const AdminDashboard = ({ user }) => {
 
           {/* Header */}
           <div className="absolute left-[19px] top-[18px] right-[19px] h-[28px] flex justify-between items-center">
-            <span style={{ fontFamily: 'Inter, sans-serif', fontWeight: 500, fontSize: '20px', color: '#000000' }}>
+            <span style={{ fontFamily: 'Inter, sans-serif', fontWeight: 500, fontSize: '20px', color: '#334155' }}>
               Financial Overview
             </span>
             <div className="flex gap-[8px]">
@@ -349,7 +349,7 @@ const AdminDashboard = ({ user }) => {
           <div className="absolute left-[19px] top-[55px] right-[19px] h-[106px] flex gap-[16px]">
 
             {/* Income Box */}
-            <div className="w-[226px] h-[106px] bg-[#C3EBFA] rounded-[13px] relative flex-1">
+            <div className="w-[226px] h-[106px] bg-[#CCFBF1] rounded-[13px] relative flex-1">
               <div className="absolute left-[18px] top-[14px] right-[15px] h-[22px] flex justify-between items-center">
                 {/* Sparkline chart SVG */}
                 <svg width="49" height="22" viewBox="0 0 49 22" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -361,17 +361,17 @@ const AdminDashboard = ({ user }) => {
                 </div>
               </div>
               <div className="absolute left-0 top-[47px] w-full flex flex-col items-center">
-                <span style={{ fontFamily: 'Inter, sans-serif', fontWeight: 500, fontSize: '24px', lineHeight: '29px', color: '#000000' }}>
+                <span style={{ fontFamily: 'Inter, sans-serif', fontWeight: 500, fontSize: '24px', lineHeight: '29px', color: '#334155' }}>
                   ₱29,545,000
                 </span>
-                <span style={{ fontFamily: 'Inter, sans-serif', fontWeight: 400, fontSize: '16px', lineHeight: '19px', color: '#000000', marginTop: '3px' }}>
+                <span style={{ fontFamily: 'Inter, sans-serif', fontWeight: 400, fontSize: '16px', lineHeight: '19px', color: '#334155', marginTop: '3px' }}>
                   Total Income
                 </span>
               </div>
             </div>
 
             {/* Expense Box */}
-            <div className="w-[226px] h-[106px] bg-[#C3EBFA] rounded-[13px] relative flex-1">
+            <div className="w-[226px] h-[106px] bg-[#CCFBF1] rounded-[13px] relative flex-1">
               <div className="absolute left-[18px] top-[14px] right-[15px] h-[22px] flex justify-between items-center">
                 {/* Sparkline chart SVG */}
                 <svg width="49" height="22" viewBox="0 0 49 22" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -383,10 +383,10 @@ const AdminDashboard = ({ user }) => {
                 </div>
               </div>
               <div className="absolute left-0 top-[47px] w-full flex flex-col items-center">
-                <span style={{ fontFamily: 'Inter, sans-serif', fontWeight: 500, fontSize: '24px', lineHeight: '29px', color: '#000000' }}>
+                <span style={{ fontFamily: 'Inter, sans-serif', fontWeight: 500, fontSize: '24px', lineHeight: '29px', color: '#334155' }}>
                   ₱19,291,266
                 </span>
-                <span style={{ fontFamily: 'Inter, sans-serif', fontWeight: 400, fontSize: '16px', lineHeight: '19px', color: '#000000', marginTop: '3px' }}>
+                <span style={{ fontFamily: 'Inter, sans-serif', fontWeight: 400, fontSize: '16px', lineHeight: '19px', color: '#334155', marginTop: '3px' }}>
                   Total Expenses
                 </span>
               </div>
@@ -401,7 +401,7 @@ const AdminDashboard = ({ user }) => {
           <div className="w-[222px] h-[321px] bg-[#FFFFFF] rounded-[24px] shadow-sm relative pt-[26px]">
             {/* Header */}
             <div className="flex justify-between items-center px-[18px] mb-[16px]">
-              <span style={{ fontFamily: 'Inter, sans-serif', fontWeight: 500, fontSize: '20px', color: '#000000' }}>Fee Status</span>
+              <span style={{ fontFamily: 'Inter, sans-serif', fontWeight: 500, fontSize: '20px', color: '#334155' }}>Fee Status</span>
               <div className="w-[16px] h-[4px] flex justify-between items-center cursor-pointer">
                 <div className="w-[4px] h-[4px] bg-[#121212] rounded-full"></div>
                 <div className="w-[4px] h-[4px] bg-[#121212] rounded-full"></div>
@@ -414,7 +414,7 @@ const AdminDashboard = ({ user }) => {
               
               {/* Row 1 (Paid) */}
               <div className="w-[194px] h-[57px] border border-[#D3D3D3] rounded-[10px] flex items-center justify-between px-[11px]">
-                <span style={{ fontFamily: 'Inter, sans-serif', fontWeight: 500, fontSize: '24px', color: '#000000' }}>1,335</span>
+                <span style={{ fontFamily: 'Inter, sans-serif', fontWeight: 500, fontSize: '24px', color: '#334155' }}>1,335</span>
                 <div className="w-[65px] h-[25px] bg-[#EFFFF1] rounded-[30px] flex items-center justify-center gap-[4px]">
                   <div className="w-[6px] h-[6px] rounded-full bg-[#4BD670]"></div>
                   <span style={{ fontFamily: 'Inter, sans-serif', fontWeight: 600, fontSize: '12.7px', color: '#4BD670' }}>Paid</span>
@@ -423,7 +423,7 @@ const AdminDashboard = ({ user }) => {
 
               {/* Row 2 (Pending) */}
               <div className="w-[194px] h-[57px] border border-[#D3D3D3] rounded-[10px] flex items-center justify-between px-[11px]">
-                <span style={{ fontFamily: 'Inter, sans-serif', fontWeight: 500, fontSize: '24px', color: '#000000' }}>4,366</span>
+                <span style={{ fontFamily: 'Inter, sans-serif', fontWeight: 500, fontSize: '24px', color: '#334155' }}>4,366</span>
                 <div className="w-[83px] h-[25px] bg-[#FDF6D8] rounded-[30px] flex items-center justify-center gap-[4px]">
                   <div className="w-[6px] h-[6px] rounded-full bg-[#FFAE43]"></div>
                   <span style={{ fontFamily: 'Inter, sans-serif', fontWeight: 600, fontSize: '12.7px', color: '#FFAE43' }}>Pending</span>
@@ -432,7 +432,7 @@ const AdminDashboard = ({ user }) => {
 
               {/* Row 3 (Overdue) */}
               <div className="w-[194px] h-[57px] border border-[#D3D3D3] rounded-[10px] flex items-center justify-between px-[11px]">
-                <span style={{ fontFamily: 'Inter, sans-serif', fontWeight: 500, fontSize: '24px', color: '#000000' }}>208</span>
+                <span style={{ fontFamily: 'Inter, sans-serif', fontWeight: 500, fontSize: '24px', color: '#334155' }}>208</span>
                 <div className="w-[83px] h-[25px] bg-[#FFEDED] rounded-[30px] flex items-center justify-center gap-[4px]">
                   <div className="w-[6px] h-[6px] rounded-full bg-[#FF414B]"></div>
                   <span style={{ fontFamily: 'Inter, sans-serif', fontWeight: 600, fontSize: '12.7px', color: '#FF414B' }}>Overdue</span>
@@ -451,7 +451,7 @@ const AdminDashboard = ({ user }) => {
           {/* Messages */}
           <div className="flex-1 h-[448px] bg-[#FFFFFF] rounded-[24px] shadow-sm pt-[28px] px-[23px] pb-[16px] flex flex-col">
             <div className="flex justify-between items-center mb-[30px]">
-              <span style={{ fontFamily: 'Inter, sans-serif', fontWeight: 500, fontSize: '20px', color: '#000000' }}>Messages</span>
+              <span style={{ fontFamily: 'Inter, sans-serif', fontWeight: 500, fontSize: '20px', color: '#334155' }}>Messages</span>
               <div className="w-[16px] h-[4px] flex justify-between items-center cursor-pointer">
                 <div className="w-[4px] h-[4px] bg-[#121212] rounded-full"></div>
                 <div className="w-[4px] h-[4px] bg-[#121212] rounded-full"></div>
@@ -465,7 +465,7 @@ const AdminDashboard = ({ user }) => {
                     {msg.img}
                   </div>
                   <div className="flex-1 min-w-0 flex flex-col">
-                    <span style={{ fontFamily: 'Inter, sans-serif', fontWeight: 400, fontSize: '16px', lineHeight: '19px', color: '#000000' }} className="truncate">{msg.name}</span>
+                    <span style={{ fontFamily: 'Inter, sans-serif', fontWeight: 400, fontSize: '16px', lineHeight: '19px', color: '#334155' }} className="truncate">{msg.name}</span>
                     <span style={{ fontFamily: 'Inter, sans-serif', fontWeight: 400, fontSize: '10px', lineHeight: '12px', color: '#969696', marginTop: '2px' }} className="truncate">{msg.text}</span>
                   </div>
                   <span style={{ fontFamily: 'Inter, sans-serif', fontWeight: 400, fontSize: '10px', lineHeight: '12px', color: '#969696' }} className="whitespace-nowrap">{msg.time}</span>

@@ -35,9 +35,9 @@ const MainLayout = () => {
   const allowedNavItems = navItems.filter(item => item.roles.includes(user?.role));
 
   return (
-    <div className="flex h-screen bg-[#F5F4F9] font-sans">
+    <div className="flex h-screen bg-[#F8FAFC] font-sans">
       {/* Sidebar - Dark Mode like Prototype */}
-      <aside className="w-[284px] h-[calc(100vh-32px)] bg-[#111827] flex flex-col shrink-0 transition-all duration-300 ml-[17px] my-[16px] rounded-[24px] overflow-hidden shadow-2xl relative">
+      <aside className="w-[284px] h-[calc(100vh-32px)] bg-[#0F172A] flex flex-col shrink-0 transition-all duration-300 ml-[17px] my-[16px] rounded-[24px] overflow-hidden shadow-2xl relative">
         {/* Logo */}
         <div className="pt-[34px] pl-[34px] flex items-center gap-[12px]">
           <div className="w-[52px] h-[52px] bg-[#FFFFFF] rounded-[12px] flex items-center justify-center shrink-0">
@@ -61,7 +61,7 @@ const MainLayout = () => {
                 key={item.path}
                 to={item.path}
                 className={`relative w-[253px] h-[44px] rounded-[7px] transition-all shrink-0 ${isActive
-                  ? 'bg-[#FFFFFF] text-[#000000]'
+                  ? 'bg-[#10B981] text-[#FFFFFF]'
                   : 'bg-transparent text-[#FFFFFF] hover:bg-white/10'
                   }`}
               >
