@@ -395,44 +395,83 @@ const AdminDashboard = ({ user }) => {
           </div>
         </div>
 
-        {/* Fee Status */}
-        <div className="w-full h-[216px] bg-[#FFFFFF] rounded-[24px] shadow-sm p-6 flex flex-col">
-          <div className="flex justify-between items-center mb-4">
-            <h3 className="font-bold text-slate-800">Fee Status</h3>
-            <MoreHorizontal size={20} className="text-slate-400" />
-          </div>
-          <div className="space-y-3 flex-1 overflow-y-auto custom-scrollbar pr-2">
-            {feeStatus.map(fee => (
-              <div key={fee.id} className="flex justify-between items-center border border-slate-100 rounded-xl p-2.5">
-                <span className="text-base font-bold text-slate-800">{fee.amount}</span>
-                <span className={`text-[10px] font-bold px-2 py-1 rounded-full flex items-center gap-1 ${fee.color}`}>
-                  <div className="w-1.5 h-1.5 rounded-full bg-current"></div>
-                  {fee.status}
-                </span>
+        {/* Row: Fee Status & Messages */}
+        <div className="flex flex-row items-start gap-[18px]">
+          {/* Fee Status */}
+          <div className="w-[222px] h-[321px] bg-[#FFFFFF] rounded-[24px] shadow-sm relative pt-[26px]">
+            {/* Header */}
+            <div className="flex justify-between items-center px-[18px] mb-[16px]">
+              <span style={{ fontFamily: 'Inter, sans-serif', fontWeight: 500, fontSize: '20px', color: '#000000' }}>Fee Status</span>
+              <div className="w-[16px] h-[4px] flex justify-between items-center cursor-pointer">
+                <div className="w-[4px] h-[4px] bg-[#121212] rounded-full"></div>
+                <div className="w-[4px] h-[4px] bg-[#121212] rounded-full"></div>
+                <div className="w-[4px] h-[4px] bg-[#121212] rounded-full"></div>
               </div>
-            ))}
-          </div>
-        </div>
+            </div>
 
-        {/* Messages */}
-        <div className="w-full h-[216px] bg-[#FFFFFF] rounded-[24px] shadow-sm p-6 flex flex-col">
-          <div className="flex justify-between items-center mb-3">
-            <h3 className="font-bold text-slate-800">Messages</h3>
-            <MoreHorizontal size={20} className="text-slate-400" />
-          </div>
-          <div className="space-y-3 flex-1 overflow-y-auto custom-scrollbar pr-2">
-            {messages.map(msg => (
-              <div key={msg.id} className="flex items-center gap-3">
-                <div className={`w-9 h-9 rounded-full flex items-center justify-center font-bold text-xs shrink-0 ${msg.color}`}>
-                  {msg.img}
+            {/* List */}
+            <div className="flex flex-col gap-[14px] px-[14px]">
+              
+              {/* Row 1 (Paid) */}
+              <div className="w-[194px] h-[57px] border border-[#D3D3D3] rounded-[10px] flex items-center justify-between px-[11px]">
+                <span style={{ fontFamily: 'Inter, sans-serif', fontWeight: 500, fontSize: '24px', color: '#000000' }}>1,335</span>
+                <div className="w-[65px] h-[25px] bg-[#EFFFF1] rounded-[30px] flex items-center justify-center gap-[4px]">
+                  <div className="w-[6px] h-[6px] rounded-full bg-[#4BD670]"></div>
+                  <span style={{ fontFamily: 'Inter, sans-serif', fontWeight: 600, fontSize: '12.7px', color: '#4BD670' }}>Paid</span>
                 </div>
-                <div className="flex-1 min-w-0">
-                  <h4 className="text-sm font-bold text-slate-800 truncate">{msg.name}</h4>
-                  <p className="text-[11px] text-slate-500 truncate">{msg.text}</p>
-                </div>
-                <span className="text-[10px] text-slate-400 font-medium whitespace-nowrap">{msg.time}</span>
               </div>
-            ))}
+
+              {/* Row 2 (Pending) */}
+              <div className="w-[194px] h-[57px] border border-[#D3D3D3] rounded-[10px] flex items-center justify-between px-[11px]">
+                <span style={{ fontFamily: 'Inter, sans-serif', fontWeight: 500, fontSize: '24px', color: '#000000' }}>4,366</span>
+                <div className="w-[83px] h-[25px] bg-[#FDF6D8] rounded-[30px] flex items-center justify-center gap-[4px]">
+                  <div className="w-[6px] h-[6px] rounded-full bg-[#FFAE43]"></div>
+                  <span style={{ fontFamily: 'Inter, sans-serif', fontWeight: 600, fontSize: '12.7px', color: '#FFAE43' }}>Pending</span>
+                </div>
+              </div>
+
+              {/* Row 3 (Overdue) */}
+              <div className="w-[194px] h-[57px] border border-[#D3D3D3] rounded-[10px] flex items-center justify-between px-[11px]">
+                <span style={{ fontFamily: 'Inter, sans-serif', fontWeight: 500, fontSize: '24px', color: '#000000' }}>208</span>
+                <div className="w-[83px] h-[25px] bg-[#FFEDED] rounded-[30px] flex items-center justify-center gap-[4px]">
+                  <div className="w-[6px] h-[6px] rounded-full bg-[#FF414B]"></div>
+                  <span style={{ fontFamily: 'Inter, sans-serif', fontWeight: 600, fontSize: '12.7px', color: '#FF414B' }}>Overdue</span>
+                </div>
+              </div>
+
+            </div>
+
+            {/* Bottom Dropdown */}
+            <div className="absolute left-[14px] bottom-[16px] w-[66px] h-[27px] bg-[#F5F4F9] rounded-[6px] flex items-center justify-center gap-[4px] cursor-pointer hover:bg-slate-200">
+              <span style={{ fontFamily: 'Inter, sans-serif', fontWeight: 400, fontSize: '12px', color: '#777777' }}>View</span>
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#6E6D71" strokeWidth="2"><path d="M6 9l6 6 6-6" /></svg>
+            </div>
+          </div>
+
+          {/* Messages */}
+          <div className="flex-1 h-[448px] bg-[#FFFFFF] rounded-[24px] shadow-sm pt-[28px] px-[23px] pb-[16px] flex flex-col">
+            <div className="flex justify-between items-center mb-[30px]">
+              <span style={{ fontFamily: 'Inter, sans-serif', fontWeight: 500, fontSize: '20px', color: '#000000' }}>Messages</span>
+              <div className="w-[16px] h-[4px] flex justify-between items-center cursor-pointer">
+                <div className="w-[4px] h-[4px] bg-[#121212] rounded-full"></div>
+                <div className="w-[4px] h-[4px] bg-[#121212] rounded-full"></div>
+                <div className="w-[4px] h-[4px] bg-[#121212] rounded-full"></div>
+              </div>
+            </div>
+            <div className="flex flex-col gap-[17px] flex-1 overflow-y-auto custom-scrollbar">
+              {messages.map(msg => (
+                <div key={msg.id} className="flex items-center gap-[13px]">
+                  <div className={`w-[43px] h-[43px] rounded-full flex items-center justify-center font-bold text-sm shrink-0 ${msg.color}`}>
+                    {msg.img}
+                  </div>
+                  <div className="flex-1 min-w-0 flex flex-col">
+                    <span style={{ fontFamily: 'Inter, sans-serif', fontWeight: 400, fontSize: '16px', lineHeight: '19px', color: '#000000' }} className="truncate">{msg.name}</span>
+                    <span style={{ fontFamily: 'Inter, sans-serif', fontWeight: 400, fontSize: '10px', lineHeight: '12px', color: '#969696', marginTop: '2px' }} className="truncate">{msg.text}</span>
+                  </div>
+                  <span style={{ fontFamily: 'Inter, sans-serif', fontWeight: 400, fontSize: '10px', lineHeight: '12px', color: '#969696' }} className="whitespace-nowrap">{msg.time}</span>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
 
