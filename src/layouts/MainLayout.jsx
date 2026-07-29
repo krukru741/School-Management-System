@@ -35,9 +35,9 @@ const MainLayout = () => {
   const allowedNavItems = navItems.filter(item => item.roles.includes(user?.role));
 
   return (
-    <div className="flex h-screen bg-[#F8FAFC] font-sans">
+    <div className="flex h-screen bg-[#F4F7FE] font-sans">
       {/* Sidebar - Dark Mode like Prototype */}
-      <aside className="w-[284px] h-[calc(100vh-32px)] bg-[#0F172A] flex flex-col shrink-0 transition-all duration-300 ml-[17px] my-[16px] rounded-[24px] overflow-hidden shadow-2xl relative">
+      <aside className="w-[284px] h-[calc(100vh-32px)] bg-[#000000] flex flex-col shrink-0 transition-all duration-300 ml-[17px] my-[16px] rounded-[24px] overflow-hidden shadow-2xl relative">
         {/* Logo */}
         <div className="pt-[34px] pl-[34px] flex items-center gap-[12px]">
           <div className="w-[52px] h-[52px] bg-[#FFFFFF] rounded-[12px] flex items-center justify-center shrink-0">
@@ -61,7 +61,7 @@ const MainLayout = () => {
                 key={item.path}
                 to={item.path}
                 className={`relative w-[253px] h-[44px] rounded-[7px] transition-all shrink-0 ${isActive
-                  ? 'bg-[#10B981] text-[#FFFFFF]'
+                  ? 'bg-[#FFFFFF] text-[#000000]'
                   : 'bg-transparent text-[#FFFFFF] hover:bg-white/10'
                   }`}
               >
@@ -123,7 +123,7 @@ const MainLayout = () => {
               <Search size={24} strokeWidth={2} className="text-[#8E8D93] shrink-0 w-[24px] h-[24px]" />
               <input
                 type="text"
-                placeholder="Search"
+                placeholder="Placeholder"
                 className="bg-transparent border-none outline-none w-[71px] h-[30px] text-[20px] font-normal text-[#8E8D93] placeholder-[#8E8D93] leading-[30px]"
                 style={{ fontFamily: 'Poppins, sans-serif' }}
               />
