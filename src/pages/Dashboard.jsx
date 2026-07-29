@@ -1,5 +1,5 @@
 import { useAuth } from '../context/AuthContext';
-import { Users, GraduationCap, ArrowUpRight, ArrowDownRight, Clock, AlertCircle, MoreHorizontal } from 'lucide-react';
+import { Users, GraduationCap, ArrowUpRight, ArrowDownRight, Clock, AlertCircle, MoreHorizontal, User, Bell, Edit, Trash2 } from 'lucide-react';
 import { 
   BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer,
   LineChart, Line, PieChart, Pie, Cell
@@ -142,43 +142,55 @@ const AdminDashboard = ({ user }) => {
               </ResponsiveContainer>
             </div>
             
-            <div className="absolute inset-0 flex justify-between px-12 items-center pointer-events-none">
-               <span className="font-bold text-lg text-slate-700">53%</span>
-               <span className="font-bold text-lg text-slate-700">47%</span>
+            <div className="absolute inset-0 flex justify-between px-10 items-center pointer-events-none">
+               <div className="flex items-center gap-1">
+                 <User fill="#A78BFA" className="text-[#A78BFA]" size={16} />
+                 <span className="font-bold text-lg text-slate-800">53%</span>
+               </div>
+               <div className="flex items-center gap-1">
+                 <User fill="#FCD34D" className="text-[#FCD34D]" size={16} />
+                 <span className="font-bold text-lg text-slate-800">47%</span>
+               </div>
             </div>
           </div>
           
           <div className="flex justify-between px-10 text-xs text-slate-500 font-medium pb-2">
-            <div className="flex items-center gap-2"><div className="w-2 h-2 rounded-full bg-[#A78BFA]"></div>3,178 (Boys)</div>
-            <div className="flex items-center gap-2"><div className="w-2 h-2 rounded-full bg-[#FCD34D]"></div>2,731 (Girls)</div>
+            <div className="flex items-center gap-1.5"><div className="w-2 h-2 rounded-full bg-[#A78BFA]"></div>3,178 <span className="text-[10px] text-slate-400">( boys )</span></div>
+            <div className="flex items-center gap-1.5"><div className="w-2 h-2 rounded-full bg-[#FCD34D]"></div>2,731 <span className="text-[10px] text-slate-400">( Girls )</span></div>
           </div>
         </div>
 
         {/* Notice Board */}
-        <div className="bg-white rounded-[24px] p-6 shadow-sm border border-slate-100 flex flex-col">
+        <div className="bg-white rounded-[24px] p-6 shadow-sm border border-slate-100 flex flex-col relative">
           <div className="flex justify-between items-center mb-6">
             <h3 className="font-bold text-slate-800">Notice Board</h3>
-            <button className="text-xs text-blue-600 font-bold bg-blue-50 px-3 py-1 rounded-full">View All</button>
+            <button className="text-[10px] text-slate-400 underline decoration-slate-300 hover:text-slate-600">view all</button>
           </div>
-          <div className="space-y-4 flex-1">
-            <div className="flex gap-4 items-start border border-slate-100 p-4 rounded-2xl hover:border-blue-100 transition-colors">
-              <div className="w-10 h-10 rounded-xl bg-orange-100 text-orange-600 flex items-center justify-center shrink-0">
-                <AlertCircle size={18} />
+          <div className="space-y-4 flex-1 overflow-y-auto pr-3 custom-scrollbar">
+            <div className="flex gap-4 items-start border border-slate-200 p-3 rounded-xl">
+              <div className="w-10 h-10 rounded-xl bg-yellow-50 text-yellow-500 flex items-center justify-center shrink-0">
+                <Bell size={18} />
               </div>
               <div>
-                <h4 className="font-bold text-slate-800 text-sm">Sports Day Announcement</h4>
-                <p className="text-[11px] text-slate-500 mt-1 leading-tight">The school's Annual Sports Day will be held on May 12, 2024. Mark your calendars!</p>
+                <h4 className="font-semibold text-slate-800 text-[13px]">Sports Day Announcement</h4>
+                <p className="text-[10px] text-slate-400 mt-0.5 leading-snug">The school's Annual Sports Day will be held on May 12, 2024. Mark your calendars!</p>
               </div>
             </div>
-            <div className="flex gap-4 items-start border border-slate-100 p-4 rounded-2xl hover:border-blue-100 transition-colors">
-              <div className="w-10 h-10 rounded-xl bg-blue-100 text-blue-600 flex items-center justify-center shrink-0">
-                <Clock size={18} />
+            <div className="flex gap-4 items-start border border-slate-200 p-3 rounded-xl">
+              <div className="w-10 h-10 rounded-xl bg-indigo-50 text-indigo-400 flex items-center justify-center shrink-0">
+                <Bell size={18} />
               </div>
               <div>
-                <h4 className="font-bold text-slate-800 text-sm">Summer Break Start Date</h4>
-                <p className="text-[11px] text-slate-500 mt-1 leading-tight">Summer break begins on May 25, 2024. Have a wonderful holiday!</p>
+                <h4 className="font-semibold text-slate-800 text-[13px]">Summer Break Start Date</h4>
+                <p className="text-[10px] text-slate-400 mt-0.5 leading-snug">Summer break begins on May 25, 2024. Have a wonderful holiday!</p>
               </div>
             </div>
+          </div>
+          
+          <div className="flex gap-2 items-center mt-4 pt-2">
+            <button className="bg-slate-100 text-slate-500 hover:bg-slate-200 text-[10px] font-semibold px-4 py-1.5 rounded-lg transition-colors">Add New</button>
+            <button className="p-1.5 bg-slate-50 border border-slate-200 rounded-lg text-slate-400 hover:text-slate-600 transition-colors"><Edit size={14} /></button>
+            <button className="p-1.5 bg-slate-50 border border-slate-200 rounded-lg text-slate-400 hover:text-slate-600 transition-colors"><Trash2 size={14} /></button>
           </div>
         </div>
 
