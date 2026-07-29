@@ -69,7 +69,7 @@ const AdminDashboard = ({ user }) => {
               </p>
             </div>
             
-            {/* Humaaans Research */}
+            {/* Humaaans Research (Generated Mock Image) */}
             <div 
               className="absolute"
               style={{
@@ -77,7 +77,7 @@ const AdminDashboard = ({ user }) => {
                 height: '222px',
                 left: '399px',
                 top: '0px',
-                background: 'url(.png) center / contain no-repeat',
+                background: "url('/humaaans-research.png') center / contain no-repeat",
                 transform: 'matrix(-1, 0, 0, 1, 0, 0)'
               }}
             >
