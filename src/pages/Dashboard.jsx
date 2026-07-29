@@ -5,6 +5,34 @@ import {
   LineChart, Line, PieChart, Pie, Cell
 } from 'recharts';
 
+const CustomEarningsTooltip = ({ active, payload, label }) => {
+  if (active && payload && payload.length) {
+    const income = payload.find(p => p.dataKey === 'income')?.value || 0;
+    const expense = payload.find(p => p.dataKey === 'expense')?.value || 0;
+
+    return (
+      <div className="w-[136px] h-[94px] bg-[#FEFEFE] border border-[#F4F6FB] rounded-[9px] flex flex-col justify-center items-center shadow-sm">
+        <span style={{ fontFamily: 'Inter, sans-serif', fontWeight: 600, fontSize: '12px', lineHeight: '15px', color: '#CCCDCE', marginBottom: '6px' }}>
+          {label} 14,2030
+        </span>
+        <div className="w-[100px] h-[3px] bg-[#F4F6FB] mb-[8px]"></div>
+        
+        <div className="flex flex-col gap-[6px] w-[90px]">
+          <div className="flex items-center gap-[8px]">
+            <div className="w-[10px] h-[10px] rounded-full bg-[#60A5FA]"></div>
+            <span style={{ fontFamily: 'Inter, sans-serif', fontWeight: 600, fontSize: '12px', color: '#989898' }}>${income}.000</span>
+          </div>
+          <div className="flex items-center gap-[8px]">
+            <div className="w-[10px] h-[10px] rounded-full bg-[#C084FC]"></div>
+            <span style={{ fontFamily: 'Inter, sans-serif', fontWeight: 600, fontSize: '12px', color: '#9D9D9D' }}>${expense}.000</span>
+          </div>
+        </div>
+      </div>
+    );
+  }
+  return null;
+};
+
 const AdminDashboard = ({ user }) => {
   // Mock Data
   const genderData = [
@@ -160,19 +188,28 @@ const AdminDashboard = ({ user }) => {
 
         {/* Earnings Chart */}
         <div className="w-full h-[448px] bg-[#FFFFFF] rounded-[24px] shadow-sm relative pt-[24px] px-[24px] pb-[16px] flex flex-col">
-          <div className="flex justify-between items-center mb-[20px]">
-            <span style={{ fontFamily: 'Inter, sans-serif', fontWeight: 500, fontSize: '20px', color: '#000000' }}>Earnings</span>
-            <div className="flex items-center gap-[30px]">
-              <div className="flex items-center gap-[10px]">
-                <div className="w-[14px] h-[14px] bg-[#C084FC] rounded-full"></div>
-                <span style={{ fontFamily: 'Inter, sans-serif', fontWeight: 600, fontSize: '14.1px', color: '#484848' }}>Expense</span>
-              </div>
+          
+          <div className="relative w-full h-[40px] mb-[15px] flex items-center">
+            {/* Title */}
+            <div className="absolute left-0">
+              <span style={{ fontFamily: 'Inter, sans-serif', fontWeight: 500, fontSize: '20px', color: '#000000' }}>Earnings</span>
+            </div>
+            
+            {/* Legends (Centered) */}
+            <div className="w-full flex justify-center items-center gap-[40px]">
               <div className="flex items-center gap-[10px]">
                 <div className="w-[14px] h-[14px] bg-[#60A5FA] rounded-full"></div>
                 <span style={{ fontFamily: 'Inter, sans-serif', fontWeight: 600, fontSize: '14.8px', color: '#484848' }}>Income</span>
               </div>
-              {/* Menu dots */}
-              <div className="w-[16px] h-[4px] flex justify-between items-center ml-2 cursor-pointer">
+              <div className="flex items-center gap-[10px]">
+                <div className="w-[14px] h-[14px] bg-[#C084FC] rounded-full"></div>
+                <span style={{ fontFamily: 'Inter, sans-serif', fontWeight: 600, fontSize: '14.1px', color: '#484848' }}>Expense</span>
+              </div>
+            </div>
+
+            {/* Menu dots */}
+            <div className="absolute right-0">
+              <div className="w-[16px] h-[4px] flex justify-between items-center cursor-pointer">
                 <div className="w-[4px] h-[4px] bg-[#121212] rounded-full"></div>
                 <div className="w-[4px] h-[4px] bg-[#121212] rounded-full"></div>
                 <div className="w-[4px] h-[4px] bg-[#121212] rounded-full"></div>
@@ -181,13 +218,13 @@ const AdminDashboard = ({ user }) => {
           </div>
           <div className="w-full flex-1">
             <ResponsiveContainer width="100%" height="100%">
-              <LineChart data={earningsData} margin={{ top: 10, right: 10, left: -20, bottom: 0 }}>
+              <LineChart data={earningsData} margin={{ top: 10, right: 10, left: -20, bottom: 0 }} style={{ outline: 'none' }}>
                 <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#F4F6FB" />
                 <XAxis dataKey="name" axisLine={false} tickLine={false} tick={{ fill: '#3C3C3C', fontSize: 14.5, fontWeight: 600, fontFamily: 'Inter, sans-serif' }} dy={10} />
                 <YAxis axisLine={false} tickLine={false} tick={{ fill: '#3C3C3C', fontSize: 14.8, fontWeight: 600, fontFamily: 'Inter, sans-serif' }} dx={-10} tickFormatter={(val) => val === 0 ? '0' : `${val}K`} ticks={[0, 250, 500, 750, 1000]} domain={[0, 1000]} />
-                <Tooltip cursor={{ stroke: '#e2e8f0', strokeWidth: 1 }} contentStyle={{ borderRadius: '9px', border: '1px solid #F4F6FB', background: '#FEFEFE', boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1)' }} itemStyle={{ fontWeight: 600, fontSize: 12, color: '#989898', fontFamily: 'Inter, sans-serif' }} labelStyle={{ fontWeight: 600, fontSize: 12, color: '#CCCDCE', fontFamily: 'Inter, sans-serif' }} formatter={(value) => [`$${value}.000`, '']} />
-                <Line type="monotone" dataKey="income" stroke="#60A5FA" strokeWidth={3} dot={false} activeDot={{ r: 6 }} />
-                <Line type="monotone" dataKey="expense" stroke="#C084FC" strokeWidth={3} dot={false} activeDot={{ r: 6 }} />
+                <Tooltip cursor={false} content={<CustomEarningsTooltip />} />
+                <Line type="monotone" dataKey="income" stroke="#60A5FA" strokeWidth={3} dot={false} activeDot={{ r: 6, strokeWidth: 0, outline: 'none' }} />
+                <Line type="monotone" dataKey="expense" stroke="#C084FC" strokeWidth={3} dot={false} activeDot={{ r: 6, strokeWidth: 0, outline: 'none' }} />
               </LineChart>
             </ResponsiveContainer>
           </div>
