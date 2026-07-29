@@ -127,29 +127,34 @@ const AdminDashboard = ({ user }) => {
           </div>
           
           <div className="flex-1 flex items-center justify-center relative">
-            <div className="w-full h-40">
+            <div className="w-full h-44">
               <ResponsiveContainer width="100%" height="100%">
                 <PieChart>
-                  <Pie data={[{value: 53}, {value: 47}]} cx="25%" cy="50%" innerRadius={35} outerRadius={50} paddingAngle={0} dataKey="value" stroke="none">
+                  {/* Boys Donut */}
+                  <Pie data={[{value: 100}]} cx="25%" cy="50%" innerRadius={45} outerRadius={60} dataKey="value" stroke="none" fill="#F1F5F9" />
+                  <Pie data={[{value: 53}, {value: 47}]} cx="25%" cy="50%" innerRadius={45} outerRadius={60} startAngle={180} endAngle={-180} dataKey="value" stroke="none" cornerRadius={20}>
                     <Cell fill="#A78BFA" />
-                    <Cell fill="#F1F5F9" />
+                    <Cell fill="transparent" />
                   </Pie>
-                  <Pie data={[{value: 47}, {value: 53}]} cx="75%" cy="50%" innerRadius={35} outerRadius={50} paddingAngle={0} dataKey="value" stroke="none">
+                  
+                  {/* Girls Donut */}
+                  <Pie data={[{value: 100}]} cx="75%" cy="50%" innerRadius={45} outerRadius={60} dataKey="value" stroke="none" fill="#F1F5F9" />
+                  <Pie data={[{value: 47}, {value: 53}]} cx="75%" cy="50%" innerRadius={45} outerRadius={60} startAngle={180} endAngle={-180} dataKey="value" stroke="none" cornerRadius={20}>
                     <Cell fill="#FCD34D" />
-                    <Cell fill="#F1F5F9" />
+                    <Cell fill="transparent" />
                   </Pie>
                 </PieChart>
               </ResponsiveContainer>
             </div>
             
             <div className="absolute inset-0 flex justify-between px-10 items-center pointer-events-none">
-               <div className="flex items-center gap-1">
+               <div className="flex items-center gap-1 justify-center w-[50%]">
                  <User fill="#A78BFA" className="text-[#A78BFA]" size={16} />
-                 <span className="font-bold text-lg text-slate-800">53%</span>
+                 <span className="font-bold text-xl text-slate-900">53%</span>
                </div>
-               <div className="flex items-center gap-1">
+               <div className="flex items-center gap-1 justify-center w-[50%]">
                  <User fill="#FCD34D" className="text-[#FCD34D]" size={16} />
-                 <span className="font-bold text-lg text-slate-800">47%</span>
+                 <span className="font-bold text-xl text-slate-900">47%</span>
                </div>
             </div>
           </div>
