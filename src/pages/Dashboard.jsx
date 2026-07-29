@@ -205,7 +205,7 @@ const AdminDashboard = ({ user }) => {
       {/* Second Row: Demographics, Notice Board, Finance */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
 
-        {/* Students Donut */}
+        {/* Students*/}
         <div className="bg-white rounded-[24px] p-6 shadow-sm border border-slate-100 flex flex-col">
           <div className="flex justify-between items-center mb-2">
             <h3 className="font-bold text-slate-800">Students</h3>
