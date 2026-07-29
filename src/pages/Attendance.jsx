@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { CalendarDays, CheckCircle, XCircle, Clock, Save, Filter } from 'lucide-react';
+import { CalendarDays, CheckCircle, XCircle, Clock, Save, Filter, FileText } from 'lucide-react';
 
 const mockStudents = [
   { id: '1', name: 'Jose Rizal', status: 'Present' },
