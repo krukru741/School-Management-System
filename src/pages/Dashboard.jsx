@@ -38,10 +38,10 @@ const AdminDashboard = ({ user }) => {
 
   return (
     <div className="w-full flex flex-col xl:flex-row gap-[24px] animate-in fade-in duration-500 pb-10">
-      
+
       {/* LEFT COLUMN (Flexible) */}
       <div className="flex-1 flex flex-col gap-[24px]">
-        
+
         {/* Greetings */}
         <div className="w-full h-[248px] bg-[#FFFFFF] rounded-[24px] shadow-sm relative overflow-hidden flex items-center p-8">
           <div className="w-3/5 z-10">
@@ -76,10 +76,10 @@ const AdminDashboard = ({ user }) => {
                   <circle cx="50" cy="50" r="42" fill="none" stroke="#CFCEFF" strokeWidth="12" strokeDasharray="263.89" strokeDashoffset="124.0" strokeLinecap="round" />
                 </svg>
                 <div className="absolute left-[33px] top-[59px] w-[42px] h-[42px] flex justify-center items-center">
-                   <svg width="32" height="32" viewBox="0 0 24 24" fill="#CFCEFF">
-                     <circle cx="12" cy="5" r="2.5" />
-                     <path d="M15 9H9a1 1 0 00-1 1v6h2v6h4v-6h2v-6a1 1 0 00-1-1z" />
-                   </svg>
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="#CFCEFF">
+                    <circle cx="12" cy="5" r="2.5" />
+                    <path d="M15 9H9a1 1 0 00-1 1v6h2v6h4v-6h2v-6a1 1 0 00-1-1z" />
+                  </svg>
                 </div>
                 <div className="absolute left-[70px] top-[69px] flex items-center">
                   <span style={{ fontFamily: 'Inter, sans-serif', fontWeight: 600, fontSize: '30px', lineHeight: '36px', color: '#000000' }}>53%</span>
@@ -91,10 +91,10 @@ const AdminDashboard = ({ user }) => {
                   <circle cx="50" cy="50" r="42" fill="none" stroke="#FFED9F" strokeWidth="12" strokeDasharray="263.89" strokeDashoffset="139.8" strokeLinecap="round" />
                 </svg>
                 <div className="absolute left-[33px] top-[59px] w-[42px] h-[42px] flex justify-center items-center">
-                   <svg width="32" height="32" viewBox="0 0 24 24" fill="#FFED9F">
-                     <circle cx="12" cy="5" r="2.5" />
-                     <path d="M15 9H9a1 1 0 00-1 1v5.5l1.5 5.5h3l1.5-5.5V10a1 1 0 00-1-1z" />
-                   </svg>
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="#FFED9F">
+                    <circle cx="12" cy="5" r="2.5" />
+                    <path d="M15 9H9a1 1 0 00-1 1v5.5l1.5 5.5h3l1.5-5.5V10a1 1 0 00-1-1z" />
+                  </svg>
                 </div>
                 <div className="absolute left-[70px] top-[68px] flex items-center">
                   <span style={{ fontFamily: 'Inter, sans-serif', fontWeight: 600, fontSize: '30px', lineHeight: '36px', color: '#000000' }}>47%</span>
@@ -180,7 +180,7 @@ const AdminDashboard = ({ user }) => {
 
       {/* RIGHT COLUMN (Fixed Width) */}
       <div className="w-full xl:w-[505px] shrink-0 flex flex-col gap-[24px]">
-        
+
         {/* Row: Head Count & Calendar */}
         <div className="flex flex-row gap-[14px]">
           {/* Head Count */}
@@ -273,28 +273,68 @@ const AdminDashboard = ({ user }) => {
         </div>
 
         {/* Financial Overview */}
-        <div className="w-full h-[183px] bg-[#FFFFFF] rounded-[24px] shadow-sm p-6 flex flex-col">
-          <div className="flex justify-between items-center mb-4">
-            <h3 className="font-bold text-slate-800">Financial Overview</h3>
-            <div className="flex gap-2">
-              <select className="text-xs font-bold bg-slate-50 border-none outline-none rounded-lg px-2 py-1 text-slate-600"><option>2023-2024</option></select>
+        <div className="w-full h-[179px] bg-[#FFFFFF] rounded-[24px] shadow-sm relative">
+
+          {/* Header */}
+          <div className="absolute left-[19px] top-[18px] right-[19px] h-[28px] flex justify-between items-center">
+            <span style={{ fontFamily: 'Inter, sans-serif', fontWeight: 500, fontSize: '20px', color: '#000000' }}>
+              Financial Overview
+            </span>
+            <div className="flex gap-[8px]">
+              <div className="w-[96px] h-[27px] bg-[#F5F4F9] rounded-[6px] flex items-center justify-between px-[10px] cursor-pointer">
+                <span style={{ fontFamily: 'Inter, sans-serif', fontWeight: 400, fontSize: '12px', color: '#777777' }}>2023-2024</span>
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#6E6D71" strokeWidth="2"><path d="M6 9l6 6 6-6" /></svg>
+              </div>
+              <div className="w-[66px] h-[27px] bg-[#F5F4F9] rounded-[6px] flex items-center justify-between px-[10px] cursor-pointer">
+                <span style={{ fontFamily: 'Inter, sans-serif', fontWeight: 400, fontSize: '12px', color: '#777777' }}>Annual</span>
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#6E6D71" strokeWidth="2"><path d="M6 9l6 6 6-6" /></svg>
+              </div>
             </div>
           </div>
-          <div className="flex-1 grid grid-cols-2 gap-4">
-            <div className="bg-[#E0F2FE] rounded-2xl p-4 relative overflow-hidden flex flex-col justify-center">
-              <div className="absolute top-2 right-2 flex items-center gap-1 bg-white/60 text-blue-700 px-2 py-1 rounded-lg text-[10px] font-bold">
-                <ArrowUpRight size={12} /> 12%
+
+          {/* Body */}
+          <div className="absolute left-[19px] top-[55px] right-[19px] h-[106px] flex gap-[16px]">
+
+            {/* Income Box */}
+            <div className="w-[226px] h-[106px] bg-[#C3EBFA] rounded-[13px] relative flex-1">
+              <div className="absolute left-[18px] top-[14px] right-[15px] h-[22px] flex justify-between items-center">
+                {/* Simulated image.png for mini chart */}
+                <div className="w-[49px] h-[22px] bg-black/5 rounded-sm"></div>
+                <div className="w-[43px] h-[16px] bg-[#FFFFFF] rounded-[32px] flex items-center justify-center gap-[2px]">
+                  <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="#00997E" strokeWidth="2.5"><path d="M12 19V5M5 12l7-7 7 7" /></svg>
+                  <span style={{ fontFamily: 'Inter, sans-serif', fontWeight: 500, fontSize: '8px', color: '#00997E' }}>12%</span>
+                </div>
               </div>
-              <h3 className="text-xl font-bold text-[#0C4A6E] mt-2">₱29,545,000</h3>
-              <p className="text-[#0369A1] text-[10px] font-semibold mt-1">Total Income</p>
-            </div>
-            <div className="bg-[#CCFBF1] rounded-2xl p-4 relative overflow-hidden flex flex-col justify-center">
-              <div className="absolute top-2 right-2 flex items-center gap-1 bg-white/60 text-teal-700 px-2 py-1 rounded-lg text-[10px] font-bold">
-                <ArrowDownRight size={12} /> 3.5%
+              <div className="absolute left-0 top-[47px] w-full flex flex-col items-center">
+                <span style={{ fontFamily: 'Inter, sans-serif', fontWeight: 500, fontSize: '24px', lineHeight: '29px', color: '#000000' }}>
+                  ₱29,545,000
+                </span>
+                <span style={{ fontFamily: 'Inter, sans-serif', fontWeight: 400, fontSize: '16px', lineHeight: '19px', color: '#000000', marginTop: '3px' }}>
+                  Total Income
+                </span>
               </div>
-              <h3 className="text-xl font-bold text-[#115E59] mt-2">₱19,291,266</h3>
-              <p className="text-[#0F766E] text-[10px] font-semibold mt-1">Total Expenses</p>
             </div>
+
+            {/* Expense Box */}
+            <div className="w-[226px] h-[106px] bg-[#C3EBFA] rounded-[13px] relative flex-1">
+              <div className="absolute left-[18px] top-[14px] right-[15px] h-[22px] flex justify-between items-center">
+                {/* Simulated image.png for mini chart */}
+                <div className="w-[49px] h-[22px] bg-black/5 rounded-sm"></div>
+                <div className="w-[43px] h-[16px] bg-[#FFFFFF] rounded-[32px] flex items-center justify-center gap-[2px]">
+                  <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="#00997E" strokeWidth="2.5"><path d="M12 19V5M5 12l7-7 7 7" /></svg>
+                  <span style={{ fontFamily: 'Inter, sans-serif', fontWeight: 500, fontSize: '8px', color: '#00997E' }}>3.5%</span>
+                </div>
+              </div>
+              <div className="absolute left-0 top-[47px] w-full flex flex-col items-center">
+                <span style={{ fontFamily: 'Inter, sans-serif', fontWeight: 500, fontSize: '24px', lineHeight: '29px', color: '#000000' }}>
+                  ₱19,291,266
+                </span>
+                <span style={{ fontFamily: 'Inter, sans-serif', fontWeight: 400, fontSize: '16px', lineHeight: '19px', color: '#000000', marginTop: '3px' }}>
+                  Total Expenses
+                </span>
+              </div>
+            </div>
+
           </div>
         </div>
 
