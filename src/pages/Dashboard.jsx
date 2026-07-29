@@ -1,147 +1,268 @@
 import { useAuth } from '../context/AuthContext';
-import { MOCK_DASHBOARD_STATS } from '../data/mockData';
-import { Users, GraduationCap, Banknote, LineChart } from 'lucide-react';
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
+import { Users, GraduationCap, ArrowUpRight, ArrowDownRight, Clock, AlertCircle, MoreHorizontal } from 'lucide-react';
+import { 
+  BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer,
+  LineChart, Line, PieChart, Pie, Cell
+} from 'recharts';
 
-const gradeDistribution = [
-  { name: 'Grade 7', students: 250 },
-  { name: 'Grade 8', students: 220 },
-  { name: 'Grade 9', students: 280 },
-  { name: 'Grade 10', students: 240 },
-  { name: 'Grade 11', students: 150 },
-  { name: 'Grade 12', students: 110 },
-];
+const AdminDashboard = ({ user }) => {
+  // Mock Data
+  const genderData = [
+    { name: 'Boys', value: 53, color: '#A78BFA' }, // Purple
+    { name: 'Girls', value: 47, color: '#FCD34D' }, // Yellow
+  ];
 
-const recentTransactions = [
-  { id: 'TXN-1001', student: 'Jose Rizal', amount: 5000, date: '2026-07-28', status: 'Completed' },
-  { id: 'TXN-1002', student: 'Andres Bonifacio', amount: 2500, date: '2026-07-28', status: 'Completed' },
-  { id: 'TXN-1003', student: 'Emilio Aguinaldo', amount: 10000, date: '2026-07-27', status: 'Pending' },
-];
+  const earningsData = [
+    { name: 'Jan', income: 400, expense: 240 },
+    { name: 'Feb', income: 300, expense: 139 },
+    { name: 'Mar', income: 200, expense: 980 },
+    { name: 'Apr', income: 278, expense: 390 },
+    { name: 'May', income: 189, expense: 480 },
+    { name: 'Jun', income: 239, expense: 380 },
+    { name: 'Jul', income: 349, expense: 430 },
+  ];
 
-const AdminDashboard = () => (
-  <div className="space-y-6 animate-in fade-in slide-in-from-bottom-4 duration-500">
-    <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
-      <StatCard icon={<GraduationCap />} title="Total Students" value={MOCK_DASHBOARD_STATS.totalStudents} color="text-blue-600" bg="bg-blue-100" />
-      <StatCard icon={<Users />} title="Active Teachers" value={MOCK_DASHBOARD_STATS.activeTeachers} color="text-purple-600" bg="bg-purple-100" />
-      <StatCard icon={<Banknote />} title="Today's Collection" value={`₱${MOCK_DASHBOARD_STATS.todayCollection.toLocaleString()}`} color="text-green-600" bg="bg-green-100" />
-      <StatCard icon={<LineChart />} title="Enrollment Rate" value={`${MOCK_DASHBOARD_STATS.enrollmentRate}%`} color="text-orange-600" bg="bg-orange-100" />
-    </div>
+  const messages = [
+    { id: 1, name: 'Jane Cooper', text: "Don't forget the lab rep...", time: '12:34 pm', img: 'J', color: 'bg-blue-100 text-blue-700' },
+    { id: 2, name: 'Kristin Watson', text: "Do we have maths test...", time: '12:34 pm', img: 'K', color: 'bg-red-100 text-red-700' },
+    { id: 3, name: 'Jenny Wilson', text: "What?", time: '12:34 pm', img: 'J', color: 'bg-green-100 text-green-700' },
+    { id: 4, name: 'Brooklyn Sim', text: "Did Sachla gave any ki...", time: '12:34 pm', img: 'B', color: 'bg-purple-100 text-purple-700' },
+    { id: 5, name: 'Darrell Steward', text: "Can we go for a movie...", time: '12:34 pm', img: 'D', color: 'bg-orange-100 text-orange-700' },
+  ];
 
-    <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-      <div className="lg:col-span-2 bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
-        <h3 className="text-lg font-bold text-slate-800 mb-6">Grade Level Distribution</h3>
-        <div className="h-72 w-full">
-          <ResponsiveContainer width="100%" height="100%">
-            <BarChart data={gradeDistribution}>
-              <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#e2e8f0" />
-              <XAxis dataKey="name" axisLine={false} tickLine={false} tick={{fill: '#64748b'}} />
-              <YAxis axisLine={false} tickLine={false} tick={{fill: '#64748b'}} />
-              <Tooltip cursor={{fill: '#f1f5f9'}} contentStyle={{borderRadius: '8px', border: 'none', boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1)'}} />
-              <Bar dataKey="students" fill="#3b82f6" radius={[4, 4, 0, 0]} />
-            </BarChart>
-          </ResponsiveContainer>
-        </div>
-      </div>
-
-      <div className="bg-white p-6 rounded-xl border border-slate-200 shadow-sm flex flex-col">
-        <h3 className="text-lg font-bold text-slate-800 mb-4">Recent Transactions</h3>
-        <div className="flex-1 overflow-auto">
-          <ul className="space-y-4">
-            {recentTransactions.map(txn => (
-              <li key={txn.id} className="flex items-center justify-between p-3 hover:bg-slate-50 rounded-lg transition-colors border border-slate-100">
-                <div>
-                  <p className="font-semibold text-slate-800">{txn.student}</p>
-                  <p className="text-xs text-slate-500">{txn.date} • {txn.id}</p>
-                </div>
-                <div className="text-right">
-                  <p className="font-bold text-slate-800">₱{txn.amount.toLocaleString()}</p>
-                  <span className={`text-xs px-2 py-1 rounded-full font-medium ${txn.status === 'Completed' ? 'bg-green-100 text-green-700' : 'bg-orange-100 text-orange-700'}`}>
-                    {txn.status}
-                  </span>
-                </div>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-);
-
-const StudentDashboard = () => (
-  <div className="space-y-6 animate-in fade-in slide-in-from-bottom-4 duration-500">
-    <div className="bg-gradient-to-r from-blue-600 to-blue-800 rounded-2xl p-8 text-white shadow-lg">
-      <h2 className="text-2xl font-bold mb-2">Welcome back, Jose Rizal!</h2>
-      <p className="text-blue-100 mb-6">Grade 10 - Section Luna</p>
+  return (
+    <div className="space-y-6 animate-in fade-in duration-500 max-w-[1400px] mx-auto">
       
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-        <div className="bg-white/10 p-4 rounded-xl backdrop-blur-sm">
-          <p className="text-blue-100 text-sm mb-1">Current GPA</p>
-          <p className="text-3xl font-bold">92.5</p>
-        </div>
-        <div className="bg-white/10 p-4 rounded-xl backdrop-blur-sm">
-          <p className="text-blue-100 text-sm mb-1">Attendance</p>
-          <p className="text-3xl font-bold">98%</p>
-        </div>
-        <div className="bg-white/10 p-4 rounded-xl backdrop-blur-sm">
-          <p className="text-blue-100 text-sm mb-1">Outstanding Balance</p>
-          <p className="text-3xl font-bold">₱5,000</p>
-        </div>
-        <div className="bg-white/10 p-4 rounded-xl backdrop-blur-sm">
-          <p className="text-blue-100 text-sm mb-1">Next Class</p>
-          <p className="text-xl font-bold truncate">Mathematics</p>
-          <p className="text-xs text-blue-200">10:00 AM</p>
-        </div>
-      </div>
-    </div>
-    
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-      <div className="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
-        <h3 className="text-lg font-bold text-slate-800 mb-4">Today's Schedule</h3>
-        <ul className="space-y-3">
-          {['08:00 AM - Science', '10:00 AM - Mathematics', '01:00 PM - English', '03:00 PM - History'].map((cls, i) => (
-            <li key={i} className="flex items-center gap-4 p-3 bg-slate-50 rounded-lg border border-slate-100">
-              <div className="w-2 h-10 bg-blue-500 rounded-full"></div>
-              <p className="font-medium text-slate-700">{cls}</p>
-            </li>
-          ))}
-        </ul>
-      </div>
-      <div className="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
-        <h3 className="text-lg font-bold text-slate-800 mb-4">Recent Announcements</h3>
-        <div className="space-y-4">
-          <div className="p-4 bg-orange-50 border border-orange-100 rounded-lg">
-            <h4 className="font-bold text-orange-800">No Classes Tomorrow</h4>
-            <p className="text-sm text-orange-700 mt-1">Due to the upcoming national holiday, all classes are suspended.</p>
+      {/* Top Row: Welcome Banner & Stats */}
+      <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
+        
+        {/* Welcome Banner */}
+        <div className="lg:col-span-2 bg-white rounded-[24px] p-8 shadow-sm flex flex-col sm:flex-row items-center justify-between border border-slate-100">
+          <div className="max-w-sm">
+            <h2 className="text-2xl font-bold text-slate-800 mb-2">Welcome, {user?.name}!</h2>
+            <p className="text-slate-500 text-sm leading-relaxed mb-6">
+              Manage your school operations with ease. Stay updated on academics, attendance, finances, and more—all in one place.
+            </p>
           </div>
-          <div className="p-4 bg-blue-50 border border-blue-100 rounded-lg">
-            <h4 className="font-bold text-blue-800">Quarterly Exams Schedule</h4>
-            <p className="text-sm text-blue-700 mt-1">Exams will begin next Monday. Check your detailed schedule in the portal.</p>
+          {/* Abstract Illustration */}
+          <div className="hidden sm:flex w-32 h-32 bg-slate-50 rounded-full items-center justify-center">
+            <div className="w-24 h-24 bg-blue-50 rounded-full flex items-center justify-center">
+              <GraduationCap size={40} className="text-blue-300" />
+            </div>
           </div>
         </div>
-      </div>
-    </div>
-  </div>
-);
 
-const StatCard = ({ icon, title, value, color, bg }) => (
-  <div className="bg-white p-6 rounded-xl border border-slate-200 shadow-sm flex items-center gap-4">
-    <div className={`w-14 h-14 rounded-full flex items-center justify-center ${bg} ${color}`}>
-      {icon}
+        {/* Top Stats Cards */}
+        <div className="space-y-4">
+          <div className="bg-[#FDF4D6] rounded-[24px] p-6 shadow-sm flex justify-between items-center h-[calc(50%-0.5rem)]">
+            <div>
+              <p className="text-[#A1883F] font-medium text-sm mb-1">Students</p>
+              <h3 className="text-3xl font-bold text-[#5A4810]">5,909</h3>
+            </div>
+            <MoreHorizontal size={20} className="text-[#A1883F] self-start" />
+          </div>
+          <div className="bg-[#F0E6FF] rounded-[24px] p-6 shadow-sm flex justify-between items-center h-[calc(50%-0.5rem)]">
+            <div>
+              <p className="text-[#7C5CA5] font-medium text-sm mb-1">Teachers</p>
+              <h3 className="text-3xl font-bold text-[#4B3073]">60</h3>
+            </div>
+            <MoreHorizontal size={20} className="text-[#7C5CA5] self-start" />
+          </div>
+        </div>
+
+        <div className="space-y-4">
+          <div className="bg-[#FEF08A] rounded-[24px] p-6 shadow-sm flex justify-between items-center h-[calc(50%-0.5rem)]">
+            <div>
+              <p className="text-[#854D0E] font-medium text-sm mb-1">Employee</p>
+              <h3 className="text-3xl font-bold text-[#713F12]">100</h3>
+            </div>
+            <MoreHorizontal size={20} className="text-[#854D0E] self-start" />
+          </div>
+          <div className="bg-white rounded-[24px] p-6 shadow-sm flex justify-between items-center h-[calc(50%-0.5rem)] border border-slate-100">
+             {/* Calendar Widget Placeholder */}
+             <div className="w-full text-center">
+               <div className="flex justify-between items-center text-sm font-bold text-slate-700 mb-2">
+                 <span>&lt;</span>
+                 <span>September 2021</span>
+                 <span>&gt;</span>
+               </div>
+               <div className="text-[10px] text-slate-400 font-medium">Manage Calendar</div>
+             </div>
+          </div>
+        </div>
+
+      </div>
+
+      {/* Second Row: Demographics, Notice Board, Finance */}
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        
+        {/* Students Donut */}
+        <div className="bg-white rounded-[24px] p-6 shadow-sm border border-slate-100 flex flex-col">
+          <div className="flex justify-between items-center mb-2">
+            <h3 className="font-bold text-slate-800">Students</h3>
+            <MoreHorizontal size={20} className="text-slate-400" />
+          </div>
+          
+          <div className="flex-1 flex items-center justify-center relative">
+            <div className="w-full h-40">
+              <ResponsiveContainer width="100%" height="100%">
+                <PieChart>
+                  <Pie data={[{value: 53}, {value: 47}]} cx="25%" cy="50%" innerRadius={35} outerRadius={50} paddingAngle={0} dataKey="value" stroke="none">
+                    <Cell fill="#A78BFA" />
+                    <Cell fill="#F1F5F9" />
+                  </Pie>
+                  <Pie data={[{value: 47}, {value: 53}]} cx="75%" cy="50%" innerRadius={35} outerRadius={50} paddingAngle={0} dataKey="value" stroke="none">
+                    <Cell fill="#FCD34D" />
+                    <Cell fill="#F1F5F9" />
+                  </Pie>
+                </PieChart>
+              </ResponsiveContainer>
+            </div>
+            
+            <div className="absolute inset-0 flex justify-between px-12 items-center pointer-events-none">
+               <span className="font-bold text-lg text-slate-700">53%</span>
+               <span className="font-bold text-lg text-slate-700">47%</span>
+            </div>
+          </div>
+          
+          <div className="flex justify-between px-10 text-xs text-slate-500 font-medium pb-2">
+            <div className="flex items-center gap-2"><div className="w-2 h-2 rounded-full bg-[#A78BFA]"></div>3,178 (Boys)</div>
+            <div className="flex items-center gap-2"><div className="w-2 h-2 rounded-full bg-[#FCD34D]"></div>2,731 (Girls)</div>
+          </div>
+        </div>
+
+        {/* Notice Board */}
+        <div className="bg-white rounded-[24px] p-6 shadow-sm border border-slate-100 flex flex-col">
+          <div className="flex justify-between items-center mb-6">
+            <h3 className="font-bold text-slate-800">Notice Board</h3>
+            <button className="text-xs text-blue-600 font-bold bg-blue-50 px-3 py-1 rounded-full">View All</button>
+          </div>
+          <div className="space-y-4 flex-1">
+            <div className="flex gap-4 items-start border border-slate-100 p-4 rounded-2xl hover:border-blue-100 transition-colors">
+              <div className="w-10 h-10 rounded-xl bg-orange-100 text-orange-600 flex items-center justify-center shrink-0">
+                <AlertCircle size={18} />
+              </div>
+              <div>
+                <h4 className="font-bold text-slate-800 text-sm">Sports Day Announcement</h4>
+                <p className="text-[11px] text-slate-500 mt-1 leading-tight">The school's Annual Sports Day will be held on May 12, 2024. Mark your calendars!</p>
+              </div>
+            </div>
+            <div className="flex gap-4 items-start border border-slate-100 p-4 rounded-2xl hover:border-blue-100 transition-colors">
+              <div className="w-10 h-10 rounded-xl bg-blue-100 text-blue-600 flex items-center justify-center shrink-0">
+                <Clock size={18} />
+              </div>
+              <div>
+                <h4 className="font-bold text-slate-800 text-sm">Summer Break Start Date</h4>
+                <p className="text-[11px] text-slate-500 mt-1 leading-tight">Summer break begins on May 25, 2024. Have a wonderful holiday!</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Financial Overview */}
+        <div className="bg-white rounded-[24px] p-6 shadow-sm border border-slate-100 flex flex-col">
+          <div className="flex justify-between items-center mb-6">
+            <h3 className="font-bold text-slate-800">Financial Overview</h3>
+            <div className="flex gap-2">
+              <select className="text-xs font-bold bg-slate-50 border-none rounded-lg px-2 py-1 text-slate-600"><option>2023-2024</option></select>
+            </div>
+          </div>
+          <div className="space-y-4 flex-1 flex flex-col justify-center">
+            <div className="bg-[#E0F2FE] rounded-2xl p-5 relative overflow-hidden">
+              <div className="absolute top-4 right-4 flex items-center gap-1 bg-white/60 text-blue-700 px-2 py-1 rounded-lg text-[10px] font-bold">
+                <ArrowUpRight size={12} /> 12%
+              </div>
+              <h3 className="text-2xl font-bold text-[#0C4A6E] mt-2">₱29,545,000</h3>
+              <p className="text-[#0369A1] text-xs font-semibold mt-1">Total Income</p>
+            </div>
+            <div className="bg-[#CCFBF1] rounded-2xl p-5 relative overflow-hidden">
+              <div className="absolute top-4 right-4 flex items-center gap-1 bg-white/60 text-teal-700 px-2 py-1 rounded-lg text-[10px] font-bold">
+                <ArrowDownRight size={12} /> 3.5%
+              </div>
+              <h3 className="text-2xl font-bold text-[#115E59] mt-2">₱19,291,266</h3>
+              <p className="text-[#0F766E] text-xs font-semibold mt-1">Total Expenses</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Third Row: Chart, Fee Status, Messages */}
+      <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
+        
+        {/* Earnings Chart */}
+        <div className="lg:col-span-2 bg-white rounded-[24px] p-6 shadow-sm border border-slate-100">
+          <div className="flex justify-between items-center mb-6">
+            <h3 className="font-bold text-slate-800">Earnings</h3>
+            <div className="flex items-center gap-4 text-xs font-bold text-slate-500">
+              <div className="flex items-center gap-2"><div className="w-2.5 h-2.5 rounded-full bg-[#60A5FA]"></div>Income</div>
+              <div className="flex items-center gap-2"><div className="w-2.5 h-2.5 rounded-full bg-[#C084FC]"></div>Expense</div>
+              <MoreHorizontal size={20} className="text-slate-400 ml-2" />
+            </div>
+          </div>
+          <div className="h-64">
+            <ResponsiveContainer width="100%" height="100%">
+              <LineChart data={earningsData}>
+                <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#f1f5f9" />
+                <XAxis dataKey="name" axisLine={false} tickLine={false} tick={{fill: '#94a3b8', fontSize: 10, fontWeight: 'bold'}} dy={10} />
+                <YAxis axisLine={false} tickLine={false} tick={{fill: '#94a3b8', fontSize: 10, fontWeight: 'bold'}} dx={-10} tickFormatter={(val) => `${val}K`} />
+                <Tooltip cursor={{stroke: '#e2e8f0', strokeWidth: 1}} contentStyle={{borderRadius: '12px', border: 'none', boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1)'}} />
+                <Line type="monotone" dataKey="income" stroke="#60A5FA" strokeWidth={3} dot={{r:4, strokeWidth:2, fill:'#fff'}} activeDot={{r: 6}} />
+                <Line type="monotone" dataKey="expense" stroke="#C084FC" strokeWidth={3} dot={{r:4, strokeWidth:2, fill:'#fff'}} activeDot={{r: 6}} />
+              </LineChart>
+            </ResponsiveContainer>
+          </div>
+        </div>
+
+        {/* Fee Status */}
+        <div className="bg-white rounded-[24px] p-6 shadow-sm border border-slate-100 flex flex-col">
+          <div className="flex justify-between items-center mb-6">
+            <h3 className="font-bold text-slate-800">Fee Status</h3>
+            <MoreHorizontal size={20} className="text-slate-400" />
+          </div>
+          <div className="space-y-4 flex-1">
+            {feeStatus.map(fee => (
+              <div key={fee.id} className="flex justify-between items-center border border-slate-100 rounded-xl p-3">
+                <span className="text-lg font-bold text-slate-800">{fee.amount}</span>
+                <span className={`text-[10px] font-bold px-2 py-1 rounded-full flex items-center gap-1 ${fee.color}`}>
+                  <div className="w-1.5 h-1.5 rounded-full bg-current"></div>
+                  {fee.status}
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Messages */}
+        <div className="bg-white rounded-[24px] p-6 shadow-sm border border-slate-100 flex flex-col">
+          <div className="flex justify-between items-center mb-4">
+            <h3 className="font-bold text-slate-800">Messages</h3>
+            <MoreHorizontal size={20} className="text-slate-400" />
+          </div>
+          <div className="space-y-3 flex-1 overflow-y-auto pr-2 custom-scrollbar">
+            {messages.map(msg => (
+              <div key={msg.id} className="flex items-center gap-3">
+                <div className={`w-10 h-10 rounded-full flex items-center justify-center font-bold text-sm shrink-0 ${msg.color}`}>
+                  {msg.img}
+                </div>
+                <div className="flex-1 min-w-0">
+                  <h4 className="text-sm font-bold text-slate-800 truncate">{msg.name}</h4>
+                  <p className="text-[11px] text-slate-500 truncate">{msg.text}</p>
+                </div>
+                <span className="text-[10px] text-slate-400 font-medium whitespace-nowrap">{msg.time}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+      </div>
+
     </div>
-    <div>
-      <p className="text-slate-500 text-sm font-medium">{title}</p>
-      <h3 className="text-2xl font-bold text-slate-800">{value}</h3>
-    </div>
-  </div>
-);
+  );
+};
 
 const Dashboard = () => {
   const { user } = useAuth();
-  
-  const isStudentOrParent = user?.role === 'Student' || user?.role === 'Parent';
-
-  return isStudentOrParent ? <StudentDashboard /> : <AdminDashboard />;
+  return <AdminDashboard user={user} />;
 };
 
 export default Dashboard;
