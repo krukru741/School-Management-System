@@ -35,7 +35,7 @@ const MainLayout = () => {
   const allowedNavItems = navItems.filter(item => item.roles.includes(user?.role));
 
   return (
-    <div className="flex h-screen bg-[#F4F7FE] font-sans">
+    <div className="flex h-screen bg-[#F5F4F9] font-sans">
       {/* Sidebar - Dark Mode like Prototype */}
       <aside className="w-[284px] h-[calc(100vh-32px)] bg-[#000000] flex flex-col shrink-0 transition-all duration-300 ml-[17px] my-[16px] rounded-[24px] overflow-hidden shadow-2xl relative">
         {/* Logo */}

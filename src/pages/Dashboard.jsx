@@ -37,84 +37,89 @@ const AdminDashboard = ({ user }) => {
   ];
 
   return (
-    <div className="space-y-6 animate-in fade-in duration-500 max-w-[1400px] mx-auto">
-
-      {/* Top Row: Welcome Banner & Stats */}
-      <div className="flex flex-row">
-
-        {/* Welcome Banner */}
-        <div className="w-[763px] h-[248px] bg-[#FFFFFF] rounded-[24px] shadow-sm border border-slate-100 relative overflow-hidden shrink-0 mr-[18px]">
-          {/* Inner Content Box (main) */}
-          <div className="absolute left-[22px] top-[11px] w-[698px] h-[222px]">
-
-            {/* Content Container */}
-            <div className="absolute left-0 top-[10px] w-[401px] h-[179px]">
-              <h2
-                className="absolute left-[2px] top-0 w-[399px] h-[72px] font-medium text-[#000000] tracking-tight m-0"
-                style={{ fontFamily: 'Poppins, sans-serif', fontSize: '24px', lineHeight: '36px' }}
-              >
-                Welcome, Laurel Higher Secondary School Team!
-              </h2>
-              <p
-                className="absolute left-0 top-[83px] w-[399px] h-[96px] font-light text-[#8F8F8F] m-0"
-                style={{ fontFamily: 'Poppins, sans-serif', fontSize: '16px', lineHeight: '24px' }}
-              >
-                Manage your school operations with ease. Stay updated on academics, attendance, finances, and more—all in one place. Let's keep shaping a brighter future together!
-              </p>
-            </div>
-
-            {/* Humaaans Research (Generated Mock Image) */}
-            <div
-              className="absolute"
-              style={{
-                width: '299px',
-                height: '222px',
-                left: '399px',
-                top: '0px',
-                background: "url('/humaaans-research.png') center / contain no-repeat",
-                transform: 'matrix(-1, 0, 0, 1, 0, 0)'
-              }}
+    <div className="relative w-[1283px] h-[1010px] animate-in fade-in duration-500">
+      
+      {/* Greetings (Welcome Banner) */}
+      <div className="absolute left-[0px] top-[7px] w-[763px] h-[248px] bg-[#FFFFFF] rounded-[24px] shadow-sm overflow-hidden">
+        {/* Inner Content Box (main) */}
+        <div className="absolute left-[22px] top-[11px] w-[698px] h-[222px]">
+          
+          {/* Content Container */}
+          <div className="absolute left-0 top-[10px] w-[401px] h-[179px]">
+            <h2 
+              className="absolute left-[2px] top-0 w-[399px] h-[72px] font-medium text-[#000000] tracking-tight m-0" 
+              style={{ fontFamily: 'Poppins, sans-serif', fontSize: '24px', lineHeight: '36px' }}
             >
-            </div>
+              Welcome, Laurel Higher Secondary School Team!
+            </h2>
+            <p 
+              className="absolute left-0 top-[83px] w-[399px] h-[96px] font-light text-[#8F8F8F] m-0"
+              style={{ fontFamily: 'Poppins, sans-serif', fontSize: '16px', lineHeight: '24px' }}
+            >
+              Manage your school operations with ease. Stay updated on academics, attendance, finances, and more—all in one place. Let's keep shaping a brighter future together!
+            </p>
+          </div>
+          
+          {/* Humaaans Research (Generated Mock Image) */}
+          <div 
+            className="absolute"
+            style={{
+              width: '299px',
+              height: '222px',
+              left: '399px',
+              top: '0px',
+              background: "url('/humaaans-research.png') center / contain no-repeat",
+              transform: 'matrix(-1, 0, 0, 1, 0, 0)'
+            }}
+          >
+          </div>
+        </div>
+      </div>
 
+      {/* Head Count (Stats Column) */}
+      <div className="absolute left-[777px] top-[0px] w-[185px] h-[346px] flex flex-col gap-[11px]">
+        {/* Students */}
+        <div className="bg-[#F8E38D] rounded-[20px] w-[185px] h-[108px] relative">
+          <span className="absolute left-[17px] top-[17px] font-light text-[20px] text-[#000000] leading-[24px]">Students</span>
+          <div className="absolute left-[151px] top-[25px] w-[16px] h-[4px] flex justify-between">
+            <div className="w-[4px] h-[4px] bg-[#121212] rounded-full"></div>
+            <div className="w-[4px] h-[4px] bg-[#121212] rounded-full"></div>
+            <div className="w-[4px] h-[4px] bg-[#121212] rounded-full"></div>
+          </div>
+          <div className="absolute left-[17px] top-[53px] font-medium text-[34px] text-[#000000] leading-[41px]">
+            5,909
           </div>
         </div>
 
-        {/* Stats Column */}
-        <div className="flex flex-col gap-[11px] w-[185px] h-[346px] shrink-0 mr-[14px]">
-          <div className="bg-[#F8E38D] rounded-[20px] p-[17px] flex flex-col justify-between w-[185px] h-[108px] shrink-0">
-            <div className="flex justify-between items-start">
-              <span className="font-light text-[20px] text-black leading-none">Students</span>
-              <MoreHorizontal size={20} className="text-[#121212] -mt-1" />
-            </div>
-            <div className="text-[34px] font-medium text-black leading-none">
-              5,909
-            </div>
+        {/* Teachers */}
+        <div className="bg-[#E2D8FC] rounded-[20px] w-[185px] h-[108px] relative">
+          <span className="absolute left-[13px] top-[18px] font-light text-[20px] text-[#000000] leading-[24px]">Teachers</span>
+          <div className="absolute left-[157px] top-[25px] w-[16px] h-[4px] flex justify-between">
+            <div className="w-[4px] h-[4px] bg-[#121212] rounded-full"></div>
+            <div className="w-[4px] h-[4px] bg-[#121212] rounded-full"></div>
+            <div className="w-[4px] h-[4px] bg-[#121212] rounded-full"></div>
           </div>
-
-          <div className="bg-[#E2D4F0] rounded-[20px] p-[17px] flex flex-col justify-between w-[185px] h-[108px] shrink-0">
-            <div className="flex justify-between items-start">
-              <span className="font-light text-[20px] text-black leading-none">Teachers</span>
-              <MoreHorizontal size={20} className="text-[#121212] -mt-1" />
-            </div>
-            <div className="text-[34px] font-medium text-black leading-none">
-              60
-            </div>
-          </div>
-
-          <div className="bg-[#F8E38D] rounded-[20px] p-[17px] flex flex-col justify-between w-[185px] h-[108px] shrink-0">
-            <div className="flex justify-between items-start">
-              <span className="font-light text-[20px] text-black leading-none">Employee</span>
-              <MoreHorizontal size={20} className="text-[#121212] -mt-1" />
-            </div>
-            <div className="text-[34px] font-medium text-black leading-none">
-              100
-            </div>
+          <div className="absolute left-[13px] top-[54px] font-medium text-[34px] text-[#000000] leading-[41px]">
+            60
           </div>
         </div>
+
+        {/* Employee */}
+        <div className="bg-[#F8E38D] rounded-[20px] w-[185px] h-[108px] relative">
+          <span className="absolute left-[17px] top-[17px] font-light text-[20px] text-[#000000] leading-[24px]">Employee</span>
+          <div className="absolute left-[151px] top-[25px] w-[16px] h-[4px] flex justify-between">
+            <div className="w-[4px] h-[4px] bg-[#121212] rounded-full"></div>
+            <div className="w-[4px] h-[4px] bg-[#121212] rounded-full"></div>
+            <div className="w-[4px] h-[4px] bg-[#121212] rounded-full"></div>
+          </div>
+          <div className="absolute left-[17px] top-[54px] font-medium text-[34px] text-[#000000] leading-[41px]">
+            100
+          </div>
+        </div>
+      </div>
 
         {/* Calendar Widget */}
-        <div className="w-[306px] h-[346px] bg-[#FFFFFF] rounded-[24px] relative shrink-0">
+        <div className="absolute left-[977px] top-[0px] w-[306px] h-[346px] bg-[#FFFFFF] rounded-[24px] relative shrink-0">
 
           {/* Header (Month & Arrows) */}
           <div className="absolute left-[24px] top-[24px] w-[258px] h-[16px] flex justify-between items-start">
@@ -200,228 +205,225 @@ const AdminDashboard = ({ user }) => {
 
         </div>
 
-      </div>
+      {/* Students */}
+      <div className="absolute left-[1px] top-[263px] w-[415px] h-[280px] bg-[#FFFFFF] rounded-[24px] shadow-sm">
+        
+        {/* header */}
+        <div className="absolute left-[21px] top-[18px] w-[365px] h-[24px]">
+          <div className="absolute left-0 top-0 h-[24px] flex items-center">
+            <span style={{ fontFamily: 'Inter, sans-serif', fontWeight: 500, fontSize: '20px', lineHeight: '24px', color: '#000000' }}>
+              Students
+            </span>
+          </div>
+          {/* Group 59 (Menu dots) */}
+          <div className="absolute left-[349px] top-[10px] w-[16px] h-[4px] flex justify-between">
+            <div className="w-[4px] h-[4px] bg-[#121212] rounded-full"></div>
+            <div className="w-[4px] h-[4px] bg-[#121212] rounded-full"></div>
+            <div className="w-[4px] h-[4px] bg-[#121212] rounded-full"></div>
+          </div>
+        </div>
 
-      {/* Second Row: Demographics, Notice Board, Finance */}
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-
-        {/* Students */}
-        <div className="w-[415px] h-[280px] bg-[#FFFFFF] rounded-[24px] shadow-sm relative shrink-0">
+        {/* body */}
+        <div className="absolute left-[30px] top-[60px] w-[356px] h-[200px]">
           
-          {/* header */}
-          <div className="absolute left-[21px] top-[18px] w-[365px] h-[24px]">
-            <div className="absolute left-0 top-0 h-[24px] flex items-center">
-              <span style={{ fontFamily: 'Inter, sans-serif', fontWeight: 500, fontSize: '20px', lineHeight: '24px', color: '#000000' }}>
-                Students
+          {/* Male Pie chart */}
+          <div className="absolute left-0 top-0 w-[159px] h-[159px]">
+            <svg className="w-full h-full transform -rotate-90" viewBox="0 0 100 100">
+              <circle cx="50" cy="50" r="42" fill="none" stroke="#EDEDED" strokeWidth="12" />
+              <circle cx="50" cy="50" r="42" fill="none" stroke="#CFCEFF" strokeWidth="12" strokeDasharray="263.89" strokeDashoffset="124.0" strokeLinecap="round" />
+            </svg>
+            <div className="absolute left-[33px] top-[59px] w-[42px] h-[42px] flex justify-center items-center">
+               <svg width="32" height="32" viewBox="0 0 24 24" fill="#CFCEFF">
+                 <circle cx="12" cy="5" r="2.5" />
+                 <path d="M15 9H9a1 1 0 00-1 1v6h2v6h4v-6h2v-6a1 1 0 00-1-1z" />
+               </svg>
+            </div>
+            <div className="absolute left-[70px] top-[69px] flex items-center">
+              <span style={{ fontFamily: 'Inter, sans-serif', fontWeight: 600, fontSize: '30px', lineHeight: '36px', color: '#000000' }}>
+                53%
               </span>
             </div>
-            {/* Group 59 (Menu dots) */}
-            <div className="absolute left-[349px] top-[10px] w-[16px] h-[4px] flex justify-between">
-              <div className="w-[4px] h-[4px] bg-[#121212] rounded-full"></div>
-              <div className="w-[4px] h-[4px] bg-[#121212] rounded-full"></div>
-              <div className="w-[4px] h-[4px] bg-[#121212] rounded-full"></div>
+          </div>
+
+          {/* Female Pie chart */}
+          <div className="absolute left-[197px] top-0 w-[159px] h-[159px]">
+            <svg className="w-full h-full transform -rotate-90" viewBox="0 0 100 100">
+              <circle cx="50" cy="50" r="42" fill="none" stroke="#EDEDED" strokeWidth="12" />
+              <circle cx="50" cy="50" r="42" fill="none" stroke="#FFED9F" strokeWidth="12" strokeDasharray="263.89" strokeDashoffset="139.8" strokeLinecap="round" />
+            </svg>
+            <div className="absolute left-[33px] top-[59px] w-[42px] h-[42px] flex justify-center items-center">
+               <svg width="32" height="32" viewBox="0 0 24 24" fill="#FFED9F">
+                 <circle cx="12" cy="5" r="2.5" />
+                 <path d="M15 9H9a1 1 0 00-1 1v5.5l1.5 5.5h3l1.5-5.5V10a1 1 0 00-1-1z" />
+               </svg>
+            </div>
+            <div className="absolute left-[70px] top-[68px] flex items-center">
+              <span style={{ fontFamily: 'Inter, sans-serif', fontWeight: 600, fontSize: '30px', lineHeight: '36px', color: '#000000' }}>
+                47%
+              </span>
             </div>
           </div>
 
-          {/* body */}
-          <div className="absolute left-[30px] top-[60px] w-[356px] h-[200px]">
-            
-            {/* Male Pie chart */}
-            <div className="absolute left-0 top-0 w-[159px] h-[159px]">
-              <svg className="w-full h-full transform -rotate-90" viewBox="0 0 100 100">
-                {/* Background Ellipse 3 */}
-                <circle cx="50" cy="50" r="42" fill="none" stroke="#EDEDED" strokeWidth="12" />
-                {/* Foreground Ellipse 7 */}
-                <circle cx="50" cy="50" r="42" fill="none" stroke="#CFCEFF" strokeWidth="12" strokeDasharray="263.89" strokeDashoffset="124.0" strokeLinecap="round" />
-              </svg>
-              {/* bx-male 1 */}
-              <div className="absolute left-[33px] top-[59px] w-[42px] h-[42px] flex justify-center items-center">
-                 <svg width="32" height="32" viewBox="0 0 24 24" fill="#CFCEFF">
-                   <circle cx="12" cy="5" r="2.5" />
-                   <path d="M15 9H9a1 1 0 00-1 1v6h2v6h4v-6h2v-6a1 1 0 00-1-1z" />
-                 </svg>
-              </div>
-              {/* Type@25 */}
-              <div className="absolute left-[70px] top-[69px] flex items-center">
-                <span style={{ fontFamily: 'Inter, sans-serif', fontWeight: 600, fontSize: '30px', lineHeight: '36px', color: '#000000' }}>
-                  53%
-                </span>
-              </div>
+          {/* Group 71 (Legend) */}
+          <div className="absolute left-[26px] top-[181px] w-[304px] h-[19px]">
+            {/* Group 61 */}
+            <div className="absolute left-0 top-0 w-[108px] h-[19px] flex items-center">
+              <div className="w-[9px] h-[9px] bg-[#CFCEFF] rounded-full absolute left-0"></div>
+              <span className="absolute left-[13px]" style={{ fontFamily: 'Inter, sans-serif', fontWeight: 600, fontSize: '16px', lineHeight: '19px', color: '#474747' }}>
+                3,178
+              </span>
             </div>
-
-            {/* Female Pie chart */}
-            <div className="absolute left-[197px] top-0 w-[159px] h-[159px]">
-              <svg className="w-full h-full transform -rotate-90" viewBox="0 0 100 100">
-                {/* Background Ellipse 3 */}
-                <circle cx="50" cy="50" r="42" fill="none" stroke="#EDEDED" strokeWidth="12" />
-                {/* Foreground Ellipse 7 */}
-                <circle cx="50" cy="50" r="42" fill="none" stroke="#FFED9F" strokeWidth="12" strokeDasharray="263.89" strokeDashoffset="139.8" strokeLinecap="round" />
-              </svg>
-              {/* bx-female 1 */}
-              <div className="absolute left-[33px] top-[59px] w-[42px] h-[42px] flex justify-center items-center">
-                 <svg width="32" height="32" viewBox="0 0 24 24" fill="#FFED9F">
-                   <circle cx="12" cy="5" r="2.5" />
-                   <path d="M15 9H9a1 1 0 00-1 1v5.5l1.5 5.5h3l1.5-5.5V10a1 1 0 00-1-1z" />
-                 </svg>
-              </div>
-              {/* Type@25 */}
-              <div className="absolute left-[70px] top-[68px] flex items-center">
-                <span style={{ fontFamily: 'Inter, sans-serif', fontWeight: 600, fontSize: '30px', lineHeight: '36px', color: '#000000' }}>
-                  47%
-                </span>
-              </div>
-            </div>
-
-            {/* Group 71 (Legend) */}
-            <div className="absolute left-[26px] top-[181px] w-[304px] h-[19px]">
-              {/* Group 61 */}
-              <div className="absolute left-0 top-0 w-[108px] h-[19px] flex items-center">
-                <div className="w-[9px] h-[9px] bg-[#CFCEFF] rounded-full absolute left-0"></div>
-                <span className="absolute left-[13px]" style={{ fontFamily: 'Inter, sans-serif', fontWeight: 600, fontSize: '16px', lineHeight: '19px', color: '#474747' }}>
-                  3,178
-                </span>
-              </div>
-              {/* Group 62 */}
-              <div className="absolute left-[197px] top-0 w-[107px] h-[19px] flex items-center">
-                <div className="w-[9px] h-[9px] bg-[#FFED9F] rounded-full absolute left-0"></div>
-                <span className="absolute left-[13px]" style={{ fontFamily: 'Inter, sans-serif', fontWeight: 600, fontSize: '16px', lineHeight: '19px', color: '#474747' }}>
-                  2,731
-                </span>
-              </div>
-            </div>
-
-          </div>
-        </div>
-
-        {/* Notice Board */}
-        <div className="bg-white rounded-[24px] p-6 shadow-sm border border-slate-100 flex flex-col relative">
-          <div className="flex justify-between items-center mb-6">
-            <h3 className="font-bold text-slate-800">Notice Board</h3>
-            <button className="text-[10px] text-slate-400 underline decoration-slate-300 hover:text-slate-600">view all</button>
-          </div>
-          <div className="space-y-4 flex-1 overflow-y-auto pr-3 custom-scrollbar">
-            <div className="flex gap-4 items-start border border-slate-200 p-3 rounded-xl">
-              <div className="w-10 h-10 rounded-xl bg-yellow-50 text-yellow-500 flex items-center justify-center shrink-0">
-                <Bell size={18} />
-              </div>
-              <div>
-                <h4 className="font-semibold text-slate-800 text-[13px]">Sports Day Announcement</h4>
-                <p className="text-[10px] text-slate-400 mt-0.5 leading-snug">The school's Annual Sports Day will be held on May 12, 2024. Mark your calendars!</p>
-              </div>
-            </div>
-            <div className="flex gap-4 items-start border border-slate-200 p-3 rounded-xl">
-              <div className="w-10 h-10 rounded-xl bg-indigo-50 text-indigo-400 flex items-center justify-center shrink-0">
-                <Bell size={18} />
-              </div>
-              <div>
-                <h4 className="font-semibold text-slate-800 text-[13px]">Summer Break Start Date</h4>
-                <p className="text-[10px] text-slate-400 mt-0.5 leading-snug">Summer break begins on May 25, 2024. Have a wonderful holiday!</p>
-              </div>
-            </div>
-          </div>
-
-          <div className="flex gap-2 items-center mt-4 pt-2">
-            <button className="bg-slate-100 text-slate-500 hover:bg-slate-200 text-[10px] font-semibold px-4 py-1.5 rounded-lg transition-colors">Add New</button>
-            <button className="p-1.5 bg-slate-50 border border-slate-200 rounded-lg text-slate-400 hover:text-slate-600 transition-colors"><Edit size={14} /></button>
-            <button className="p-1.5 bg-slate-50 border border-slate-200 rounded-lg text-slate-400 hover:text-slate-600 transition-colors"><Trash2 size={14} /></button>
-          </div>
-        </div>
-
-        {/* Financial Overview */}
-        <div className="bg-white rounded-[24px] p-6 shadow-sm border border-slate-100 flex flex-col">
-          <div className="flex justify-between items-center mb-6">
-            <h3 className="font-bold text-slate-800">Financial Overview</h3>
-            <div className="flex gap-2">
-              <select className="text-xs font-bold bg-slate-50 border-none rounded-lg px-2 py-1 text-slate-600"><option>2023-2024</option></select>
-            </div>
-          </div>
-          <div className="space-y-4 flex-1 flex flex-col justify-center">
-            <div className="bg-[#E0F2FE] rounded-2xl p-5 relative overflow-hidden">
-              <div className="absolute top-4 right-4 flex items-center gap-1 bg-white/60 text-blue-700 px-2 py-1 rounded-lg text-[10px] font-bold">
-                <ArrowUpRight size={12} /> 12%
-              </div>
-              <h3 className="text-2xl font-bold text-[#0C4A6E] mt-2">₱29,545,000</h3>
-              <p className="text-[#0369A1] text-xs font-semibold mt-1">Total Income</p>
-            </div>
-            <div className="bg-[#CCFBF1] rounded-2xl p-5 relative overflow-hidden">
-              <div className="absolute top-4 right-4 flex items-center gap-1 bg-white/60 text-teal-700 px-2 py-1 rounded-lg text-[10px] font-bold">
-                <ArrowDownRight size={12} /> 3.5%
-              </div>
-              <h3 className="text-2xl font-bold text-[#115E59] mt-2">₱19,291,266</h3>
-              <p className="text-[#0F766E] text-xs font-semibold mt-1">Total Expenses</p>
+            {/* Group 62 */}
+            <div className="absolute left-[197px] top-0 w-[107px] h-[19px] flex items-center">
+              <div className="w-[9px] h-[9px] bg-[#FFED9F] rounded-full absolute left-0"></div>
+              <span className="absolute left-[13px]" style={{ fontFamily: 'Inter, sans-serif', fontWeight: 600, fontSize: '16px', lineHeight: '19px', color: '#474747' }}>
+                2,731
+              </span>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Third Row: Chart, Fee Status, Messages */}
-      <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
-
-        {/* Earnings Chart */}
-        <div className="lg:col-span-2 bg-white rounded-[24px] p-6 shadow-sm border border-slate-100">
-          <div className="flex justify-between items-center mb-6">
-            <h3 className="font-bold text-slate-800">Earnings</h3>
-            <div className="flex items-center gap-4 text-xs font-bold text-slate-500">
-              <div className="flex items-center gap-2"><div className="w-2.5 h-2.5 rounded-full bg-[#60A5FA]"></div>Income</div>
-              <div className="flex items-center gap-2"><div className="w-2.5 h-2.5 rounded-full bg-[#C084FC]"></div>Expense</div>
-              <MoreHorizontal size={20} className="text-slate-400 ml-2" />
+      {/* Notice Board */}
+      <div className="absolute left-[430px] top-[263px] w-[333px] h-[280px] bg-[#FFFFFF] rounded-[24px] shadow-sm">
+        <div className="absolute left-[16px] top-[19px] w-[301px] h-[26px] flex justify-between items-center">
+          <span style={{ fontFamily: 'Inter, sans-serif', fontWeight: 500, fontSize: '20px', lineHeight: '24px', color: '#000000' }}>
+            Notice Board
+          </span>
+          <button className="text-[10px] text-[#969696] underline hover:text-slate-600">view all</button>
+        </div>
+        
+        {/* Notices */}
+        <div className="absolute left-[16px] top-[62px] w-[283px] h-[153px] flex flex-col gap-[14px]">
+          {/* Sports Day */}
+          <div className="w-[283px] h-[70px] border border-[#C9C9C9] rounded-[10px] relative">
+            <div className="absolute left-[11px] top-[10px] w-[42px] h-[48px] bg-[#FFED9F] rounded-[5px] flex items-center justify-center text-[#FCA52B]">
+              <Bell size={24} />
+            </div>
+            <div className="absolute left-[64px] top-[9px] font-normal text-[14px] leading-[17px] text-[#000000]">
+              Sports Day Announcement
+            </div>
+            <div className="absolute left-[64px] top-[33px] w-[209px] font-normal text-[10px] leading-[12px] text-[#969696]">
+              The school's Annual Sports Day will be held on May 12, 2024. Mark your calendars!
             </div>
           </div>
-          <div className="h-64">
-            <ResponsiveContainer width="100%" height="100%">
-              <LineChart data={earningsData}>
-                <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#f1f5f9" />
-                <XAxis dataKey="name" axisLine={false} tickLine={false} tick={{ fill: '#94a3b8', fontSize: 10, fontWeight: 'bold' }} dy={10} />
-                <YAxis axisLine={false} tickLine={false} tick={{ fill: '#94a3b8', fontSize: 10, fontWeight: 'bold' }} dx={-10} tickFormatter={(val) => `${val}K`} />
-                <Tooltip cursor={{ stroke: '#e2e8f0', strokeWidth: 1 }} contentStyle={{ borderRadius: '12px', border: 'none', boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1)' }} />
-                <Line type="monotone" dataKey="income" stroke="#60A5FA" strokeWidth={3} dot={{ r: 4, strokeWidth: 2, fill: '#fff' }} activeDot={{ r: 6 }} />
-                <Line type="monotone" dataKey="expense" stroke="#C084FC" strokeWidth={3} dot={{ r: 4, strokeWidth: 2, fill: '#fff' }} activeDot={{ r: 6 }} />
-              </LineChart>
-            </ResponsiveContainer>
+          {/* Summer Break */}
+          <div className="w-[283px] h-[69px] border border-[#C9C9C9] rounded-[10px] relative">
+            <div className="absolute left-[11px] top-[10px] w-[42px] h-[47px] bg-[#D6DAFF] rounded-[5px] flex items-center justify-center text-[#696FC1]">
+              <Bell size={24} />
+            </div>
+            <div className="absolute left-[64px] top-[9px] font-normal text-[14px] leading-[17px] text-[#000000]">
+              Summer Break Start Date
+            </div>
+            <div className="absolute left-[64px] top-[32px] w-[209px] font-normal text-[10px] leading-[12px] text-[#969696]">
+              Summer break begins on May 25, 2024. Have a wonderful holiday!
+            </div>
           </div>
         </div>
 
-        {/* Fee Status */}
-        <div className="bg-white rounded-[24px] p-6 shadow-sm border border-slate-100 flex flex-col">
-          <div className="flex justify-between items-center mb-6">
-            <h3 className="font-bold text-slate-800">Fee Status</h3>
-            <MoreHorizontal size={20} className="text-slate-400" />
+        {/* Action Buttons */}
+        <div className="absolute left-[16px] top-[233px] flex gap-[10px]">
+          <div className="w-[61px] h-[27px] bg-[#F5F4F9] rounded-[6px] flex items-center justify-center cursor-pointer">
+            <span style={{ fontFamily: 'Inter, sans-serif', fontWeight: 400, fontSize: '10px', color: '#777777' }}>Type@25</span>
           </div>
-          <div className="space-y-4 flex-1">
-            {feeStatus.map(fee => (
-              <div key={fee.id} className="flex justify-between items-center border border-slate-100 rounded-xl p-3">
-                <span className="text-lg font-bold text-slate-800">{fee.amount}</span>
-                <span className={`text-[10px] font-bold px-2 py-1 rounded-full flex items-center gap-1 ${fee.color}`}>
-                  <div className="w-1.5 h-1.5 rounded-full bg-current"></div>
-                  {fee.status}
-                </span>
+          <div className="w-[25px] h-[27px] bg-[#F5F4F9] rounded-[6px] flex items-center justify-center cursor-pointer text-[#777777]">
+            <Edit size={14} />
+          </div>
+          <div className="w-[25px] h-[27px] bg-[#F5F4F9] rounded-[6px] flex items-center justify-center cursor-pointer text-[#777777]">
+            <Trash2 size={14} />
+          </div>
+        </div>
+      </div>
+
+      {/* Financial Overview */}
+      <div className="absolute left-[777px] top-[360px] w-[505px] h-[183px] bg-[#FFFFFF] rounded-[24px] shadow-sm p-6 flex flex-col">
+        <div className="flex justify-between items-center mb-4">
+          <h3 className="font-bold text-slate-800">Financial Overview</h3>
+          <div className="flex gap-2">
+            <select className="text-xs font-bold bg-slate-50 border-none rounded-lg px-2 py-1 text-slate-600"><option>2023-2024</option></select>
+          </div>
+        </div>
+        <div className="flex-1 grid grid-cols-2 gap-4">
+          <div className="bg-[#E0F2FE] rounded-2xl p-4 relative overflow-hidden">
+            <div className="absolute top-2 right-2 flex items-center gap-1 bg-white/60 text-blue-700 px-2 py-1 rounded-lg text-[10px] font-bold">
+              <ArrowUpRight size={12} /> 12%
+            </div>
+            <h3 className="text-xl font-bold text-[#0C4A6E] mt-2">₱29,545,000</h3>
+            <p className="text-[#0369A1] text-[10px] font-semibold mt-1">Total Income</p>
+          </div>
+          <div className="bg-[#CCFBF1] rounded-2xl p-4 relative overflow-hidden">
+            <div className="absolute top-2 right-2 flex items-center gap-1 bg-white/60 text-teal-700 px-2 py-1 rounded-lg text-[10px] font-bold">
+              <ArrowDownRight size={12} /> 3.5%
+            </div>
+            <h3 className="text-xl font-bold text-[#115E59] mt-2">₱19,291,266</h3>
+            <p className="text-[#0F766E] text-[10px] font-semibold mt-1">Total Expenses</p>
+          </div>
+        </div>
+      </div>
+
+      {/* Earnings Chart */}
+      <div className="absolute left-[1px] top-[562px] w-[728px] h-[448px] bg-[#FFFFFF] rounded-[24px] shadow-sm p-6">
+        <div className="flex justify-between items-center mb-6">
+          <h3 className="font-bold text-slate-800">Earnings</h3>
+          <div className="flex items-center gap-4 text-xs font-bold text-slate-500">
+            <div className="flex items-center gap-2"><div className="w-2.5 h-2.5 rounded-full bg-[#60A5FA]"></div>Income</div>
+            <div className="flex items-center gap-2"><div className="w-2.5 h-2.5 rounded-full bg-[#C084FC]"></div>Expense</div>
+            <MoreHorizontal size={20} className="text-slate-400 ml-2" />
+          </div>
+        </div>
+        <div className="w-full h-[360px]">
+          <ResponsiveContainer width="100%" height="100%">
+            <LineChart data={earningsData}>
+              <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#f1f5f9" />
+              <XAxis dataKey="name" axisLine={false} tickLine={false} tick={{ fill: '#94a3b8', fontSize: 10, fontWeight: 'bold' }} dy={10} />
+              <YAxis axisLine={false} tickLine={false} tick={{ fill: '#94a3b8', fontSize: 10, fontWeight: 'bold' }} dx={-10} tickFormatter={(val) => `${val}K`} />
+              <Tooltip cursor={{ stroke: '#e2e8f0', strokeWidth: 1 }} contentStyle={{ borderRadius: '12px', border: 'none', boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1)' }} />
+              <Line type="monotone" dataKey="income" stroke="#60A5FA" strokeWidth={3} dot={{ r: 4, strokeWidth: 2, fill: '#fff' }} activeDot={{ r: 6 }} />
+              <Line type="monotone" dataKey="expense" stroke="#C084FC" strokeWidth={3} dot={{ r: 4, strokeWidth: 2, fill: '#fff' }} activeDot={{ r: 6 }} />
+            </LineChart>
+          </ResponsiveContainer>
+        </div>
+      </div>
+
+      {/* Fee Status */}
+      <div className="absolute left-[743px] top-[562px] w-[539px] h-[216px] bg-[#FFFFFF] rounded-[24px] shadow-sm p-6 flex flex-col">
+        <div className="flex justify-between items-center mb-4">
+          <h3 className="font-bold text-slate-800">Fee Status</h3>
+          <MoreHorizontal size={20} className="text-slate-400" />
+        </div>
+        <div className="space-y-3 flex-1 overflow-y-auto custom-scrollbar pr-2">
+          {feeStatus.map(fee => (
+            <div key={fee.id} className="flex justify-between items-center border border-slate-100 rounded-xl p-2.5">
+              <span className="text-base font-bold text-slate-800">{fee.amount}</span>
+              <span className={`text-[10px] font-bold px-2 py-1 rounded-full flex items-center gap-1 ${fee.color}`}>
+                <div className="w-1.5 h-1.5 rounded-full bg-current"></div>
+                {fee.status}
+              </span>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Messages */}
+      <div className="absolute left-[743px] top-[794px] w-[539px] h-[216px] bg-[#FFFFFF] rounded-[24px] shadow-sm p-6 flex flex-col">
+        <div className="flex justify-between items-center mb-3">
+          <h3 className="font-bold text-slate-800">Messages</h3>
+          <MoreHorizontal size={20} className="text-slate-400" />
+        </div>
+        <div className="space-y-3 flex-1 overflow-y-auto custom-scrollbar pr-2">
+          {messages.map(msg => (
+            <div key={msg.id} className="flex items-center gap-3">
+              <div className={`w-9 h-9 rounded-full flex items-center justify-center font-bold text-xs shrink-0 ${msg.color}`}>
+                {msg.img}
               </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Messages */}
-        <div className="bg-white rounded-[24px] p-6 shadow-sm border border-slate-100 flex flex-col">
-          <div className="flex justify-between items-center mb-4">
-            <h3 className="font-bold text-slate-800">Messages</h3>
-            <MoreHorizontal size={20} className="text-slate-400" />
-          </div>
-          <div className="space-y-3 flex-1 overflow-y-auto pr-2 custom-scrollbar">
-            {messages.map(msg => (
-              <div key={msg.id} className="flex items-center gap-3">
-                <div className={`w-10 h-10 rounded-full flex items-center justify-center font-bold text-sm shrink-0 ${msg.color}`}>
-                  {msg.img}
-                </div>
-                <div className="flex-1 min-w-0">
-                  <h4 className="text-sm font-bold text-slate-800 truncate">{msg.name}</h4>
-                  <p className="text-[11px] text-slate-500 truncate">{msg.text}</p>
-                </div>
-                <span className="text-[10px] text-slate-400 font-medium whitespace-nowrap">{msg.time}</span>
+              <div className="flex-1 min-w-0">
+                <h4 className="text-sm font-bold text-slate-800 truncate">{msg.name}</h4>
+                <p className="text-[11px] text-slate-500 truncate">{msg.text}</p>
               </div>
-            ))}
-          </div>
+              <span className="text-[10px] text-slate-400 font-medium whitespace-nowrap">{msg.time}</span>
+            </div>
+          ))}
         </div>
-
       </div>
 
     </div>
