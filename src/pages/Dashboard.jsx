@@ -43,22 +43,25 @@ const AdminDashboard = ({ user }) => {
       <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
         
         {/* Welcome Banner */}
-        <div className="lg:col-span-2 bg-white rounded-[24px] p-10 shadow-sm flex flex-col sm:flex-row items-center justify-between border border-slate-100 relative overflow-hidden min-h-[248px]">
-          {/* Corner dots */}
-          <div className="absolute top-5 left-5 w-2.5 h-2.5 rounded-full border-[1.5px] border-[#3B82F6]"></div>
-          <div className="absolute top-5 right-5 w-2.5 h-2.5 rounded-full border-[1.5px] border-[#3B82F6]"></div>
-          <div className="absolute bottom-5 left-5 w-2.5 h-2.5 rounded-full border-[1.5px] border-[#3B82F6]"></div>
-          <div className="absolute bottom-5 right-5 w-2.5 h-2.5 rounded-full border-[1.5px] border-[#3B82F6]"></div>
+        <div className="lg:col-span-2 bg-white rounded-[24px] shadow-sm flex items-center justify-center border border-slate-100 min-h-[248px] p-3 overflow-hidden">
+          {/* Inner Content Box (698x222 constraint) */}
+          <div className="w-full max-w-[698px] min-h-[222px] relative flex flex-col sm:flex-row items-center justify-between p-4 sm:p-6">
+            
+            {/* Corner dots bound to the inner 698x222 box */}
+            <div className="absolute top-0 left-0 w-2 h-2 rounded-full border-[1.5px] border-[#3B82F6]"></div>
+            <div className="absolute top-0 right-0 w-2 h-2 rounded-full border-[1.5px] border-[#3B82F6]"></div>
+            <div className="absolute bottom-0 left-0 w-2 h-2 rounded-full border-[1.5px] border-[#3B82F6]"></div>
+            <div className="absolute bottom-0 right-0 w-2 h-2 rounded-full border-[1.5px] border-[#3B82F6]"></div>
 
-          <div className="max-w-[420px] relative z-10 self-center">
-            <h2 className="text-2xl font-bold text-slate-800 mb-3 leading-tight">Welcome, {user?.name || 'Laurel Higher Secondary School'} Team!</h2>
-            <p className="text-slate-400 text-sm leading-relaxed mb-6 font-medium">
-              Manage your school operations with ease. Stay updated on academics, attendance, finances, and more—all in one place. Let's keep shaping a brighter future together!
-            </p>
-          </div>
-          
-          {/* Abstract Illustration */}
-          <div className="hidden sm:block relative w-56 h-40">
+            <div className="max-w-[420px] relative z-10">
+              <h2 className="text-2xl font-bold text-slate-800 mb-3 leading-tight">Welcome, {user?.name || 'Laurel Higher Secondary School'} Team!</h2>
+              <p className="text-slate-400 text-sm leading-relaxed mb-6 font-medium">
+                Manage your school operations with ease. Stay updated on academics, attendance, finances, and more—all in one place. Let's keep shaping a brighter future together!
+              </p>
+            </div>
+            
+            {/* Abstract Illustration */}
+            <div className="hidden sm:block relative w-56 h-40">
             {/* Floating UI Elements */}
             <div className="absolute top-0 right-0 w-20 h-28 bg-slate-100 rounded-lg border border-slate-200/60 shadow-sm opacity-80 flex flex-col p-2 gap-1.5">
                <div className="w-full h-1.5 bg-slate-200 rounded-full"></div>
@@ -92,6 +95,7 @@ const AdminDashboard = ({ user }) => {
               <User size={60} fill="#4ADE80" strokeWidth={1.5} className="text-[#302C5E]" />
             </div>
           </div>
+        </div>
         </div>
 
         {/* Stats Column */}
