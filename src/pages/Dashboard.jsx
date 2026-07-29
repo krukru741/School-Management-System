@@ -99,27 +99,35 @@ const AdminDashboard = ({ user }) => {
         </div>
 
         {/* Stats Column */}
-        <div className="flex flex-col gap-4 w-full lg:w-[185px] h-[346px] shrink-0">
-          <div className="bg-[#FDF4D6] rounded-[24px] p-5 shadow-sm flex justify-between items-center flex-1">
-            <div>
-              <p className="text-[#A1883F] font-medium text-[13px] mb-1">Students</p>
-              <h3 className="text-2xl font-bold text-[#5A4810]">5,909</h3>
+        <div className="flex flex-col gap-[11px] w-full lg:w-[185px] h-[346px] shrink-0">
+          <div className="bg-[#F8E38D] rounded-[20px] p-[17px] flex flex-col justify-between w-full h-[108px]">
+            <div className="flex justify-between items-start">
+              <span className="font-light text-[20px] text-black leading-none">Students</span>
+              <MoreHorizontal size={20} className="text-[#121212] -mt-1" />
             </div>
-            <MoreHorizontal size={20} className="text-[#A1883F] self-start" />
+            <div className="text-[34px] font-medium text-black leading-none">
+              5,909
+            </div>
           </div>
-          <div className="bg-[#F0E6FF] rounded-[24px] p-5 shadow-sm flex justify-between items-center flex-1">
-            <div>
-              <p className="text-[#7C5CA5] font-medium text-[13px] mb-1">Teachers</p>
-              <h3 className="text-2xl font-bold text-[#4B3073]">60</h3>
+          
+          <div className="bg-[#E2D4F0] rounded-[20px] p-[17px] flex flex-col justify-between w-full h-[108px]">
+            <div className="flex justify-between items-start">
+              <span className="font-light text-[20px] text-black leading-none">Teachers</span>
+              <MoreHorizontal size={20} className="text-[#121212] -mt-1" />
             </div>
-            <MoreHorizontal size={20} className="text-[#7C5CA5] self-start" />
+            <div className="text-[34px] font-medium text-black leading-none">
+              60
+            </div>
           </div>
-          <div className="bg-[#FDF4D6] rounded-[24px] p-5 shadow-sm flex justify-between items-center flex-1">
-            <div>
-              <p className="text-[#A1883F] font-medium text-[13px] mb-1">Employee</p>
-              <h3 className="text-2xl font-bold text-[#5A4810]">100</h3>
+          
+          <div className="bg-[#F8E38D] rounded-[20px] p-[17px] flex flex-col justify-between w-full h-[108px]">
+            <div className="flex justify-between items-start">
+              <span className="font-light text-[20px] text-black leading-none">Employee</span>
+              <MoreHorizontal size={20} className="text-[#121212] -mt-1" />
             </div>
-            <MoreHorizontal size={20} className="text-[#A1883F] self-start" />
+            <div className="text-[34px] font-medium text-black leading-none">
+              100
+            </div>
           </div>
         </div>
 
