@@ -205,49 +205,91 @@ const AdminDashboard = ({ user }) => {
       {/* Second Row: Demographics, Notice Board, Finance */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
 
-        {/* Students*/}
-        <div className="bg-white rounded-[24px] p-6 shadow-sm border border-slate-100 flex flex-col">
-          <div className="flex justify-between items-center mb-2">
-            <h3 className="font-bold text-slate-800">Students</h3>
-            <MoreHorizontal size={20} className="text-slate-400" />
-          </div>
-
-          <div className="flex-1 flex items-center justify-center relative">
-            <div className="w-full h-44">
-              <ResponsiveContainer width="100%" height="100%">
-                <PieChart>
-                  {/* Boys Donut */}
-                  <Pie data={[{ value: 100 }]} cx="25%" cy="50%" innerRadius={45} outerRadius={60} dataKey="value" stroke="none" fill="#F1F5F9" />
-                  <Pie data={[{ value: 53 }, { value: 47 }]} cx="25%" cy="50%" innerRadius={45} outerRadius={60} startAngle={180} endAngle={-180} dataKey="value" stroke="none" cornerRadius={20}>
-                    <Cell fill="#A78BFA" />
-                    <Cell fill="transparent" />
-                  </Pie>
-
-                  {/* Girls Donut */}
-                  <Pie data={[{ value: 100 }]} cx="75%" cy="50%" innerRadius={45} outerRadius={60} dataKey="value" stroke="none" fill="#F1F5F9" />
-                  <Pie data={[{ value: 47 }, { value: 53 }]} cx="75%" cy="50%" innerRadius={45} outerRadius={60} startAngle={180} endAngle={-180} dataKey="value" stroke="none" cornerRadius={20}>
-                    <Cell fill="#FCD34D" />
-                    <Cell fill="transparent" />
-                  </Pie>
-                </PieChart>
-              </ResponsiveContainer>
+        {/* Students */}
+        <div className="w-[415px] h-[280px] bg-[#FFFFFF] rounded-[24px] shadow-sm relative shrink-0">
+          
+          {/* header */}
+          <div className="absolute left-[21px] top-[18px] w-[365px] h-[24px]">
+            <div className="absolute left-0 top-0 h-[24px] flex items-center">
+              <span style={{ fontFamily: 'Inter, sans-serif', fontWeight: 500, fontSize: '20px', lineHeight: '24px', color: '#000000' }}>
+                Students
+              </span>
             </div>
-
-            <div className="absolute inset-0 flex justify-between px-10 items-center pointer-events-none">
-              <div className="flex items-center gap-1 justify-center w-[50%]">
-                <User fill="#A78BFA" className="text-[#A78BFA]" size={16} />
-                <span className="font-bold text-xl text-slate-900">53%</span>
-              </div>
-              <div className="flex items-center gap-1 justify-center w-[50%]">
-                <User fill="#FCD34D" className="text-[#FCD34D]" size={16} />
-                <span className="font-bold text-xl text-slate-900">47%</span>
-              </div>
+            {/* Group 59 (Menu dots) */}
+            <div className="absolute left-[349px] top-[10px] w-[16px] h-[4px] flex justify-between">
+              <div className="w-[4px] h-[4px] bg-[#121212] rounded-full"></div>
+              <div className="w-[4px] h-[4px] bg-[#121212] rounded-full"></div>
+              <div className="w-[4px] h-[4px] bg-[#121212] rounded-full"></div>
             </div>
           </div>
 
-          <div className="flex justify-between px-10 text-xs text-slate-500 font-medium pb-2">
-            <div className="flex items-center gap-1.5"><div className="w-2 h-2 rounded-full bg-[#A78BFA]"></div>3,178 <span className="text-[10px] text-slate-400">( boys )</span></div>
-            <div className="flex items-center gap-1.5"><div className="w-2 h-2 rounded-full bg-[#FCD34D]"></div>2,731 <span className="text-[10px] text-slate-400">( Girls )</span></div>
+          {/* body */}
+          <div className="absolute left-[30px] top-[60px] w-[356px] h-[200px]">
+            
+            {/* Male Pie chart */}
+            <div className="absolute left-0 top-0 w-[159px] h-[159px]">
+              <svg className="w-full h-full transform -rotate-90" viewBox="0 0 100 100">
+                {/* Background Ellipse 3 */}
+                <circle cx="50" cy="50" r="42" fill="none" stroke="#EDEDED" strokeWidth="12" />
+                {/* Foreground Ellipse 7 */}
+                <circle cx="50" cy="50" r="42" fill="none" stroke="#CFCEFF" strokeWidth="12" strokeDasharray="263.89" strokeDashoffset="124.0" strokeLinecap="round" />
+              </svg>
+              {/* bx-male 1 */}
+              <div className="absolute left-[33px] top-[59px] w-[42px] h-[42px] flex justify-center items-center">
+                 <svg width="32" height="32" viewBox="0 0 24 24" fill="#CFCEFF">
+                   <circle cx="12" cy="5" r="2.5" />
+                   <path d="M15 9H9a1 1 0 00-1 1v6h2v6h4v-6h2v-6a1 1 0 00-1-1z" />
+                 </svg>
+              </div>
+              {/* Type@25 */}
+              <div className="absolute left-[70px] top-[69px] flex items-center">
+                <span style={{ fontFamily: 'Inter, sans-serif', fontWeight: 600, fontSize: '30px', lineHeight: '36px', color: '#000000' }}>
+                  53%
+                </span>
+              </div>
+            </div>
+
+            {/* Female Pie chart */}
+            <div className="absolute left-[197px] top-0 w-[159px] h-[159px]">
+              <svg className="w-full h-full transform -rotate-90" viewBox="0 0 100 100">
+                {/* Background Ellipse 3 */}
+                <circle cx="50" cy="50" r="42" fill="none" stroke="#EDEDED" strokeWidth="12" />
+                {/* Foreground Ellipse 7 */}
+                <circle cx="50" cy="50" r="42" fill="none" stroke="#FFED9F" strokeWidth="12" strokeDasharray="263.89" strokeDashoffset="139.8" strokeLinecap="round" />
+              </svg>
+              {/* bx-female 1 */}
+              <div className="absolute left-[33px] top-[59px] w-[42px] h-[42px] flex justify-center items-center">
+                 <svg width="32" height="32" viewBox="0 0 24 24" fill="#FFED9F">
+                   <circle cx="12" cy="5" r="2.5" />
+                   <path d="M15 9H9a1 1 0 00-1 1v5.5l1.5 5.5h3l1.5-5.5V10a1 1 0 00-1-1z" />
+                 </svg>
+              </div>
+              {/* Type@25 */}
+              <div className="absolute left-[70px] top-[68px] flex items-center">
+                <span style={{ fontFamily: 'Inter, sans-serif', fontWeight: 600, fontSize: '30px', lineHeight: '36px', color: '#000000' }}>
+                  47%
+                </span>
+              </div>
+            </div>
+
+            {/* Group 71 (Legend) */}
+            <div className="absolute left-[26px] top-[181px] w-[304px] h-[19px]">
+              {/* Group 61 */}
+              <div className="absolute left-0 top-0 w-[108px] h-[19px] flex items-center">
+                <div className="w-[9px] h-[9px] bg-[#CFCEFF] rounded-full absolute left-0"></div>
+                <span className="absolute left-[13px]" style={{ fontFamily: 'Inter, sans-serif', fontWeight: 600, fontSize: '16px', lineHeight: '19px', color: '#474747' }}>
+                  3,178
+                </span>
+              </div>
+              {/* Group 62 */}
+              <div className="absolute left-[197px] top-0 w-[107px] h-[19px] flex items-center">
+                <div className="w-[9px] h-[9px] bg-[#FFED9F] rounded-full absolute left-0"></div>
+                <span className="absolute left-[13px]" style={{ fontFamily: 'Inter, sans-serif', fontWeight: 600, fontSize: '16px', lineHeight: '19px', color: '#474747' }}>
+                  2,731
+                </span>
+              </div>
+            </div>
+
           </div>
         </div>
 
