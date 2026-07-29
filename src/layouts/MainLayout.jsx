@@ -28,6 +28,8 @@ const MainLayout = () => {
     { name: 'Finance', path: '/finance', icon: <Banknote size={20} />, roles: ['Super Admin', 'Cashier'] },
     { name: 'Attendance', path: '/attendance', icon: <CalendarDays size={20} />, roles: ['Super Admin', 'Registrar', 'Teacher'] },
     { name: 'Grades', path: '/grades', icon: <BookOpen size={20} />, roles: ['Super Admin', 'Registrar', 'Teacher'] },
+    { name: 'Message', path: '/messages', icon: <MessageSquare size={20} />, roles: ['Super Admin', 'Registrar', 'Teacher', 'Student', 'Parent'] },
+    { name: 'Settings', path: '/settings', icon: <Settings size={20} />, roles: ['Super Admin', 'Registrar', 'Cashier', 'Teacher', 'Student', 'Parent'] },
   ];
 
   const allowedNavItems = navItems.filter(item => item.roles.includes(user?.role));
