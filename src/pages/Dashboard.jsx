@@ -22,6 +22,12 @@ const AdminDashboard = ({ user }) => {
     { name: 'Jul', income: 349, expense: 430 },
   ];
 
+  const feeStatus = [
+    { id: 1, amount: '1,335', status: 'Paid', color: 'text-green-600 bg-green-100' },
+    { id: 2, amount: '4,366', status: 'Pending', color: 'text-orange-600 bg-orange-100' },
+    { id: 3, amount: '208', status: 'Overdue', color: 'text-red-600 bg-red-100' },
+  ];
+
   const messages = [
     { id: 1, name: 'Jane Cooper', text: "Don't forget the lab rep...", time: '12:34 pm', img: 'J', color: 'bg-blue-100 text-blue-700' },
     { id: 2, name: 'Kristin Watson', text: "Do we have maths test...", time: '12:34 pm', img: 'K', color: 'bg-red-100 text-red-700' },
@@ -52,42 +58,59 @@ const AdminDashboard = ({ user }) => {
           </div>
         </div>
 
-        {/* Top Stats Cards */}
-        <div className="space-y-4">
-          <div className="bg-[#FDF4D6] rounded-[24px] p-6 shadow-sm flex justify-between items-center h-[calc(50%-0.5rem)]">
+        {/* Stats Column */}
+        <div className="flex flex-col gap-4">
+          <div className="bg-[#FDF4D6] rounded-[24px] p-5 shadow-sm flex justify-between items-center flex-1">
             <div>
-              <p className="text-[#A1883F] font-medium text-sm mb-1">Students</p>
-              <h3 className="text-3xl font-bold text-[#5A4810]">5,909</h3>
+              <p className="text-[#A1883F] font-medium text-[13px] mb-1">Students</p>
+              <h3 className="text-2xl font-bold text-[#5A4810]">5,909</h3>
             </div>
             <MoreHorizontal size={20} className="text-[#A1883F] self-start" />
           </div>
-          <div className="bg-[#F0E6FF] rounded-[24px] p-6 shadow-sm flex justify-between items-center h-[calc(50%-0.5rem)]">
+          <div className="bg-[#F0E6FF] rounded-[24px] p-5 shadow-sm flex justify-between items-center flex-1">
             <div>
-              <p className="text-[#7C5CA5] font-medium text-sm mb-1">Teachers</p>
-              <h3 className="text-3xl font-bold text-[#4B3073]">60</h3>
+              <p className="text-[#7C5CA5] font-medium text-[13px] mb-1">Teachers</p>
+              <h3 className="text-2xl font-bold text-[#4B3073]">60</h3>
             </div>
             <MoreHorizontal size={20} className="text-[#7C5CA5] self-start" />
           </div>
+          <div className="bg-[#FDF4D6] rounded-[24px] p-5 shadow-sm flex justify-between items-center flex-1">
+            <div>
+              <p className="text-[#A1883F] font-medium text-[13px] mb-1">Employee</p>
+              <h3 className="text-2xl font-bold text-[#5A4810]">100</h3>
+            </div>
+            <MoreHorizontal size={20} className="text-[#A1883F] self-start" />
+          </div>
         </div>
 
-        <div className="space-y-4">
-          <div className="bg-[#FEF08A] rounded-[24px] p-6 shadow-sm flex justify-between items-center h-[calc(50%-0.5rem)]">
-            <div>
-              <p className="text-[#854D0E] font-medium text-sm mb-1">Employee</p>
-              <h3 className="text-3xl font-bold text-[#713F12]">100</h3>
-            </div>
-            <MoreHorizontal size={20} className="text-[#854D0E] self-start" />
+        {/* Calendar Widget */}
+        <div className="bg-white rounded-[24px] p-6 shadow-sm flex flex-col border border-slate-100 h-full">
+          <div className="flex justify-between items-center text-sm font-bold text-slate-700 mb-6 px-1">
+            <span className="cursor-pointer text-slate-300 hover:text-slate-500 font-medium text-xs">&lt;</span>
+            <span className="text-sm">September 2021</span>
+            <span className="cursor-pointer text-slate-300 hover:text-slate-500 font-medium text-xs">&gt;</span>
           </div>
-          <div className="bg-white rounded-[24px] p-6 shadow-sm flex justify-between items-center h-[calc(50%-0.5rem)] border border-slate-100">
-             {/* Calendar Widget Placeholder */}
-             <div className="w-full text-center">
-               <div className="flex justify-between items-center text-sm font-bold text-slate-700 mb-2">
-                 <span>&lt;</span>
-                 <span>September 2021</span>
-                 <span>&gt;</span>
-               </div>
-               <div className="text-[10px] text-slate-400 font-medium">Manage Calendar</div>
-             </div>
+          
+          <div className="grid grid-cols-7 gap-y-4 text-center text-[9px] font-bold text-slate-300 mb-4">
+            <div>SUN</div><div>MON</div><div>TUE</div><div>WED</div><div>THU</div><div>FRI</div><div>SAT</div>
+          </div>
+          
+          <div className="grid grid-cols-7 gap-y-4 text-center text-[12px] font-bold text-slate-700 flex-1 content-start">
+            <div>1</div><div>2</div><div>3</div><div>4</div><div>5</div><div>6</div><div>7</div>
+            
+            <div>8</div><div>9</div><div>10</div><div>11</div><div>12</div><div>13</div><div>14</div>
+            
+            <div>15</div><div>16</div><div>17</div><div>18</div>
+            <div className="relative z-10"><span className="bg-[#EA580C] text-white w-6 h-6 rounded-full flex items-center justify-center mx-auto shadow-sm shadow-orange-200">19</span></div>
+            <div>20</div><div>21</div>
+            
+            <div>22</div><div>23</div><div>24</div><div>25</div><div>26</div><div>27</div><div>28</div>
+            
+            <div>29</div><div>30</div><div>31</div>
+          </div>
+          
+          <div className="mt-4 flex">
+            <span className="text-[10px] text-slate-500 font-medium bg-slate-100 px-3 py-1.5 rounded-lg cursor-pointer hover:bg-slate-200 transition-colors">Manage Calendar</span>
           </div>
         </div>
 
