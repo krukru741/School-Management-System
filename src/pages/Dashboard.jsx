@@ -1,6 +1,6 @@
 import { useAuth } from '../context/AuthContext';
 import { Users, GraduationCap, ArrowUpRight, ArrowDownRight, Clock, AlertCircle, MoreHorizontal, User, Bell, Edit, Trash2 } from 'lucide-react';
-import { 
+import {
   BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer,
   LineChart, Line, PieChart, Pie, Cell
 } from 'recharts';
@@ -38,33 +38,33 @@ const AdminDashboard = ({ user }) => {
 
   return (
     <div className="space-y-6 animate-in fade-in duration-500 max-w-[1400px] mx-auto">
-      
+
       {/* Top Row: Welcome Banner & Stats */}
       <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
-        
+
         {/* Welcome Banner */}
         <div className="lg:col-span-2 bg-[#FFFFFF] rounded-[24px] shadow-sm border border-slate-100 h-[248px] relative overflow-hidden shrink-0">
           {/* Inner Content Box (main) */}
           <div className="absolute left-[22px] top-[11px] w-[698px] h-[222px]">
-            
+
             {/* Content Container */}
             <div className="absolute left-0 top-[10px] w-[401px] h-[179px]">
-              <h2 
-                className="absolute left-[2px] top-0 w-[399px] h-[72px] font-medium text-[#000000] tracking-tight m-0" 
+              <h2
+                className="absolute left-[2px] top-0 w-[399px] h-[72px] font-medium text-[#000000] tracking-tight m-0"
                 style={{ fontFamily: 'Poppins, sans-serif', fontSize: '24px', lineHeight: '36px' }}
               >
                 Welcome, Laurel Higher Secondary School Team!
               </h2>
-              <p 
+              <p
                 className="absolute left-0 top-[83px] w-[399px] h-[96px] font-light text-[#8F8F8F] m-0"
                 style={{ fontFamily: 'Poppins, sans-serif', fontSize: '16px', lineHeight: '24px' }}
               >
                 Manage your school operations with ease. Stay updated on academics, attendance, finances, and more—all in one place. Let's keep shaping a brighter future together!
               </p>
             </div>
-            
+
             {/* Humaaans Research (Generated Mock Image) */}
-            <div 
+            <div
               className="absolute"
               style={{
                 width: '299px',
@@ -91,7 +91,7 @@ const AdminDashboard = ({ user }) => {
               5,909
             </div>
           </div>
-          
+
           <div className="bg-[#E2D4F0] rounded-[20px] p-[17px] flex flex-col justify-between w-full h-[108px]">
             <div className="flex justify-between items-start">
               <span className="font-light text-[20px] text-black leading-none">Teachers</span>
@@ -101,7 +101,7 @@ const AdminDashboard = ({ user }) => {
               60
             </div>
           </div>
-          
+
           <div className="bg-[#F8E38D] rounded-[20px] p-[17px] flex flex-col justify-between w-full h-[108px]">
             <div className="flex justify-between items-start">
               <span className="font-light text-[20px] text-black leading-none">Employee</span>
@@ -114,81 +114,137 @@ const AdminDashboard = ({ user }) => {
         </div>
 
         {/* Calendar Widget */}
-        <div className="bg-white rounded-[24px] p-6 shadow-sm flex flex-col border border-slate-100 h-full">
-          <div className="flex justify-between items-center text-sm font-bold text-slate-700 mb-6 px-1">
-            <span className="cursor-pointer text-slate-300 hover:text-slate-500 font-medium text-xs">&lt;</span>
-            <span className="text-sm">September 2021</span>
-            <span className="cursor-pointer text-slate-300 hover:text-slate-500 font-medium text-xs">&gt;</span>
+        <div className="w-[306px] h-[346px] bg-[#FFFFFF] rounded-[24px] relative shrink-0">
+
+          {/* Header (Month & Arrows) */}
+          <div className="absolute left-[24px] top-[24px] w-[258px] h-[16px] flex justify-between items-start">
+            <div className="w-[16px] h-[16px] flex items-center justify-center shrink-0">
+              <svg width="8" height="12" viewBox="0 0 8 12" fill="none" stroke="#B5BEC6" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M7 1L2 6l5 5" />
+              </svg>
+            </div>
+            <div className="w-[110px] h-[14px] text-center" style={{ fontFamily: 'Avenir Next LT Pro, sans-serif', fontWeight: 600, fontSize: '14px', lineHeight: '14px', color: '#4A5660' }}>
+              September 2021
+            </div>
+            <div className="w-[16px] h-[16px] flex items-center justify-center shrink-0">
+              <svg width="8" height="12" viewBox="0 0 8 12" fill="none" stroke="#B5BEC6" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M1 1l5 5-5 5" />
+              </svg>
+            </div>
           </div>
-          
-          <div className="grid grid-cols-7 gap-y-4 text-center text-[9px] font-bold text-slate-300 mb-4">
-            <div>SUN</div><div>MON</div><div>TUE</div><div>WED</div><div>THU</div><div>FRI</div><div>SAT</div>
+
+          {/* Days */}
+          <div className="absolute left-[24px] top-[62px] w-[258px] h-[20px] flex gap-[8px]">
+            {['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'].map((day, i) => (
+              <div key={i} className="flex-1 h-[20px] flex items-center justify-center">
+                <span style={{ fontFamily: 'Avenir Next LT Pro, sans-serif', fontWeight: 600, fontSize: '10px', lineHeight: '12px', letterSpacing: '1.5px', textTransform: 'uppercase', color: '#B5BEC6' }}>
+                  {day}
+                </span>
+              </div>
+            ))}
           </div>
-          
-          <div className="grid grid-cols-7 gap-y-4 text-center text-[12px] font-bold text-slate-700 flex-1 content-start">
-            <div>1</div><div>2</div><div>3</div><div>4</div><div>5</div><div>6</div><div>7</div>
-            
-            <div>8</div><div>9</div><div>10</div><div>11</div><div>12</div><div>13</div><div>14</div>
-            
-            <div>15</div><div>16</div><div>17</div><div>18</div>
-            <div className="relative z-10"><span className="bg-[#EA580C] text-white w-6 h-6 rounded-full flex items-center justify-center mx-auto shadow-sm shadow-orange-200">19</span></div>
-            <div>20</div><div>21</div>
-            
-            <div>22</div><div>23</div><div>24</div><div>25</div><div>26</div><div>27</div><div>28</div>
-            
-            <div>29</div><div>30</div><div>31</div>
+
+          {/* Dates Grid */}
+          <div className="absolute left-[24px] top-[104px] w-[258px] h-[182px] flex flex-col gap-[8px]">
+            {/* Row 1 */}
+            <div className="w-[258px] h-[30px] flex gap-[8px]">
+              {['29', '30', '31', '1', '2', '3', '4'].map((date, i) => (
+                <div key={i} className="w-[30px] h-[30px] flex items-center justify-center">
+                  <span style={{ fontFamily: 'Avenir Next LT Pro, sans-serif', fontWeight: 600, fontSize: '16px', lineHeight: '18px', color: i < 3 ? '#B5BEC6' : '#4A5660' }}>{date}</span>
+                </div>
+              ))}
+            </div>
+            {/* Row 2 */}
+            <div className="w-[258px] h-[30px] flex gap-[8px]">
+              {['5', '6', '7', '8', '9', '10', '11'].map((date, i) => (
+                <div key={i} className="w-[30px] h-[30px] flex items-center justify-center">
+                  <span style={{ fontFamily: 'Avenir Next LT Pro, sans-serif', fontWeight: 600, fontSize: '16px', lineHeight: '18px', color: '#4A5660' }}>{date}</span>
+                </div>
+              ))}
+            </div>
+            {/* Row 3 */}
+            <div className="w-[258px] h-[30px] flex gap-[8px]">
+              {['12', '13', '14', '15', '16', '17', '18'].map((date, i) => (
+                <div key={i} className="w-[30px] h-[30px] flex items-center justify-center">
+                  <span style={{ fontFamily: 'Avenir Next LT Pro, sans-serif', fontWeight: 600, fontSize: '16px', lineHeight: '18px', color: '#4A5660' }}>{date}</span>
+                </div>
+              ))}
+            </div>
+            {/* Row 4 */}
+            <div className="w-[258px] h-[30px] flex gap-[8px]">
+              {['19', '20', '21', '22', '23', '24', '25'].map((date, i) => {
+                const isActive = date === '19';
+                return (
+                  <div key={i} className={`w-[30px] h-[30px] flex items-center justify-center ${isActive ? 'bg-[#F04D23] rounded-[29px]' : ''}`}>
+                    <span style={{ fontFamily: 'Avenir Next LT Pro, sans-serif', fontWeight: 600, fontSize: '16px', lineHeight: '18px', color: isActive ? '#FFFFFF' : '#4A5660' }}>{date}</span>
+                  </div>
+                );
+              })}
+            </div>
+            {/* Row 5 */}
+            <div className="w-[258px] h-[30px] flex gap-[8px]">
+              {['26', '27', '28', '29', '30', '1', '2'].map((date, i) => (
+                <div key={i} className="w-[30px] h-[30px] flex items-center justify-center">
+                  <span style={{ fontFamily: 'Avenir Next LT Pro, sans-serif', fontWeight: 600, fontSize: '16px', lineHeight: '18px', color: i >= 5 ? '#B5BEC6' : '#4A5660' }}>{date}</span>
+                </div>
+              ))}
+            </div>
           </div>
-          
-          <div className="mt-4 flex">
-            <span className="text-[10px] text-slate-500 font-medium bg-slate-100 px-3 py-1.5 rounded-lg cursor-pointer hover:bg-slate-200 transition-colors">Manage Calendar</span>
+
+          {/* Add Btn */}
+          <div className="absolute left-[29px] top-[299px] w-[120px] h-[27px] bg-[#F5F4F9] rounded-[6px] flex items-center px-[9px]">
+            <span style={{ fontFamily: 'Inter, sans-serif', fontWeight: 400, fontSize: '12px', lineHeight: '14px', color: '#777777' }}>
+              Manage Calendar
+            </span>
           </div>
+
         </div>
 
       </div>
 
       {/* Second Row: Demographics, Notice Board, Finance */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-        
+
         {/* Students Donut */}
         <div className="bg-white rounded-[24px] p-6 shadow-sm border border-slate-100 flex flex-col">
           <div className="flex justify-between items-center mb-2">
             <h3 className="font-bold text-slate-800">Students</h3>
             <MoreHorizontal size={20} className="text-slate-400" />
           </div>
-          
+
           <div className="flex-1 flex items-center justify-center relative">
             <div className="w-full h-44">
               <ResponsiveContainer width="100%" height="100%">
                 <PieChart>
                   {/* Boys Donut */}
-                  <Pie data={[{value: 100}]} cx="25%" cy="50%" innerRadius={45} outerRadius={60} dataKey="value" stroke="none" fill="#F1F5F9" />
-                  <Pie data={[{value: 53}, {value: 47}]} cx="25%" cy="50%" innerRadius={45} outerRadius={60} startAngle={180} endAngle={-180} dataKey="value" stroke="none" cornerRadius={20}>
+                  <Pie data={[{ value: 100 }]} cx="25%" cy="50%" innerRadius={45} outerRadius={60} dataKey="value" stroke="none" fill="#F1F5F9" />
+                  <Pie data={[{ value: 53 }, { value: 47 }]} cx="25%" cy="50%" innerRadius={45} outerRadius={60} startAngle={180} endAngle={-180} dataKey="value" stroke="none" cornerRadius={20}>
                     <Cell fill="#A78BFA" />
                     <Cell fill="transparent" />
                   </Pie>
-                  
+
                   {/* Girls Donut */}
-                  <Pie data={[{value: 100}]} cx="75%" cy="50%" innerRadius={45} outerRadius={60} dataKey="value" stroke="none" fill="#F1F5F9" />
-                  <Pie data={[{value: 47}, {value: 53}]} cx="75%" cy="50%" innerRadius={45} outerRadius={60} startAngle={180} endAngle={-180} dataKey="value" stroke="none" cornerRadius={20}>
+                  <Pie data={[{ value: 100 }]} cx="75%" cy="50%" innerRadius={45} outerRadius={60} dataKey="value" stroke="none" fill="#F1F5F9" />
+                  <Pie data={[{ value: 47 }, { value: 53 }]} cx="75%" cy="50%" innerRadius={45} outerRadius={60} startAngle={180} endAngle={-180} dataKey="value" stroke="none" cornerRadius={20}>
                     <Cell fill="#FCD34D" />
                     <Cell fill="transparent" />
                   </Pie>
                 </PieChart>
               </ResponsiveContainer>
             </div>
-            
+
             <div className="absolute inset-0 flex justify-between px-10 items-center pointer-events-none">
-               <div className="flex items-center gap-1 justify-center w-[50%]">
-                 <User fill="#A78BFA" className="text-[#A78BFA]" size={16} />
-                 <span className="font-bold text-xl text-slate-900">53%</span>
-               </div>
-               <div className="flex items-center gap-1 justify-center w-[50%]">
-                 <User fill="#FCD34D" className="text-[#FCD34D]" size={16} />
-                 <span className="font-bold text-xl text-slate-900">47%</span>
-               </div>
+              <div className="flex items-center gap-1 justify-center w-[50%]">
+                <User fill="#A78BFA" className="text-[#A78BFA]" size={16} />
+                <span className="font-bold text-xl text-slate-900">53%</span>
+              </div>
+              <div className="flex items-center gap-1 justify-center w-[50%]">
+                <User fill="#FCD34D" className="text-[#FCD34D]" size={16} />
+                <span className="font-bold text-xl text-slate-900">47%</span>
+              </div>
             </div>
           </div>
-          
+
           <div className="flex justify-between px-10 text-xs text-slate-500 font-medium pb-2">
             <div className="flex items-center gap-1.5"><div className="w-2 h-2 rounded-full bg-[#A78BFA]"></div>3,178 <span className="text-[10px] text-slate-400">( boys )</span></div>
             <div className="flex items-center gap-1.5"><div className="w-2 h-2 rounded-full bg-[#FCD34D]"></div>2,731 <span className="text-[10px] text-slate-400">( Girls )</span></div>
@@ -221,7 +277,7 @@ const AdminDashboard = ({ user }) => {
               </div>
             </div>
           </div>
-          
+
           <div className="flex gap-2 items-center mt-4 pt-2">
             <button className="bg-slate-100 text-slate-500 hover:bg-slate-200 text-[10px] font-semibold px-4 py-1.5 rounded-lg transition-colors">Add New</button>
             <button className="p-1.5 bg-slate-50 border border-slate-200 rounded-lg text-slate-400 hover:text-slate-600 transition-colors"><Edit size={14} /></button>
@@ -258,7 +314,7 @@ const AdminDashboard = ({ user }) => {
 
       {/* Third Row: Chart, Fee Status, Messages */}
       <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
-        
+
         {/* Earnings Chart */}
         <div className="lg:col-span-2 bg-white rounded-[24px] p-6 shadow-sm border border-slate-100">
           <div className="flex justify-between items-center mb-6">
@@ -273,11 +329,11 @@ const AdminDashboard = ({ user }) => {
             <ResponsiveContainer width="100%" height="100%">
               <LineChart data={earningsData}>
                 <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#f1f5f9" />
-                <XAxis dataKey="name" axisLine={false} tickLine={false} tick={{fill: '#94a3b8', fontSize: 10, fontWeight: 'bold'}} dy={10} />
-                <YAxis axisLine={false} tickLine={false} tick={{fill: '#94a3b8', fontSize: 10, fontWeight: 'bold'}} dx={-10} tickFormatter={(val) => `${val}K`} />
-                <Tooltip cursor={{stroke: '#e2e8f0', strokeWidth: 1}} contentStyle={{borderRadius: '12px', border: 'none', boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1)'}} />
-                <Line type="monotone" dataKey="income" stroke="#60A5FA" strokeWidth={3} dot={{r:4, strokeWidth:2, fill:'#fff'}} activeDot={{r: 6}} />
-                <Line type="monotone" dataKey="expense" stroke="#C084FC" strokeWidth={3} dot={{r:4, strokeWidth:2, fill:'#fff'}} activeDot={{r: 6}} />
+                <XAxis dataKey="name" axisLine={false} tickLine={false} tick={{ fill: '#94a3b8', fontSize: 10, fontWeight: 'bold' }} dy={10} />
+                <YAxis axisLine={false} tickLine={false} tick={{ fill: '#94a3b8', fontSize: 10, fontWeight: 'bold' }} dx={-10} tickFormatter={(val) => `${val}K`} />
+                <Tooltip cursor={{ stroke: '#e2e8f0', strokeWidth: 1 }} contentStyle={{ borderRadius: '12px', border: 'none', boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1)' }} />
+                <Line type="monotone" dataKey="income" stroke="#60A5FA" strokeWidth={3} dot={{ r: 4, strokeWidth: 2, fill: '#fff' }} activeDot={{ r: 6 }} />
+                <Line type="monotone" dataKey="expense" stroke="#C084FC" strokeWidth={3} dot={{ r: 4, strokeWidth: 2, fill: '#fff' }} activeDot={{ r: 6 }} />
               </LineChart>
             </ResponsiveContainer>
           </div>
