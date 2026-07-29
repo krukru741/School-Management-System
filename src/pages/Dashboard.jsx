@@ -69,41 +69,18 @@ const AdminDashboard = ({ user }) => {
               </p>
             </div>
             
-            {/* Abstract Illustration Placeholder for Humaaans Research */}
-            <div className="absolute left-[399px] top-0 w-[299px] h-[222px] flex items-center justify-center -scale-x-100">
-               {/* Using the CSS composition flipped horizontally to match the transformation matrix in Figma */}
-              <div className="relative w-56 h-40 scale-x-[-1]">
-                <div className="absolute top-0 right-0 w-20 h-28 bg-slate-100 rounded-lg border border-slate-200/60 shadow-sm opacity-80 flex flex-col p-2 gap-1.5">
-                   <div className="w-full h-1.5 bg-slate-200 rounded-full"></div>
-                   <div className="w-3/4 h-1.5 bg-slate-200 rounded-full"></div>
-                   <div className="flex items-center gap-1 mt-2">
-                     <div className="w-3 h-3 rounded-full bg-slate-200"></div>
-                     <div className="w-full h-1.5 bg-slate-200 rounded-full"></div>
-                   </div>
-                </div>
-                
-                <div className="absolute top-4 right-14 w-28 h-32 bg-white rounded-lg border border-slate-200 shadow-md flex flex-col p-2.5 gap-2 z-10">
-                  <div className="w-full h-2 bg-slate-100 rounded-full"></div>
-                  <div className="w-2/3 h-2 bg-slate-100 rounded-full mb-1"></div>
-                  
-                  <div className="flex items-center gap-2">
-                    <div className="w-4 h-4 rounded-full bg-slate-100"></div>
-                    <div className="flex-1 space-y-1"><div className="w-full h-1.5 bg-slate-100 rounded-full"></div><div className="w-1/2 h-1.5 bg-slate-100 rounded-full"></div></div>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <div className="w-4 h-4 rounded-full bg-slate-100"></div>
-                    <div className="flex-1 space-y-1"><div className="w-full h-1.5 bg-slate-100 rounded-full"></div><div className="w-1/2 h-1.5 bg-slate-100 rounded-full"></div></div>
-                  </div>
-                </div>
-
-                <div className="absolute bottom-2 left-0 w-14 h-14 bg-white rounded-lg border border-slate-200 shadow-sm flex items-center justify-center opacity-80">
-                  <div className="w-6 h-6 rounded-full border-4 border-slate-100 border-t-slate-300"></div>
-                </div>
-                
-                <div className="absolute bottom-0 right-20 z-20 text-[#302C5E] drop-shadow-xl">
-                  <User size={60} fill="#4ADE80" strokeWidth={1.5} className="text-[#302C5E]" />
-                </div>
-              </div>
+            {/* Humaaans Research */}
+            <div 
+              className="absolute"
+              style={{
+                width: '299px',
+                height: '222px',
+                left: '399px',
+                top: '0px',
+                background: 'url(.png) center / contain no-repeat',
+                transform: 'matrix(-1, 0, 0, 1, 0, 0)'
+              }}
+            >
             </div>
 
           </div>
