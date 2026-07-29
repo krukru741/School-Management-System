@@ -123,7 +123,7 @@ const MainLayout = () => {
               <Search size={24} strokeWidth={2} className="text-[#8E8D93] shrink-0 w-[24px] h-[24px]" />
               <input
                 type="text"
-                placeholder="Placeholder"
+                placeholder="Search"
                 className="bg-transparent border-none outline-none w-[71px] h-[30px] text-[20px] font-normal text-[#8E8D93] placeholder-[#8E8D93] leading-[30px]"
                 style={{ fontFamily: 'Poppins, sans-serif' }}
               />
