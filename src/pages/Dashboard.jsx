@@ -99,7 +99,7 @@ const AdminDashboard = ({ user }) => {
         </div>
 
         {/* Stats Column */}
-        <div className="flex flex-col gap-4">
+        <div className="flex flex-col gap-4 w-full lg:w-[185px] h-[346px] shrink-0">
           <div className="bg-[#FDF4D6] rounded-[24px] p-5 shadow-sm flex justify-between items-center flex-1">
             <div>
               <p className="text-[#A1883F] font-medium text-[13px] mb-1">Students</p>
