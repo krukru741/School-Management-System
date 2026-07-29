@@ -40,10 +40,10 @@ const AdminDashboard = ({ user }) => {
     <div className="space-y-6 animate-in fade-in duration-500 max-w-[1400px] mx-auto">
 
       {/* Top Row: Welcome Banner & Stats */}
-      <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
+      <div className="flex flex-row">
 
         {/* Welcome Banner */}
-        <div className="lg:col-span-2 bg-[#FFFFFF] rounded-[24px] shadow-sm border border-slate-100 h-[248px] relative overflow-hidden shrink-0">
+        <div className="w-[763px] h-[248px] bg-[#FFFFFF] rounded-[24px] shadow-sm border border-slate-100 relative overflow-hidden shrink-0 mr-[18px]">
           {/* Inner Content Box (main) */}
           <div className="absolute left-[22px] top-[11px] w-[698px] h-[222px]">
 
@@ -81,8 +81,8 @@ const AdminDashboard = ({ user }) => {
         </div>
 
         {/* Stats Column */}
-        <div className="flex flex-col gap-[11px] w-full lg:w-[185px] h-[346px] shrink-0">
-          <div className="bg-[#F8E38D] rounded-[20px] p-[17px] flex flex-col justify-between w-full h-[108px]">
+        <div className="flex flex-col gap-[11px] w-[185px] h-[346px] shrink-0 mr-[14px]">
+          <div className="bg-[#F8E38D] rounded-[20px] p-[17px] flex flex-col justify-between w-[185px] h-[108px] shrink-0">
             <div className="flex justify-between items-start">
               <span className="font-light text-[20px] text-black leading-none">Students</span>
               <MoreHorizontal size={20} className="text-[#121212] -mt-1" />
@@ -92,7 +92,7 @@ const AdminDashboard = ({ user }) => {
             </div>
           </div>
 
-          <div className="bg-[#E2D4F0] rounded-[20px] p-[17px] flex flex-col justify-between w-full h-[108px]">
+          <div className="bg-[#E2D4F0] rounded-[20px] p-[17px] flex flex-col justify-between w-[185px] h-[108px] shrink-0">
             <div className="flex justify-between items-start">
               <span className="font-light text-[20px] text-black leading-none">Teachers</span>
               <MoreHorizontal size={20} className="text-[#121212] -mt-1" />
@@ -102,7 +102,7 @@ const AdminDashboard = ({ user }) => {
             </div>
           </div>
 
-          <div className="bg-[#F8E38D] rounded-[20px] p-[17px] flex flex-col justify-between w-full h-[108px]">
+          <div className="bg-[#F8E38D] rounded-[20px] p-[17px] flex flex-col justify-between w-[185px] h-[108px] shrink-0">
             <div className="flex justify-between items-start">
               <span className="font-light text-[20px] text-black leading-none">Employee</span>
               <MoreHorizontal size={20} className="text-[#121212] -mt-1" />
