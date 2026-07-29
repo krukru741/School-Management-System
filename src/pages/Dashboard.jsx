@@ -16,7 +16,7 @@ const CustomEarningsTooltip = ({ active, payload, label }) => {
           {label} 14,2030
         </span>
         <div className="w-[100px] h-[3px] bg-[#F4F6FB] mb-[8px]"></div>
-        
+
         <div className="flex flex-col gap-[6px] w-[90px]">
           <div className="flex items-center gap-[8px]">
             <div className="w-[10px] h-[10px] rounded-full bg-[#60A5FA]"></div>
@@ -70,7 +70,7 @@ const AdminDashboard = ({ user }) => {
   ];
 
   return (
-    <div className="w-full flex flex-col xl:flex-row gap-[24px] animate-in fade-in duration-500 pb-10">
+    <div className="w-full flex flex-col 2xl:flex-row gap-[24px] animate-in fade-in duration-500 pb-10">
 
       {/* LEFT COLUMN (Flexible) */}
       <div className="flex-1 flex flex-col gap-[24px]">
@@ -89,7 +89,7 @@ const AdminDashboard = ({ user }) => {
         </div>
 
         {/* Row: Students & Notice Board */}
-        <div className="w-full flex flex-row gap-[24px]">
+        <div className="w-full flex flex-row flex-wrap xl:flex-nowrap gap-[24px]">
           {/* Students */}
           <div className="w-[415px] shrink-0 h-[280px] bg-[#E0F2FE] rounded-[24px] shadow-sm relative">
             <div className="absolute left-[21px] top-[18px] w-[365px] h-[24px]">
@@ -188,13 +188,13 @@ const AdminDashboard = ({ user }) => {
 
         {/* Earnings Chart */}
         <div className="w-full h-[448px] bg-[#FFFFFF] rounded-[24px] shadow-sm relative pt-[24px] px-[24px] pb-[16px] flex flex-col">
-          
+
           <div className="relative w-full h-[40px] mb-[15px] flex items-center">
             {/* Title */}
             <div className="absolute left-0">
               <span style={{ fontFamily: 'Inter, sans-serif', fontWeight: 500, fontSize: '20px', color: '#334155' }}>Earnings</span>
             </div>
-            
+
             {/* Legends (Centered) */}
             <div className="w-full flex justify-center items-center gap-[40px]">
               <div className="flex items-center gap-[10px]">
@@ -232,10 +232,10 @@ const AdminDashboard = ({ user }) => {
       </div>
 
       {/* RIGHT COLUMN (Fixed Width) */}
-      <div className="w-full xl:w-[505px] shrink-0 flex flex-col gap-[24px]">
+      <div className="w-full 2xl:w-[505px] shrink-0 flex flex-col items-center 2xl:items-start gap-[24px]">
 
         {/* Row: Head Count & Calendar */}
-        <div className="flex flex-row gap-[14px]">
+        <div className="flex flex-row flex-wrap justify-center 2xl:justify-start gap-[14px]">
           {/* Head Count */}
           <div className="w-[185px] flex flex-col gap-[11px]">
             <div className="bg-[#F8E38D] rounded-[20px] w-full h-[108px] relative">
@@ -326,7 +326,7 @@ const AdminDashboard = ({ user }) => {
         </div>
 
         {/* Financial Overview */}
-        <div className="w-full h-[179px] bg-[#FFFFFF] rounded-[24px] shadow-sm relative">
+        <div className="w-full h-[179px] bg-[#FFFFFF] r ounded-[15px] shadow-sm relative">
 
           {/* Header */}
           <div className="absolute left-[19px] top-[18px] right-[19px] h-[28px] flex justify-between items-center">
@@ -353,7 +353,7 @@ const AdminDashboard = ({ user }) => {
               <div className="absolute left-[18px] top-[14px] right-[15px] h-[22px] flex justify-between items-center">
                 {/* Sparkline chart SVG */}
                 <svg width="49" height="22" viewBox="0 0 49 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M1.5 19.5C9.5 19.5 14.5 8.5 21.5 11.5C28.5 14.5 35.5 3.5 47.5 2.5" stroke="#00997E" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M1.5 19.5C9.5 19.5 14.5 8.5 21.5 11.5C28.5 14.5 35.5 3.5 47.5 2.5" stroke="#00997E" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
                 <div className="w-[43px] h-[16px] bg-[#FFFFFF] rounded-[32px] flex items-center justify-center gap-[2px]">
                   <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="#00997E" strokeWidth="2.5"><path d="M12 19V5M5 12l7-7 7 7" /></svg>
@@ -375,7 +375,7 @@ const AdminDashboard = ({ user }) => {
               <div className="absolute left-[18px] top-[14px] right-[15px] h-[22px] flex justify-between items-center">
                 {/* Sparkline chart SVG */}
                 <svg width="49" height="22" viewBox="0 0 49 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M1.5 18.5C9.5 18.5 14.5 9.5 21.5 13.5C28.5 17.5 35.5 5.5 47.5 3.5" stroke="#00997E" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M1.5 18.5C9.5 18.5 14.5 9.5 21.5 13.5C28.5 17.5 35.5 5.5 47.5 3.5" stroke="#00997E" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
                 <div className="w-[43px] h-[16px] bg-[#FFFFFF] rounded-[32px] flex items-center justify-center gap-[2px]">
                   <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="#00997E" strokeWidth="2.5"><path d="M12 19V5M5 12l7-7 7 7" /></svg>
@@ -396,7 +396,7 @@ const AdminDashboard = ({ user }) => {
         </div>
 
         {/* Row: Fee Status & Messages */}
-        <div className="flex flex-row items-start gap-[18px]">
+        <div className="flex flex-row flex-wrap justify-center 2xl:justify-start items-start gap-[18px]">
           {/* Fee Status */}
           <div className="w-[222px] h-[321px] bg-[#FFFFFF] rounded-[24px] shadow-sm relative pt-[26px]">
             {/* Header */}
@@ -411,7 +411,7 @@ const AdminDashboard = ({ user }) => {
 
             {/* List */}
             <div className="flex flex-col gap-[14px] px-[14px]">
-              
+
               {/* Row 1 (Paid) */}
               <div className="w-[194px] h-[57px] border border-[#D3D3D3] rounded-[10px] flex items-center justify-between px-[11px]">
                 <span style={{ fontFamily: 'Inter, sans-serif', fontWeight: 500, fontSize: '24px', color: '#334155' }}>1,335</span>
