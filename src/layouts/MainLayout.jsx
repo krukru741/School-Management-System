@@ -77,32 +77,44 @@ const MainLayout = () => {
       {/* Main Content Area */}
       <main className="flex-1 flex flex-col h-screen overflow-hidden">
         {/* Top Header */}
-        <header className="h-24 px-8 flex items-center justify-between shrink-0">
-          {/* Search Bar */}
-          <div className="relative w-96">
-            <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400" size={18} />
-            <input 
-              type="text" 
-              placeholder="Search..." 
-              className="w-full pl-12 pr-4 py-3 bg-white border-none rounded-full text-sm focus:outline-none focus:ring-2 focus:ring-blue-100 shadow-sm text-slate-700"
-            />
+        <header className="w-full max-w-[1254px] h-[70px] px-[5px] py-[10px] mx-auto mt-[24px] flex justify-between items-start shrink-0">
+          
+          {/* Left: Collapse & Search */}
+          <div className="flex gap-[10px] w-full max-w-[406px] h-[50px]">
+            {/* Collapse Button */}
+            <button className="w-[50px] h-[50px] bg-[#FFFFFF] rounded-[12px] shadow-[2px_4px_4px_rgba(0,0,0,0.1)] flex items-center justify-center shrink-0">
+               {/* Arrow Right rotated 180 */}
+               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="-rotate-180 text-black">
+                 <path d="M5 12h14M12 5l7 7-7 7" />
+               </svg>
+            </button>
+            
+            {/* Search Bar */}
+            <div className="w-[346px] h-[50px] bg-[#EBEAEF] rounded-[34px] flex items-center px-[14px] gap-[10px]">
+               <Search size={24} className="text-[#8E8D93] shrink-0" />
+               <input 
+                 type="text"
+                 placeholder="Placeholder"
+                 className="bg-transparent border-none outline-none w-full text-[20px] font-normal text-[#8E8D93] placeholder-[#8E8D93]"
+                 style={{ fontFamily: 'Poppins, sans-serif' }}
+               />
+            </div>
           </div>
 
-          {/* Right Actions */}
-          <div className="flex items-center gap-4">
-            <button className="w-10 h-10 rounded-full bg-white flex items-center justify-center text-slate-500 hover:text-blue-600 shadow-sm transition-colors">
-              <Bell size={18} />
+          {/* Right: Actions */}
+          <div className="flex gap-[12px] w-[236px] h-[50px] shrink-0">
+            <button className="w-[50px] h-[50px] bg-[#ECEBF1] rounded-[35px] flex items-center justify-center text-[#6E6D71] shrink-0">
+              <Bell size={24} strokeWidth={1.5} />
             </button>
-            <button className="w-10 h-10 rounded-full bg-white flex items-center justify-center text-slate-500 hover:text-blue-600 shadow-sm transition-colors">
-              <MessageSquare size={18} />
+            <button className="w-[50px] h-[50px] bg-[#ECEBF1] rounded-[35px] flex items-center justify-center text-[#6E6D71] shrink-0">
+              <MessageSquare size={24} strokeWidth={1.5} />
             </button>
-            <button className="w-10 h-10 rounded-full bg-white flex items-center justify-center text-slate-500 hover:text-blue-600 shadow-sm transition-colors">
-              <Settings size={18} />
+            <button className="w-[50px] h-[50px] bg-[#ECEBF1] rounded-[35px] flex items-center justify-center text-[#6E6D71] shrink-0">
+              <Settings size={24} strokeWidth={1.5} />
             </button>
-            <div className="flex items-center gap-3 ml-2 pl-4 border-l border-slate-200">
-              <div className="w-10 h-10 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold shadow-md border-2 border-white">
-                {user?.name?.charAt(0)}
-              </div>
+            <div className="w-[50px] h-[50px] bg-[#ECEBF1] rounded-[35px] flex items-center justify-center shrink-0 overflow-hidden">
+               {/* Profile Mock Image */}
+               <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80" alt="Profile" className="w-full h-full object-cover" />
             </div>
           </div>
         </header>
