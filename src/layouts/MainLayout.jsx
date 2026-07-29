@@ -51,21 +51,27 @@ const MainLayout = () => {
         </div>
 
         {/* Body / Nav Items */}
-        <nav className="flex-1 mt-[35px] px-[15px] flex flex-col gap-[10px] overflow-y-auto">
+        <nav className="absolute left-[32px] top-[121px] bottom-[80px] w-[245px] flex flex-col gap-[10px] overflow-y-auto overflow-x-hidden">
           {allowedNavItems.map((item) => {
             const isActive = location.pathname === item.path;
             return (
               <Link
                 key={item.path}
                 to={item.path}
-                className={`w-[253px] h-[44px] flex items-center pl-[12px] gap-[14px] rounded-[7px] transition-all shrink-0 ${isActive
+                className={`relative w-[253px] h-[44px] rounded-[7px] transition-all shrink-0 ${isActive
                   ? 'bg-[#FFFFFF] text-[#000000]'
                   : 'bg-transparent text-[#FFFFFF] hover:bg-white/10'
                   }`}
-                style={{ fontFamily: 'Inter, sans-serif', fontWeight: 400, fontSize: '18px' }}
               >
-                {item.icon}
-                <span>{item.name}</span>
+                <div className="absolute left-[12px] top-[10px] w-[24px] h-[24px] flex items-center justify-center">
+                  {item.icon}
+                </div>
+                <span
+                  className="absolute left-[48px] top-[11px] h-[22px] leading-[22px]"
+                  style={{ fontFamily: 'Inter, sans-serif', fontWeight: 400, fontSize: '18px' }}
+                >
+                  {item.name}
+                </span>
               </Link>
             );
           })}
@@ -73,11 +79,11 @@ const MainLayout = () => {
 
         {/* LogOut Btn */}
         <div className="mt-auto mb-[4px] ml-[15px] shrink-0">
-          <button 
+          <button
             onClick={logout}
             className="relative w-[253px] h-[44px] bg-[#FFFFFF] rounded-[7px] hover:bg-slate-100 transition-colors"
           >
-            <span 
+            <span
               className="absolute w-[69px] h-[22px] left-[16px] top-[11px] text-[#000000] leading-[22px]"
               style={{ fontFamily: 'Inter, sans-serif', fontWeight: 500, fontSize: '18px' }}
             >
