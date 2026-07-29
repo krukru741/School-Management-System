@@ -47,12 +47,6 @@ const AdminDashboard = ({ user }) => {
           {/* Inner Content Box (main) */}
           <div className="absolute left-[22px] top-[11px] w-[698px] h-[222px]">
             
-            {/* Corner dots */}
-            <div className="absolute top-0 left-0 w-2 h-2 rounded-full border-[1.5px] border-[#3B82F6]"></div>
-            <div className="absolute top-0 right-0 w-2 h-2 rounded-full border-[1.5px] border-[#3B82F6]"></div>
-            <div className="absolute bottom-0 left-0 w-2 h-2 rounded-full border-[1.5px] border-[#3B82F6]"></div>
-            <div className="absolute bottom-0 right-0 w-2 h-2 rounded-full border-[1.5px] border-[#3B82F6]"></div>
-
             {/* Content Container */}
             <div className="absolute left-0 top-[10px] w-[401px] h-[179px]">
               <h2 
