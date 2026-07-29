@@ -43,14 +43,14 @@ const AdminDashboard = ({ user }) => {
       <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
         
         {/* Welcome Banner */}
-        <div className="lg:col-span-2 bg-white rounded-[24px] p-8 shadow-sm flex flex-col sm:flex-row items-center justify-between border border-slate-100 relative overflow-hidden">
+        <div className="lg:col-span-2 bg-white rounded-[24px] p-10 shadow-sm flex flex-col sm:flex-row items-center justify-between border border-slate-100 relative overflow-hidden min-h-[248px]">
           {/* Corner dots */}
-          <div className="absolute top-4 left-4 w-2 h-2 rounded-full border-[1.5px] border-blue-400"></div>
-          <div className="absolute top-4 right-4 w-2 h-2 rounded-full border-[1.5px] border-blue-400"></div>
-          <div className="absolute bottom-4 left-4 w-2 h-2 rounded-full border-[1.5px] border-blue-400"></div>
-          <div className="absolute bottom-4 right-4 w-2 h-2 rounded-full border-[1.5px] border-blue-400"></div>
+          <div className="absolute top-5 left-5 w-2.5 h-2.5 rounded-full border-[1.5px] border-[#3B82F6]"></div>
+          <div className="absolute top-5 right-5 w-2.5 h-2.5 rounded-full border-[1.5px] border-[#3B82F6]"></div>
+          <div className="absolute bottom-5 left-5 w-2.5 h-2.5 rounded-full border-[1.5px] border-[#3B82F6]"></div>
+          <div className="absolute bottom-5 right-5 w-2.5 h-2.5 rounded-full border-[1.5px] border-[#3B82F6]"></div>
 
-          <div className="max-w-sm relative z-10">
+          <div className="max-w-[420px] relative z-10 self-center">
             <h2 className="text-2xl font-bold text-slate-800 mb-3 leading-tight">Welcome, {user?.name || 'Laurel Higher Secondary School'} Team!</h2>
             <p className="text-slate-400 text-sm leading-relaxed mb-6 font-medium">
               Manage your school operations with ease. Stay updated on academics, attendance, finances, and more—all in one place. Let's keep shaping a brighter future together!
