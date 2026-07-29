@@ -72,18 +72,25 @@ const MainLayout = () => {
         </nav>
 
         {/* LogOut Btn */}
-        <div className="mt-auto mb-[4px] px-[15px] shrink-0">
-          <button
+        <div className="mt-auto mb-[4px] ml-[15px] shrink-0">
+          <button 
             onClick={logout}
-            className="w-[253px] h-[44px] flex items-center justify-between pl-[16px] pr-[10px] bg-[#FFFFFF] rounded-[7px] hover:bg-slate-100 transition-colors"
+            className="relative w-[253px] h-[44px] bg-[#FFFFFF] rounded-[7px] hover:bg-slate-100 transition-colors"
           >
-            <span
-              className="text-[#000000]"
+            <span 
+              className="absolute w-[69px] h-[22px] left-[16px] top-[11px] text-[#000000] leading-[22px]"
               style={{ fontFamily: 'Inter, sans-serif', fontWeight: 500, fontSize: '18px' }}
             >
               Log Out
             </span>
-            <LogOut size={24} className="text-[#000000]" />
+            {/* arrow-right-circle */}
+            <div className="absolute w-[24px] h-[24px] left-[219px] top-[10px] flex items-center justify-center">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#000000" strokeWidth="2">
+                <circle cx="12" cy="12" r="10" />
+                <path d="M12 16l4-4-4-4" />
+                <path d="M8 12h8" />
+              </svg>
+            </div>
           </button>
         </div>
       </aside>
