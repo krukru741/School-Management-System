@@ -326,7 +326,7 @@ const AdminDashboard = ({ user }) => {
         </div>
 
         {/* Financial Overview */}
-        <div className="w-full h-[179px] bg-[#FFFFFF] r ounded-[15px] shadow-sm relative">
+        <div className="w-full max-w-[460px] h-[179px] bg-[#FFFFFF] rounded-[24px] shadow-sm relative">
 
           {/* Header */}
           <div className="absolute left-[19px] top-[18px] right-[19px] h-[28px] flex justify-between items-center">
@@ -449,7 +449,7 @@ const AdminDashboard = ({ user }) => {
           </div>
 
           {/* Messages */}
-          <div className="flex-1 h-[448px] bg-[#FFFFFF] rounded-[24px] shadow-sm pt-[28px] px-[23px] pb-[16px] flex flex-col">
+          <div className="flex-1 max-w-[306px] h-[428px] bg-[#FFFFFF] rounded-[24px] shadow-sm pt-[28px] px-[23px] pb-[16px] flex flex-col">
             <div className="flex justify-between items-center mb-[30px]">
               <span style={{ fontFamily: 'Inter, sans-serif', fontWeight: 500, fontSize: '20px', color: '#334155' }}>Messages</span>
               <div className="w-[16px] h-[4px] flex justify-between items-center cursor-pointer">
