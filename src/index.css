@@ -42,8 +42,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
   height: 100vh;
   display: flex;
-  justify-content: center;
-  align-items: center;
   padding: 0;
   margin: 0;
   overflow: hidden;
@@ -65,6 +63,8 @@ body {
   border-radius: 0;
   position: relative;
   overflow: hidden;
+  justify-content: flex-start !important;
+  gap: 0 !important;
 }
 
 /* Sidebar */
@@ -72,7 +72,7 @@ body {
   width: 270px;
   background: var(--bg-sidebar);
   border-radius: 0;
-  margin: 0;
+  margin: 0 !important;
   display: flex;
   flex-direction: column;
   padding: 24px 0;
@@ -168,6 +168,7 @@ body {
   display: flex;
   flex-direction: column;
   padding: 24px 24px 24px 0;
+  margin: 0;
   overflow-y: auto;
 }
 
@@ -215,7 +216,7 @@ body {
   background: transparent;
   outline: none;
   font-family: var(--font-poppins);
-  font-size: 16px;
+  font-size: 20px;
   color: var(--text-placeholder);
   width: 100%;
 }
