@@ -45,7 +45,14 @@ body {
   justify-content: center;
   align-items: center;
   padding: 0;
+  margin: 0;
   overflow: hidden;
+}
+
+#root {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
 }
 
 /* App Container */
