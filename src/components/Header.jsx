@@ -1,12 +1,12 @@
 import React from 'react';
-import { Search, Bell, MessageSquare, Settings, ChevronRight } from 'lucide-react';
+import { Search, Bell, MessageSquare, Settings, ChevronLeft } from 'lucide-react';
 
 const Header = () => {
   return (
     <div className="header">
       <div className="header-left">
         <button className="collapse-btn">
-          <ChevronRight size={24} />
+          <ChevronLeft size={24} />
         </button>
         <div className="search-bar">
           <Search size={20} color="#8E8D93" />

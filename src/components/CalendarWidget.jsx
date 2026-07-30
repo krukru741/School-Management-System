@@ -22,7 +22,8 @@ const CalendarWidget = () => {
       </div>
       
       <div className="calendar-grid">
-        {/* Placeholder blanks to shift start day */}
+        {/* Placeholder blanks to shift start day to Wednesday (3 blanks for Sun, Mon, Tue) */}
+        <div className="calendar-date" style={{opacity: 0}}></div>
         <div className="calendar-date" style={{opacity: 0}}></div>
         <div className="calendar-date" style={{opacity: 0}}></div>
         
