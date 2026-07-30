@@ -6,7 +6,7 @@
   --bg-card: #FFFFFF;
   --bg-search: #EBEAEF;
   --bg-icon-btn: #ECEBF1;
-  
+
   --bg-yellow: #F8E38D;
   --bg-purple: #E2D8FC;
   --bg-orange: #F04D23;
@@ -21,7 +21,7 @@
   --text-gray-40: #B5BEC6;
   --text-gray-80: #4A5660;
   --text-light-gray: #777777;
-  
+
   --font-urbanist: 'Urbanist', sans-serif;
   --font-inter: 'Inter', sans-serif;
   --font-poppins: 'Poppins', sans-serif;
@@ -172,82 +172,153 @@ body {
   overflow-y: auto;
 }
 
-/* Header */
-.header {
+/* --- Custom Header From Scratch --- */
+.custom-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 5px;
-  margin-bottom: 20px;
+  padding: 16px 24px;
+  background: #FFFFFF;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+  margin-bottom: 24px;
 }
 
-.header-left {
+.header-search-wrapper {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 16px;
 }
 
-.collapse-btn {
-  width: 50px;
-  height: 50px;
-  background: #FFFFFF;
-  box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.1);
-  border-radius: 12px;
+.menu-toggle {
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: var(--bg-main);
   border: none;
   cursor: pointer;
+  color: var(--text-primary);
+  transition: all 0.2s ease;
 }
 
-.search-bar {
+.menu-toggle:hover {
+  background: #EBEAEF;
+}
+
+.search-input-group {
   display: flex;
   align-items: center;
-  gap: 10px;
-  background: var(--bg-search);
-  border-radius: 34px;
-  padding: 10px 14px;
-  width: 346px;
-  height: 50px;
+  background: var(--bg-main);
+  padding: 0 16px;
+  border-radius: 14px;
+  height: 44px;
+  width: 300px;
+  border: 1px solid transparent;
+  transition: all 0.3s ease;
 }
 
-.search-bar input {
+.search-input-group:focus-within {
+  border-color: #D1D0D5;
+  background: #FFFFFF;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
+}
+
+.search-icon {
+  color: var(--text-secondary);
+  margin-right: 12px;
+}
+
+.search-input-group input {
   border: none;
   background: transparent;
   outline: none;
-  font-family: var(--font-poppins);
-  font-size: 20px;
-  color: var(--text-placeholder);
   width: 100%;
+  font-family: var(--font-inter);
+  font-size: 14px;
+  color: var(--text-primary);
 }
 
-.header-right {
+.search-input-group input::placeholder {
+  color: var(--text-placeholder);
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.action-icons {
   display: flex;
   align-items: center;
   gap: 12px;
+  padding-right: 24px;
+  border-right: 1px solid #EBEAEF;
 }
 
-.icon-btn {
-  width: 50px;
-  height: 50px;
-  background: var(--bg-icon-btn);
-  border-radius: 35px;
+.action-btn {
+  position: relative;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: var(--text-secondary);
   display: flex;
   align-items: center;
   justify-content: center;
-  border: none;
-  cursor: pointer;
-  color: #6E6D71;
+  transition: all 0.2s ease;
 }
 
-.profile-pic {
-  width: 50px;
-  height: 50px;
-  border-radius: 35px;
-  background-color: #DDD;
-  background-size: cover;
-  background-position: center;
+.action-btn:hover {
+  background: var(--bg-main);
+  color: var(--text-primary);
+}
+
+.badge {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  width: 8px;
+  height: 8px;
+  background: var(--bg-orange);
+  border-radius: 50%;
+  border: 2px solid #FFFFFF;
+}
+
+.profile-section {
+  display: flex;
+  align-items: center;
+  gap: 12px;
   cursor: pointer;
+}
+
+.profile-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.profile-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.profile-role {
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+.profile-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  object-fit: cover;
 }
 
 /* Dashboard Grid Area */
@@ -313,19 +384,19 @@ body {
 .stat-cards-vertical {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  gap: 11px; /* 11px gap to make 3 cards of 108px equal to 346px calendar height */
+  justify-content: flex-start;
+  gap: 11px;
 }
 
 .stat-card {
   width: 185px;
   height: 108px;
   border-radius: 20px;
-  padding: 20px;
+  padding: 17px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-start;
+  align-items: flex-start;
   position: relative;
 }
 
@@ -338,22 +409,27 @@ body {
 }
 
 .stat-title {
+  font-family: var(--font-inter);
   font-weight: 300;
   font-size: 20px;
   line-height: 24px;
-  margin-bottom: 4px;
+  color: #000000;
+  margin: 0;
+  margin-bottom: 12px;
 }
 
 .stat-value {
+  font-family: var(--font-inter);
   font-weight: 500;
   font-size: 34px;
   line-height: 41px;
+  color: #000000;
 }
 
 .stat-more {
   position: absolute;
-  top: 15px;
-  right: 15px;
+  top: 25px;
+  right: 18px;
   display: flex;
   gap: 2px;
   cursor: pointer;
