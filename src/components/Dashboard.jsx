@@ -20,17 +20,17 @@ const Dashboard = () => {
           </div>
         </div>
 
-        <div className="stat-cards">
-          <StatCard title="Students" value="5,909" bgColor="var(--bg-yellow)" />
-          <StatCard title="Teachers" value="60" bgColor="var(--bg-purple)" />
-          <StatCard title="Employee" value="100" bgColor="var(--bg-yellow)" />
-        </div>
-
         <div className="bottom-section">
            <NoticeBoard />
         </div>
       </div>
       
+      <div className="stat-cards-vertical">
+        <StatCard title="Students" value="5,909" bgColor="var(--bg-yellow)" />
+        <StatCard title="Teachers" value="60" bgColor="var(--bg-purple)" />
+        <StatCard title="Employee" value="100" bgColor="var(--bg-yellow)" />
+      </div>
+
       <div className="dashboard-sidebar">
         <CalendarWidget />
       </div>

@@ -245,8 +245,8 @@ body {
 /* Dashboard Grid Area */
 .dashboard-grid {
   display: grid;
-  grid-template-columns: 1fr 306px;
-  grid-template-rows: auto auto;
+  grid-template-columns: 1fr 185px 306px;
+  grid-template-rows: auto;
   gap: 24px;
 }
 
@@ -302,13 +302,15 @@ body {
 }
 
 /* Stat Cards Section */
-.stat-cards {
+.stat-cards-vertical {
   display: flex;
-  gap: 24px;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 11px; /* 11px gap to make 3 cards of 108px equal to 346px calendar height */
 }
 
 .stat-card {
-  flex: 1;
+  width: 185px;
   height: 108px;
   border-radius: 20px;
   padding: 20px;
