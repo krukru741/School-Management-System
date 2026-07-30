@@ -1,44 +1,40 @@
 import React from 'react';
-import { Plus, Edit2 } from 'lucide-react';
+import { Bell, Edit2, Trash2 } from 'lucide-react';
 
 const NoticeBoard = () => {
   return (
     <div className="notice-board">
-      <div className="widget-header">
-        <h2 className="widget-title">Notice Board</h2>
+      <div className="nb-header">
+        <h2 className="nb-title">Notice Board</h2>
+        <span className="nb-view-all">view all</span>
       </div>
       
-      <div style={{flex: 1, display: 'flex', flexDirection: 'column', gap: '15px'}}>
-        <div style={{ display: 'flex', alignItems: 'flex-start', gap: '10px' }}>
-          <div style={{ width: 10, height: 10, borderRadius: '50%', background: '#F04D23', marginTop: '5px' }}></div>
-          <div>
-            <div style={{ fontSize: 14, fontWeight: 500 }}>School reopening date extended</div>
-            <div style={{ fontSize: 12, color: '#8F8F8F' }}>2 days ago</div>
+      <div className="nb-list">
+        <div className="nb-item">
+          <div className="nb-icon-block yellow">
+            <Bell size={20} color="#FCA52B" />
+          </div>
+          <div className="nb-text-block">
+            <div className="nb-item-title">Sports Day Announcement</div>
+            <div className="nb-item-desc">The school's Annual Sports Day will be held on May 12, 2024. Mark your calendars!</div>
           </div>
         </div>
-        <div style={{ display: 'flex', alignItems: 'flex-start', gap: '10px' }}>
-          <div style={{ width: 10, height: 10, borderRadius: '50%', background: '#F8E38D', marginTop: '5px' }}></div>
-          <div>
-            <div style={{ fontSize: 14, fontWeight: 500 }}>Parent-Teacher meeting on Friday</div>
-            <div style={{ fontSize: 12, color: '#8F8F8F' }}>3 days ago</div>
+        
+        <div className="nb-item">
+          <div className="nb-icon-block purple">
+            <Bell size={20} color="#696FC1" />
           </div>
-        </div>
-        <div style={{ display: 'flex', alignItems: 'flex-start', gap: '10px' }}>
-          <div style={{ width: 10, height: 10, borderRadius: '50%', background: '#E2D8FC', marginTop: '5px' }}></div>
-          <div>
-            <div style={{ fontSize: 14, fontWeight: 500 }}>Annual Sports Meet Registration</div>
-            <div style={{ fontSize: 12, color: '#8F8F8F' }}>1 week ago</div>
+          <div className="nb-text-block">
+            <div className="nb-item-title">Summer Break Start Date</div>
+            <div className="nb-item-desc">Summer break begins on May 25, 2024. Have a wonderful holiday!</div>
           </div>
         </div>
       </div>
       
-      <div style={{ display: 'flex', gap: '10px', marginTop: '20px' }}>
-        <button className="btn-small">
-          <Plus size={14} /> Add
-        </button>
-        <button className="btn-icon">
-          <Edit2 size={14} />
-        </button>
+      <div className="nb-buttons">
+        <button className="nb-add-btn">Add</button>
+        <button className="nb-icon-btn"><Edit2 size={12} color="#777777" /></button>
+        <button className="nb-icon-btn"><Trash2 size={12} color="#777777" /></button>
       </div>
     </div>
   );

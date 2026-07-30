@@ -2,6 +2,7 @@ import React from 'react';
 import StatCard from './StatCard';
 import CalendarWidget from './CalendarWidget';
 import NoticeBoard from './NoticeBoard';
+import StudentsWidget from './StudentsWidget';
 
 const Dashboard = () => {
   return (
@@ -21,6 +22,7 @@ const Dashboard = () => {
         </div>
 
         <div className="bottom-section">
+           <StudentsWidget />
            <NoticeBoard />
         </div>
       </div>
