@@ -16,15 +16,15 @@ const Sidebar = ({ activeMenu, setActiveMenu }) => {
   return (
     <div className="sidebar">
       <div className="logo-container">
-        <div className="logo-icon">Sm</div>
-        <div className="logo-text">Smansys</div>
+        <div className="logo-icon">IHMA</div>
+        <div className="logo-text">School</div>
       </div>
-      
+
       <div className="nav-menu">
         {menuItems.map((item) => {
           const Icon = item.icon;
           return (
-            <div 
+            <div
               key={item.name}
               className={`nav-item ${activeMenu === item.name ? 'active' : ''}`}
               onClick={() => setActiveMenu(item.name)}
@@ -35,7 +35,7 @@ const Sidebar = ({ activeMenu, setActiveMenu }) => {
           );
         })}
       </div>
-      
+
       <button className="logout-btn">
         Log Out
         <LogOut size={24} />
