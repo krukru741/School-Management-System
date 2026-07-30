@@ -48,6 +48,33 @@
 
   <!--? Config: Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file. -->
 
+  <style>
+    #layout-menu {
+      background-color: #1a234b !important;
+    }
+
+    #layout-menu .menu-link {
+      color: #ffffff !important;
+    }
+
+    #layout-menu .menu-icon {
+      color: #ffffff !important;
+    }
+
+    #layout-menu .menu-item.active>.menu-link {
+      background-color: #4a9ee6 !important;
+      border-radius: 8px;
+    }
+
+    #layout-menu .app-brand {
+      height: auto;
+      padding-top: 2rem;
+      padding-bottom: 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  </style>
   <script src="../assets/js/config.js"></script>
 </head>
 
@@ -58,104 +85,78 @@
       <!-- Menu -->
 
       <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
-        <div class="app-brand demo">
-          <a href="index.html" class="app-brand-link">
-            <span class="app-brand-logo demo me-1">
-              <span class="text-primary">
-                <svg width="30" height="24" viewBox="0 0 250 196" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path fill-rule="evenodd" clip-rule="evenodd"
-                    d="M12.3002 1.25469L56.655 28.6432C59.0349 30.1128 60.4839 32.711 60.4839 35.5089V160.63C60.4839 163.468 58.9941 166.097 56.5603 167.553L12.2055 194.107C8.3836 196.395 3.43136 195.15 1.14435 191.327C0.395485 190.075 0 188.643 0 187.184V8.12039C0 3.66447 3.61061 0.0522461 8.06452 0.0522461C9.56056 0.0522461 11.0271 0.468577 12.3002 1.25469Z"
-                    fill="currentColor" />
-                  <path opacity="0.077704" fill-rule="evenodd" clip-rule="evenodd"
-                    d="M0 65.2656L60.4839 99.9629V133.979L0 65.2656Z" fill="black" />
-                  <path opacity="0.077704" fill-rule="evenodd" clip-rule="evenodd"
-                    d="M0 65.2656L60.4839 99.0795V119.859L0 65.2656Z" fill="black" />
-                  <path fill-rule="evenodd" clip-rule="evenodd"
-                    d="M237.71 1.22393L193.355 28.5207C190.97 29.9889 189.516 32.5905 189.516 35.3927V160.631C189.516 163.469 191.006 166.098 193.44 167.555L237.794 194.108C241.616 196.396 246.569 195.151 248.856 191.328C249.605 190.076 250 188.644 250 187.185V8.09597C250 3.64006 246.389 0.027832 241.935 0.027832C240.444 0.027832 238.981 0.441882 237.71 1.22393Z"
-                    fill="currentColor" />
-                  <path opacity="0.077704" fill-rule="evenodd" clip-rule="evenodd"
-                    d="M250 65.2656L189.516 99.8897V135.006L250 65.2656Z" fill="black" />
-                  <path opacity="0.077704" fill-rule="evenodd" clip-rule="evenodd"
-                    d="M250 65.2656L189.516 99.0497V120.886L250 65.2656Z" fill="black" />
-                  <path fill-rule="evenodd" clip-rule="evenodd"
-                    d="M12.2787 1.18923L125 70.3075V136.87L0 65.2465V8.06814C0 3.61223 3.61061 0 8.06452 0C9.552 0 11.0105 0.411583 12.2787 1.18923Z"
-                    fill="currentColor" />
-                  <path fill-rule="evenodd" clip-rule="evenodd"
-                    d="M12.2787 1.18923L125 70.3075V136.87L0 65.2465V8.06814C0 3.61223 3.61061 0 8.06452 0C9.552 0 11.0105 0.411583 12.2787 1.18923Z"
-                    fill="white" fill-opacity="0.15" />
-                  <path fill-rule="evenodd" clip-rule="evenodd"
-                    d="M237.721 1.18923L125 70.3075V136.87L250 65.2465V8.06814C250 3.61223 246.389 0 241.935 0C240.448 0 238.99 0.411583 237.721 1.18923Z"
-                    fill="currentColor" />
-                  <path fill-rule="evenodd" clip-rule="evenodd"
-                    d="M237.721 1.18923L125 70.3075V136.87L250 65.2465V8.06814C250 3.61223 246.389 0 241.935 0C240.448 0 238.99 0.411583 237.721 1.18923Z"
-                    fill="white" fill-opacity="0.3" />
-                </svg>
-              </span>
-            </span>
-            <span class="app-brand-text demo menu-text fw-semibold ms-2">Materio</span>
-          </a>
-
-          <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto">
-            <i class="menu-toggle-icon d-xl-inline-block align-middle"></i>
+        <div class="app-brand demo border-bottom border-secondary mb-4 pb-4">
+          <a href="index.html" class="d-flex flex-column align-items-center w-100 text-decoration-none">
+            <div class="bg-white rounded-circle d-flex align-items-center justify-content-center mb-3"
+              style="width: 70px; height: 70px;">
+              <!-- Using a simple geometric shape to approximate the logo in the image -->
+              <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M10 30V15C10 12.2386 12.2386 10 15 10C17.7614 10 20 12.2386 20 15V22" stroke="#48b7d3"
+                  stroke-width="6" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M30 30V15C30 12.2386 27.7614 10 25 10C22.2386 10 20 12.2386 20 15V22" stroke="#fd5c63"
+                  stroke-width="6" stroke-linecap="round" stroke-linejoin="round" />
+                <circle cx="20" cy="27" r="4" fill="#303b4d" />
+              </svg>
+            </div>
+            <span class="text-white fw-semibold" style="font-size: 15px;">IHMA. school</span>
           </a>
         </div>
 
-        <div class="menu-inner-shadow"></div>
-
-        <ul class="menu-inner py-1">
+        <ul class="menu-inner py-1 px-3">
           <!-- Dashboard -->
-          <li class="menu-item active">
-            <a href="index.html" class="menu-link">
-              <i class="menu-icon icon-base ri ri-home-smile-line"></i>
+          <li class="menu-item active mb-2">
+            <a href="index.html" class="menu-link px-3 py-2">
+              <i class="menu-icon icon-base ri ri-home-3-line"></i>
               <div data-i18n="Dashboard">Dashboard</div>
             </a>
           </li>
 
-          <!-- Students -->
-          <li class="menu-item">
-            <a href="students.html" class="menu-link">
-              <i class="menu-icon icon-base ri ri-group-line"></i>
-              <div data-i18n="Students">Students</div>
-            </a>
-          </li>
-
           <!-- Teachers -->
-          <li class="menu-item">
-            <a href="teachers.html" class="menu-link">
-              <i class="menu-icon icon-base ri ri-user-star-line"></i>
+          <li class="menu-item mb-2">
+            <a href="teachers.html" class="menu-link px-3 py-2">
+              <i class="menu-icon icon-base ri ri-home-heart-line"></i>
               <div data-i18n="Teachers">Teachers</div>
             </a>
           </li>
 
-          <!-- Classes -->
-          <li class="menu-item">
-            <a href="classes.html" class="menu-link">
-              <i class="menu-icon icon-base ri ri-building-4-line"></i>
-              <div data-i18n="Classes">Classes</div>
-            </a>
-          </li>
-
-          <!-- Subjects -->
-          <li class="menu-item">
-            <a href="subjects.html" class="menu-link">
-              <i class="menu-icon icon-base ri ri-book-open-line"></i>
-              <div data-i18n="Subjects">Subjects</div>
+          <!-- Students/ classes -->
+          <li class="menu-item mb-2">
+            <a href="students.html" class="menu-link px-3 py-2">
+              <i class="menu-icon icon-base ri ri-graduation-cap-line"></i>
+              <div data-i18n="Students/ classes">Students/ classes</div>
             </a>
           </li>
 
           <!-- Billing -->
-          <li class="menu-item">
-            <a href="billing.html" class="menu-link">
-              <i class="menu-icon icon-base ri ri-bank-card-line"></i>
+          <li class="menu-item mb-2">
+            <a href="billing.html" class="menu-link px-3 py-2">
+              <i class="menu-icon icon-base ri ri-bank-line"></i>
               <div data-i18n="Billing">Billing</div>
             </a>
           </li>
 
-          <!-- Settings -->
-          <li class="menu-item">
-            <a href="settings.html" class="menu-link">
+          <!-- Exams -->
+          <li class="menu-item mb-5">
+            <a href="exams.html" class="menu-link px-3 py-2">
+              <i class="menu-icon icon-base ri ri-file-paper-2-line"></i>
+              <div data-i18n="Exams">Exams</div>
+            </a>
+          </li>
+
+          <!-- Settings and profile -->
+          <li class="menu-item mb-2">
+            <a href="settings.html" class="menu-link px-3 py-2">
               <i class="menu-icon icon-base ri ri-settings-4-line"></i>
-              <div data-i18n="Settings">Settings</div>
+              <div data-i18n="Settings and profile">Settings and profile</div>
+            </a>
+          </li>
+
+          <!-- Features -->
+          <li class="menu-item mt-5">
+            <a href="#" class="menu-link px-3 py-2">
+              <i class="menu-icon icon-base ri ri-building-line"></i>
+              <div data-i18n="Features" class="flex-grow-1">Features</div>
+              <span class="badge rounded-pill bg-light text-dark fw-bold ms-auto" style="font-size: 10px;">NEW</span>
             </a>
           </li>
         </ul>
@@ -178,16 +179,35 @@
           <div class="navbar-nav-right d-flex align-items-center justify-content-end" id="navbar-collapse">
             <!-- Search -->
             <div class="navbar-nav align-items-center">
-              <div class="nav-item d-flex align-items-center">
-                <i class="icon-base ri ri-search-line icon-lg lh-0"></i>
-                <input type="text" class="form-control border-0 shadow-none" placeholder="Search..."
-                  aria-label="Search..." />
+              <div class="nav-item d-flex align-items-center bg-light rounded-pill px-3 py-1"
+                style="background-color: #F4F5FA !important;">
+                <i class="icon-base ri ri-search-line icon-md lh-0 text-muted"></i>
+                <input type="text" class="form-control border-0 shadow-none bg-transparent ps-2" placeholder="Search"
+                  aria-label="Search" style="width: 200px;" />
               </div>
             </div>
             <!-- /Search -->
 
             <ul class="navbar-nav flex-row align-items-center ms-md-auto">
-
+              <!-- Quick actions -->
+              <li class="nav-item me-2">
+                <a class="nav-link btn btn-icon btn-sm text-muted rounded-circle" style="background-color: #F4F5FA;"
+                  href="javascript:void(0);">
+                  <i class="icon-base ri ri-notification-3-line"></i>
+                </a>
+              </li>
+              <li class="nav-item me-2">
+                <a class="nav-link btn btn-icon btn-sm text-muted rounded-circle" style="background-color: #F4F5FA;"
+                  href="javascript:void(0);">
+                  <i class="icon-base ri ri-message-3-line"></i>
+                </a>
+              </li>
+              <li class="nav-item me-3">
+                <a class="nav-link btn btn-icon btn-sm text-muted rounded-circle" style="background-color: #F4F5FA;"
+                  href="javascript:void(0);">
+                  <i class="icon-base ri ri-settings-4-line"></i>
+                </a>
+              </li>
 
               <!-- User -->
               <li class="nav-item navbar-dropdown dropdown-user dropdown">
@@ -260,513 +280,404 @@
         <div class="content-wrapper">
           <!-- Content -->
           <div class="container-xxl flex-grow-1 container-p-y">
-            <div class="row gy-6">
-              <!-- Congratulations card -->
-              <div class="col-md-12 col-lg-4">
-                <div class="card">
-                  <div class="card-body text-nowrap">
-                    <h5 class="card-title mb-0 flex-wrap text-nowrap">Welcome, Admin! 🏫</h5>
-                    <p class="mb-2">School System Overview</p>
-                    <h4 class="text-primary mb-0">1,250</h4>
-                    <p class="mb-2">Total Enrolled Students</p>
-                    <a href="javascript:;" class="btn btn-sm btn-primary">View Students</a>
-                  </div>
-                  <img src="../assets/img/illustrations/trophy.png" class="position-absolute bottom-0 end-0 me-5 mb-5"
-                    width="83" alt="view sales" />
-                </div>
-              </div>
-              <!--/ Congratulations card -->
 
-              <!-- Transactions -->
-              <div class="col-lg-8">
+            <!-- Row 1 -->
+            <div class="row gy-4 mb-4">
+              <!-- Welcome Hero Card -->
+              <div class="col-md-6 col-lg-6">
                 <div class="card h-100">
-                  <div class="card-header">
-                    <div class="d-flex align-items-center justify-content-between">
-                      <h5 class="card-title m-0 me-2">Quick Stats</h5>
+                  <div class="card-body d-flex justify-content-between align-items-center h-100">
+                    <div class="pe-3">
+                      <h4 class="card-title mb-3 flex-wrap text-nowrap fw-bold text-dark">Welcome, Laurel
+                        Higher<br>Secondary School Team!</h4>
+                      <p class="mb-0 text-muted" style="font-size: 14px; line-height: 1.6;">Manage your school
+                        operations with ease. Stay updated on academics, attendance, finances, and more—all in one
+                        place. Let's keep shaping a brighter future together!</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Stats Column -->
+              <div class="col-md-2 col-lg-2">
+                <div class="d-flex flex-column h-100 gap-3">
+                  <div class="card flex-grow-1" style="background-color: #FCEFB4;">
+                    <div class="card-body p-2 px-3 d-flex flex-column justify-content-center position-relative">
+                      <h6 class="card-title text-dark mb-1">Students</h6>
+                      <h4 class="mb-0 text-dark fw-bold">5,909</h4>
+                      <div class="dropdown position-absolute top-0 end-0 mt-2 me-2">
+                        <button class="btn p-0 text-dark" type="button" data-bs-toggle="dropdown" aria-haspopup="true"
+                          aria-expanded="false"><i class="icon-base ri ri-more-fill"></i></button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card flex-grow-1" style="background-color: #E6DAF9;">
+                    <div class="card-body p-2 px-3 d-flex flex-column justify-content-center position-relative">
+                      <h6 class="card-title text-dark mb-1">Teachers</h6>
+                      <h4 class="mb-0 text-dark fw-bold">60</h4>
+                      <div class="dropdown position-absolute top-0 end-0 mt-2 me-2">
+                        <button class="btn p-0 text-dark" type="button" data-bs-toggle="dropdown" aria-haspopup="true"
+                          aria-expanded="false"><i class="icon-base ri ri-more-fill"></i></button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card flex-grow-1" style="background-color: #FCEFB4;">
+                    <div class="card-body p-2 px-3 d-flex flex-column justify-content-center position-relative">
+                      <h6 class="card-title text-dark mb-1">Employee</h6>
+                      <h4 class="mb-0 text-dark fw-bold">100</h4>
+                      <div class="dropdown position-absolute top-0 end-0 mt-2 me-2">
+                        <button class="btn p-0 text-dark" type="button" data-bs-toggle="dropdown" aria-haspopup="true"
+                          aria-expanded="false"><i class="icon-base ri ri-more-fill"></i></button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Static Calendar -->
+              <div class="col-md-4 col-lg-4">
+                <div class="card h-100">
+                  <div class="card-header pb-2 d-flex justify-content-between align-items-center">
+                    <button class="btn btn-sm btn-icon text-muted"><i
+                        class="icon-base ri ri-arrow-left-s-line"></i></button>
+                    <span class="fw-bold text-dark" style="font-size: 15px;">September 2021</span>
+                    <button class="btn btn-sm btn-icon text-muted"><i
+                        class="icon-base ri ri-arrow-right-s-line"></i></button>
+                  </div>
+                  <div class="card-body">
+                    <div class="calendar-grid"
+                      style="display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px; text-align: center; font-size: 13px;">
+                      <!-- Days -->
+                      <div class="text-muted fw-medium" style="font-size: 10px;">SUN</div>
+                      <div class="text-muted fw-medium" style="font-size: 10px;">MON</div>
+                      <div class="text-muted fw-medium" style="font-size: 10px;">TUE</div>
+                      <div class="text-muted fw-medium" style="font-size: 10px;">WED</div>
+                      <div class="text-muted fw-medium" style="font-size: 10px;">THU</div>
+                      <div class="text-muted fw-medium" style="font-size: 10px;">FRI</div>
+                      <div class="text-muted fw-medium" style="font-size: 10px;">SAT</div>
+
+                      <!-- Dates row 1 -->
+                      <div class="py-1">1</div>
+                      <div class="py-1 text-dark fw-medium">2</div>
+                      <div class="py-1 text-dark fw-medium">3</div>
+                      <div class="py-1 text-dark fw-medium">4</div>
+                      <div class="py-1 text-dark fw-medium">5</div>
+                      <div class="py-1 text-dark fw-medium">6</div>
+                      <div class="py-1 text-dark fw-medium">7</div>
+                      <!-- Dates row 2 -->
+                      <div class="py-1">8</div>
+                      <div class="py-1 text-dark fw-medium">9</div>
+                      <div class="py-1 text-dark fw-medium">10</div>
+                      <div class="py-1 text-dark fw-medium">11</div>
+                      <div class="py-1 text-danger fw-bold">12</div>
+                      <div class="py-1 text-dark fw-medium">13</div>
+                      <div class="py-1 text-dark fw-medium">14</div>
+                      <!-- Dates row 3 -->
+                      <div class="py-1">15</div>
+                      <div class="py-1 text-dark fw-medium">16</div>
+                      <div class="py-1 text-dark fw-medium">17</div>
+                      <div class="py-1 text-dark fw-medium">18</div>
+                      <div class="py-1 bg-danger text-white rounded-circle d-inline-block mx-auto fw-medium"
+                        style="width: 24px; height: 24px; line-height: 24px;">19</div>
+                      <div class="py-1 text-dark fw-medium">20</div>
+                      <div class="py-1 text-dark fw-medium">21</div>
+                      <!-- Dates row 4 -->
+                      <div class="py-1">22</div>
+                      <div class="py-1 text-dark fw-medium">23</div>
+                      <div class="py-1 text-dark fw-medium">24</div>
+                      <div class="py-1 text-dark fw-medium">25</div>
+                      <div class="py-1 text-dark fw-medium">26</div>
+                      <div class="py-1 text-dark fw-medium">27</div>
+                      <div class="py-1 text-dark fw-medium">28</div>
+                      <!-- Dates row 5 -->
+                      <div class="py-1">29</div>
+                      <div class="py-1 text-dark fw-medium">30</div>
+                      <div class="py-1 text-dark fw-medium">31</div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                    </div>
+                    <div class="mt-3">
+                      <button class="btn btn-sm text-body" style="background-color: #F4F5FA;">Manage Calendar</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Row 2 -->
+            <div class="row gy-4 mb-4">
+              <!-- Students Overview Chart -->
+              <div class="col-md-4 col-lg-4">
+                <div class="card h-100">
+                  <div class="card-header pb-0">
+                    <div class="d-flex justify-content-between align-items-center">
+                      <h5 class="mb-0 text-dark fw-bold">Students</h5>
                       <div class="dropdown">
-                        <button class="btn text-body-secondary p-0" type="button" id="transactionID"
+                        <button class="btn text-body-secondary p-0" type="button" id="studentsOverviewDropdown"
                           data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                          <i class="icon-base ri ri-more-2-line icon-24px"></i>
+                          <i class="icon-base ri ri-more-fill"></i>
                         </button>
-                        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="transactionID">
+                        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="studentsOverviewDropdown">
                           <a class="dropdown-item" href="javascript:void(0);">Refresh</a>
-                          <a class="dropdown-item" href="javascript:void(0);">Share</a>
-                          <a class="dropdown-item" href="javascript:void(0);">Update</a>
                         </div>
                       </div>
                     </div>
-                    <p class="small mb-0"><span class="h6 mb-0">98% Attendance</span> today</p>
                   </div>
-                  <div class="card-body pt-lg-10">
-                    <div class="row g-6">
-                      <div class="col-md-3 col-6">
-                        <div class="d-flex align-items-center">
-                          <div class="avatar">
-                            <div class="avatar-initial bg-primary rounded shadow-xs">
-                              <i class="icon-base ri ri-pie-chart-2-line icon-24px"></i>
-                            </div>
-                          </div>
-                          <div class="ms-3">
-                            <p class="mb-0">Teachers</p>
-                            <h5 class="mb-0">45</h5>
-                          </div>
+                  <div class="card-body d-flex align-items-center justify-content-center pt-0 mt-n3">
+                    <div class="row w-100">
+                      <div class="col-6 d-flex flex-column align-items-center">
+                        <div id="boysChart"></div>
+                        <div class="mt-1 d-flex align-items-center">
+                          <span class="badge bg-label-primary p-1 rounded-circle me-2"><i
+                              class="icon-base ri ri-user-line" style="font-size: 10px;"></i></span>
+                          <span class="fw-bold text-heading">3,178</span> <span class="text-muted ms-1"
+                            style="font-size: 13px;">(boys)</span>
                         </div>
                       </div>
-                      <div class="col-md-3 col-6">
-                        <div class="d-flex align-items-center">
-                          <div class="avatar">
-                            <div class="avatar-initial bg-success rounded shadow-xs">
-                              <i class="icon-base ri ri-group-line icon-24px"></i>
-                            </div>
-                          </div>
-                          <div class="ms-3">
-                            <p class="mb-0">Classes</p>
-                            <h5 class="mb-0">24</h5>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-md-3 col-6">
-                        <div class="d-flex align-items-center">
-                          <div class="avatar">
-                            <div class="avatar-initial bg-warning rounded shadow-xs">
-                              <i class="icon-base ri ri-macbook-line icon-24px"></i>
-                            </div>
-                          </div>
-                          <div class="ms-3">
-                            <p class="mb-0">Subjects</p>
-                            <h5 class="mb-0">12</h5>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-md-3 col-6">
-                        <div class="d-flex align-items-center">
-                          <div class="avatar">
-                            <div class="avatar-initial bg-info rounded shadow-xs">
-                              <i class="icon-base ri ri-money-dollar-circle-line icon-24px"></i>
-                            </div>
-                          </div>
-                          <div class="ms-3">
-                            <p class="mb-0">Revenue</p>
-                            <h5 class="mb-0">$$</h5>
-                          </div>
+                      <div class="col-6 d-flex flex-column align-items-center">
+                        <div id="girlsChart"></div>
+                        <div class="mt-1 d-flex align-items-center">
+                          <span class="badge bg-label-warning p-1 rounded-circle me-2"><i
+                              class="icon-base ri ri-user-line" style="font-size: 10px;"></i></span>
+                          <span class="fw-bold text-heading">2,731</span> <span class="text-muted ms-1"
+                            style="font-size: 13px;">(Girls)</span>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-              <!--/ Transactions -->
 
-              <!-- Weekly Overview Chart -->
-              <div class="col-xl-4 col-md-6">
-                <div class="card">
-                  <div class="card-header">
-                    <div class="d-flex justify-content-between">
-                      <h5 class="mb-1">Weekly Overview</h5>
-                      <div class="dropdown">
-                        <button class="btn text-body-secondary p-0" type="button" id="weeklyOverviewDropdown"
-                          data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                          <i class="icon-base ri ri-more-2-line icon-24px"></i>
-                        </button>
-                        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="weeklyOverviewDropdown">
-                          <a class="dropdown-item" href="javascript:void(0);">Refresh</a>
-                          <a class="dropdown-item" href="javascript:void(0);">Share</a>
-                          <a class="dropdown-item" href="javascript:void(0);">Update</a>
+              <!-- Notice Board -->
+              <div class="col-md-4 col-lg-4">
+                <div class="card h-100">
+                  <div class="card-header d-flex align-items-center justify-content-between pb-2">
+                    <h5 class="card-title m-0 me-2 text-dark fw-bold">Notice Board</h5>
+                    <a href="javascript:void(0);" class="text-muted text-decoration-underline"
+                      style="font-size: 13px;">view all</a>
+                  </div>
+                  <div class="card-body pt-0 d-flex flex-column">
+                    <div class="notices-list flex-grow-1 position-relative pe-2 mt-2"
+                      style="overflow-y: auto; max-height: 220px;">
+                      <!-- Notice 1 -->
+                      <div class="border rounded p-3 mb-3 d-flex align-items-start">
+                        <div
+                          class="flex-shrink-0 bg-label-warning rounded d-flex align-items-center justify-content-center me-3"
+                          style="width: 48px; height: 48px;">
+                          <i class="icon-base ri ri-notification-4-line ri-24px"></i>
+                        </div>
+                        <div>
+                          <h6 class="mb-1 text-heading">Sports Day Announcement</h6>
+                          <p class="mb-0 text-muted" style="font-size: 13px; line-height: 1.4;">The school's Annual
+                            Sports Day will be held on May 12, 2024. Mark your calendars!</p>
+                        </div>
+                      </div>
+                      <!-- Notice 2 -->
+                      <div class="border rounded p-3 mb-3 d-flex align-items-start">
+                        <div
+                          class="flex-shrink-0 bg-label-primary rounded d-flex align-items-center justify-content-center me-3"
+                          style="width: 48px; height: 48px;">
+                          <i class="icon-base ri ri-notification-3-line ri-24px"></i>
+                        </div>
+                        <div>
+                          <h6 class="mb-1 text-heading">Summer Break Start Date</h6>
+                          <p class="mb-0 text-muted" style="font-size: 13px; line-height: 1.4;">Summer break begins on
+                            May 25, 2024. Have a wonderful holiday!</p>
                         </div>
                       </div>
                     </div>
+                    <div class="mt-2 d-flex align-items-center gap-2">
+                      <button class="btn btn-sm text-body fw-normal"
+                        style="background-color: #F4F5FA; border-radius: 6px;">Add New</button>
+                      <button class="btn btn-sm btn-icon text-body"
+                        style="background-color: #F4F5FA; border-radius: 6px;"><i
+                          class="icon-base ri ri-edit-box-line"></i></button>
+                      <button class="btn btn-sm btn-icon text-body"
+                        style="background-color: #F4F5FA; border-radius: 6px;"><i
+                          class="icon-base ri ri-delete-bin-7-line"></i></button>
+                    </div>
                   </div>
-                  <div class="card-body pt-lg-2">
-                    <div id="weeklyOverviewChart"></div>
-                    <div class="mt-1 mt-md-3">
-                      <div class="d-flex align-items-center gap-4">
-                        <h4 class="mb-0">45%</h4>
-                        <p class="mb-0">Your sales performance is 45% 😎 better compared to last month</p>
+                </div>
+              </div>
+
+              <!-- Financial Overview -->
+              <div class="col-md-4 col-lg-4">
+                <div class="card h-100">
+                  <div class="card-header pb-2 d-flex justify-content-between align-items-center">
+                    <h5 class="mb-0 text-dark fw-bold">Financial Overview</h5>
+                    <div class="d-flex gap-2">
+                      <span class="badge text-body fw-medium px-2 py-1" style="background-color: #F4F5FA;">2023-2024 <i
+                          class="icon-base ri ri-arrow-down-s-line"></i></span>
+                      <span class="badge text-body fw-medium px-2 py-1" style="background-color: #F4F5FA;">Annual <i
+                          class="icon-base ri ri-arrow-down-s-line"></i></span>
+                    </div>
+                  </div>
+                  <div class="card-body">
+                    <div class="d-flex flex-column gap-3 h-100 justify-content-center">
+                      <div class="rounded p-3 position-relative overflow-hidden" style="background-color: #E2F6F8;">
+                        <div class="d-flex justify-content-between align-items-start mb-0">
+                          <div id="financialIncomeSparkline" style="margin-left: -10px; width: 60px;"></div>
+                          <span class="badge bg-white text-success fw-medium"><i
+                              class="icon-base ri ri-arrow-up-line"></i> 12%</span>
+                        </div>
+                        <h4 class="mb-0 text-dark fw-bold mt-1">₹29,545,000</h4>
+                        <span class="text-dark" style="font-size: 13px;">Total Income</span>
                       </div>
-                      <div class="d-grid mt-3 mt-md-4">
-                        <button class="btn btn-primary" type="button">Details</button>
+
+                      <div class="rounded p-3 position-relative overflow-hidden" style="background-color: #E2F6F8;">
+                        <div class="d-flex justify-content-between align-items-start mb-0">
+                          <div id="financialExpenseSparkline" style="margin-left: -10px; width: 60px;"></div>
+                          <span class="badge bg-white text-success fw-medium"><i
+                              class="icon-base ri ri-arrow-up-line"></i> 8.5%</span>
+                        </div>
+                        <h4 class="mb-0 text-dark fw-bold mt-1">₹19,291,266</h4>
+                        <span class="text-dark" style="font-size: 13px;">Total Expenses</span>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-              <!--/ Weekly Overview Chart -->
+            </div>
 
-              <!-- Total Earnings -->
-              <div class="col-xl-4 col-md-6">
-                <div class="card">
-                  <div class="card-header d-flex align-items-center justify-content-between">
-                    <h5 class="card-title m-0 me-2">Total Earning</h5>
-                    <div class="dropdown">
-                      <button class="btn text-body-secondary p-0" type="button" id="totalEarnings"
-                        data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <i class="icon-base ri ri-more-2-line icon-24px"></i>
-                      </button>
-                      <div class="dropdown-menu dropdown-menu-end" aria-labelledby="totalEarnings">
-                        <a class="dropdown-item" href="javascript:void(0);">Last 28 Days</a>
-                        <a class="dropdown-item" href="javascript:void(0);">Last Month</a>
-                        <a class="dropdown-item" href="javascript:void(0);">Last Year</a>
+            <!-- Row 3 -->
+            <div class="row gy-4">
+              <!-- Earnings Chart -->
+              <div class="col-md-6 col-lg-6">
+                <div class="card h-100">
+                  <div class="card-header pb-0 d-flex justify-content-between align-items-center">
+                    <h5 class="mb-0 text-dark fw-bold">Earnings</h5>
+                    <div class="d-flex align-items-center gap-3">
+                      <div class="d-flex align-items-center"><span class="badge bg-info p-1 rounded-circle me-2"></span>
+                        <span class="text-dark fw-medium" style="font-size: 13px;">Income</span>
                       </div>
+                      <div class="d-flex align-items-center"><span
+                          class="badge bg-primary p-1 rounded-circle me-2"></span> <span class="text-dark fw-medium"
+                          style="font-size: 13px;">Expense</span></div>
+                      <button class="btn btn-sm btn-icon text-muted"><i class="icon-base ri ri-more-fill"></i></button>
                     </div>
                   </div>
-                  <div class="card-body pt-lg-8">
-                    <div class="mb-5 mb-lg-12">
-                      <div class="d-flex align-items-center">
-                        <h3 class="mb-0">$24,895</h3>
-                        <span class="text-success ms-2">
-                          <i class="icon-base ri ri-arrow-up-s-line icon-sm"></i>
-                          <span>10%</span>
-                        </span>
-                      </div>
-                      <p class="mb-0">Compared to $84,325 last year</p>
+                  <div class="card-body pt-2">
+                    <div id="earningsLineChart"></div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Fee Status -->
+              <div class="col-md-3 col-lg-3">
+                <div class="card h-100">
+                  <div class="card-header pb-2 d-flex justify-content-between align-items-center">
+                    <h5 class="mb-0 text-dark fw-bold">Fee Status</h5>
+                    <button class="btn btn-sm btn-icon text-muted"><i class="icon-base ri ri-more-fill"></i></button>
+                  </div>
+                  <div class="card-body d-flex flex-column gap-3 justify-content-between pb-3 mt-1">
+                    <div class="border rounded px-3 py-2 d-flex justify-content-between align-items-center">
+                      <h4 class="mb-0 text-dark fw-bold">1,335</h4>
+                      <span class="badge bg-label-success rounded-pill fw-medium"><span
+                          style="display:inline-block; width: 6px; height: 6px; border-radius: 50%; background: currentcolor; margin-right: 4px;"></span>
+                        Paid</span>
                     </div>
-                    <ul class="p-0 m-0">
-                      <li class="d-flex mb-6">
-                        <div class="avatar flex-shrink-0 bg-lightest rounded me-3">
-                          <img src="../assets/img/icons/misc/zipcar.png" alt="zipcar" />
+                    <div class="border rounded px-3 py-2 d-flex justify-content-between align-items-center">
+                      <h4 class="mb-0 text-dark fw-bold">4,366</h4>
+                      <span class="badge bg-label-warning rounded-pill fw-medium"><span
+                          style="display:inline-block; width: 6px; height: 6px; border-radius: 50%; background: currentcolor; margin-right: 4px;"></span>
+                        Pending</span>
+                    </div>
+                    <div class="border rounded px-3 py-2 d-flex justify-content-between align-items-center">
+                      <h4 class="mb-0 text-dark fw-bold">208</h4>
+                      <span class="badge bg-label-danger rounded-pill fw-medium"><span
+                          style="display:inline-block; width: 6px; height: 6px; border-radius: 50%; background: currentcolor; margin-right: 4px;"></span>
+                        Overdue</span>
+                    </div>
+                    <div class="mt-auto pt-2">
+                      <span class="badge text-body fw-medium px-2 py-1" style="background-color: #F4F5FA;">Annual <i
+                          class="icon-base ri ri-arrow-down-s-line"></i></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Messages -->
+              <div class="col-md-3 col-lg-3">
+                <div class="card h-100">
+                  <div class="card-header pb-2 d-flex justify-content-between align-items-center">
+                    <h5 class="mb-0 text-dark fw-bold">Messages</h5>
+                    <button class="btn btn-sm btn-icon text-muted"><i class="icon-base ri ri-more-fill"></i></button>
+                  </div>
+                  <div class="card-body pt-3">
+                    <ul class="list-unstyled mb-0">
+                      <li class="d-flex mb-3 align-items-center pb-1">
+                        <div class="avatar me-3">
+                          <img src="../assets/img/avatars/2.png" alt="Avatar" class="rounded-circle" />
                         </div>
-                        <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
-                          <div class="me-2">
-                            <h6 class="mb-0">Zipcar</h6>
-                            <p class="mb-0">Vuejs, React & HTML</p>
+                        <div class="d-flex flex-column flex-grow-1">
+                          <div class="d-flex justify-content-between align-items-center">
+                            <h6 class="mb-0 text-dark">Jane Cooper</h6>
+                            <small class="text-muted" style="font-size: 11px;">12:34 pm</small>
                           </div>
-                          <div>
-                            <h6 class="mb-2">$24,895.65</h6>
-                            <div class="progress bg-label-primary" style="height: 4px">
-                              <div class="progress-bar bg-primary" style="width: 75%" role="progressbar"
-                                aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                          </div>
+                          <small class="text-muted text-truncate" style="max-width: 140px; font-size: 12px;">Don't
+                            forget the lab repo...</small>
                         </div>
                       </li>
-                      <li class="d-flex mb-6">
-                        <div class="avatar flex-shrink-0 bg-lightest rounded me-3">
-                          <img src="../assets/img/icons/misc/bitbank.png" alt="bitbank" />
+                      <li class="d-flex mb-3 align-items-center pb-1">
+                        <div class="avatar me-3">
+                          <img src="../assets/img/avatars/3.png" alt="Avatar" class="rounded-circle" />
                         </div>
-                        <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
-                          <div class="me-2">
-                            <h6 class="mb-0">Bitbank</h6>
-                            <p class="mb-0">Sketch, Figma & XD</p>
+                        <div class="d-flex flex-column flex-grow-1">
+                          <div class="d-flex justify-content-between align-items-center">
+                            <h6 class="mb-0 text-dark">Kristin Watson</h6>
+                            <small class="text-muted" style="font-size: 11px;">12:34 pm</small>
                           </div>
-                          <div>
-                            <h6 class="mb-2">$8,6500.20</h6>
-                            <div class="progress bg-label-info" style="height: 4px">
-                              <div class="progress-bar bg-info" style="width: 75%" role="progressbar" aria-valuenow="75"
-                                aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                          </div>
+                          <small class="text-muted text-truncate" style="max-width: 140px; font-size: 12px;">Do we have
+                            maths test...</small>
                         </div>
                       </li>
-                      <li class="d-flex">
-                        <div class="avatar flex-shrink-0 bg-lightest rounded me-3">
-                          <img src="../assets/img/icons/misc/aviato.png" alt="aviato" />
+                      <li class="d-flex mb-3 align-items-center pb-1">
+                        <div class="avatar me-3">
+                          <img src="../assets/img/avatars/4.png" alt="Avatar" class="rounded-circle" />
                         </div>
-                        <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
-                          <div class="me-2">
-                            <h6 class="mb-0">Aviato</h6>
-                            <p class="mb-0">HTML & Angular</p>
+                        <div class="d-flex flex-column flex-grow-1">
+                          <div class="d-flex justify-content-between align-items-center">
+                            <h6 class="mb-0 text-dark">Jenny Wilson</h6>
+                            <small class="text-muted" style="font-size: 11px;">12:34 pm</small>
                           </div>
-                          <div>
-                            <h6 class="mb-2">$1,2450.80</h6>
-                            <div class="progress bg-label-secondary" style="height: 4px">
-                              <div class="progress-bar bg-secondary" style="width: 75%" role="progressbar"
-                                aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
+                          <small class="text-muted text-truncate"
+                            style="max-width: 140px; font-size: 12px;">Wud?</small>
+                        </div>
+                      </li>
+                      <li class="d-flex mb-3 align-items-center pb-1">
+                        <div class="avatar me-3">
+                          <img src="../assets/img/avatars/5.png" alt="Avatar" class="rounded-circle" />
+                        </div>
+                        <div class="d-flex flex-column flex-grow-1">
+                          <div class="d-flex justify-content-between align-items-center">
+                            <h6 class="mb-0 text-dark">Brooklyn Sim</h6>
+                            <small class="text-muted" style="font-size: 11px;">12:34 pm</small>
                           </div>
+                          <small class="text-muted text-truncate" style="max-width: 140px; font-size: 12px;">Did Sachin
+                            gave any ki...</small>
+                        </div>
+                      </li>
+                      <li class="d-flex align-items-center">
+                        <div class="avatar me-3">
+                          <img src="../assets/img/avatars/6.png" alt="Avatar" class="rounded-circle" />
+                        </div>
+                        <div class="d-flex flex-column flex-grow-1">
+                          <div class="d-flex justify-content-between align-items-center">
+                            <h6 class="mb-0 text-dark">Darrell Steward</h6>
+                            <small class="text-muted" style="font-size: 11px;">12:34 pm</small>
+                          </div>
+                          <small class="text-muted text-truncate" style="max-width: 140px; font-size: 12px;">Can we go
+                            for a movie...</small>
                         </div>
                       </li>
                     </ul>
                   </div>
                 </div>
               </div>
-              <!--/ Total Earnings -->
-
-              <!-- Four Cards -->
-              <div class="col-xl-4 col-md-6">
-                <div class="row gy-6">
-                  <!-- Total Profit line chart -->
-                  <div class="col-sm-6">
-                    <div class="card h-100">
-                      <div class="card-header pb-0">
-                        <h4 class="mb-0">$86.4k</h4>
-                      </div>
-                      <div class="card-body">
-                        <div id="totalProfitLineChart" class="mb-3"></div>
-                        <h6 class="text-center mb-0">Total Profit</h6>
-                      </div>
-                    </div>
-                  </div>
-                  <!--/ Total Profit line chart -->
-                  <!-- Total Profit Weekly Project -->
-                  <div class="col-sm-6">
-                    <div class="card h-100">
-                      <div class="card-header d-flex align-items-center justify-content-between">
-                        <div class="avatar">
-                          <div class="avatar-initial bg-secondary rounded-circle shadow-xs">
-                            <i class="icon-base ri ri-pie-chart-2-line icon-24px"></i>
-                          </div>
-                        </div>
-                        <div class="dropdown">
-                          <button class="btn text-body-secondary p-0" type="button" id="totalProfitID"
-                            data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i class="icon-base ri ri-more-2-line icon-24px"></i>
-                          </button>
-                          <div class="dropdown-menu dropdown-menu-end" aria-labelledby="totalProfitID">
-                            <a class="dropdown-item" href="javascript:void(0);">Refresh</a>
-                            <a class="dropdown-item" href="javascript:void(0);">Share</a>
-                            <a class="dropdown-item" href="javascript:void(0);">Update</a>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="card-body">
-                        <h6 class="mb-1">Total Profit</h6>
-                        <div class="d-flex flex-wrap mb-1 align-items-center">
-                          <h4 class="mb-0 me-2">$25.6k</h4>
-                          <p class="text-success mb-0">+42%</p>
-                        </div>
-                        <small>Weekly Project</small>
-                      </div>
-                    </div>
-                  </div>
-                  <!--/ Total Profit Weekly Project -->
-                  <!-- New Yearly Project -->
-                  <div class="col-sm-6">
-                    <div class="card h-100">
-                      <div class="card-header d-flex align-items-center justify-content-between">
-                        <div class="avatar">
-                          <div class="avatar-initial bg-primary rounded-circle shadow-xs">
-                            <i class="icon-base ri ri-file-word-2-line icon-24px"></i>
-                          </div>
-                        </div>
-                        <div class="dropdown">
-                          <button class="btn text-body-secondary p-0" type="button" id="newProjectID"
-                            data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i class="icon-base ri ri-more-2-line icon-24px"></i>
-                          </button>
-                          <div class="dropdown-menu dropdown-menu-end" aria-labelledby="newProjectID">
-                            <a class="dropdown-item" href="javascript:void(0);">Refresh</a>
-                            <a class="dropdown-item" href="javascript:void(0);">Share</a>
-                            <a class="dropdown-item" href="javascript:void(0);">Update</a>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="card-body">
-                        <h6 class="mb-1">New Project</h6>
-                        <div class="d-flex flex-wrap mb-1 align-items-center">
-                          <h4 class="mb-0 me-2">862</h4>
-                          <p class="text-danger mb-0">-18%</p>
-                        </div>
-                        <small>Yearly Project</small>
-                      </div>
-                    </div>
-                  </div>
-                  <!--/ New Yearly Project -->
-                  <!-- Sessions chart -->
-                  <div class="col-sm-6">
-                    <div class="card h-100">
-                      <div class="card-header pb-0">
-                        <h4 class="mb-0">2,856</h4>
-                      </div>
-                      <div class="card-body">
-                        <div id="sessionsColumnChart" class="mb-3"></div>
-                        <h6 class="text-center mb-0">Sessions</h6>
-                      </div>
-                    </div>
-                  </div>
-                  <!--/ Sessions chart -->
-                </div>
-              </div>
-              <!--/ four cards -->
-
-              <!-- Data Tables -->
-              <div class="col-12">
-                <div class="card overflow-hidden">
-                  <div class="table-responsive">
-                    <table class="table table-sm">
-                      <thead>
-                        <tr>
-                          <th class="text-truncate">User</th>
-                          <th class="text-truncate">Email</th>
-                          <th class="text-truncate">Role</th>
-                          <th class="text-truncate">Status</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td>
-                            <div class="d-flex align-items-center">
-                              <div class="avatar avatar-sm me-4">
-                                <img src="../assets/img/avatars/1.png" alt="Avatar" class="rounded-circle" />
-                              </div>
-                              <div>
-                                <h6 class="mb-0 text-truncate">Jordan Stevenson</h6>
-                                <small class="text-truncate">@amiccoo</small>
-                              </div>
-                            </div>
-                          </td>
-                          <td class="text-truncate">susanna.Lind57@gmail.com</td>
-                          <td class="text-truncate">
-                            <div class="d-flex align-items-center">
-                              <i class="icon-base ri ri-vip-crown-line icon-22px text-primary me-2"></i>
-                              <span>Admin</span>
-                            </div>
-                          </td>
-                          <td><span class="badge bg-label-warning rounded-pill">Pending</span></td>
-                        </tr>
-                        <tr>
-                          <td>
-                            <div class="d-flex align-items-center">
-                              <div class="avatar avatar-sm me-4">
-                                <img src="../assets/img/avatars/3.png" alt="Avatar" class="rounded-circle" />
-                              </div>
-                              <div>
-                                <h6 class="mb-0 text-truncate">Benedetto Rossiter</h6>
-                                <small class="text-truncate">@brossiter15</small>
-                              </div>
-                            </div>
-                          </td>
-                          <td class="text-truncate">estelle.Bailey10@gmail.com</td>
-                          <td class="text-truncate">
-                            <div class="d-flex align-items-center">
-                              <i class="icon-base ri ri-edit-box-line text-warning icon-22px me-2"></i>
-                              <span>Editor</span>
-                            </div>
-                          </td>
-                          <td><span class="badge bg-label-success rounded-pill">Active</span></td>
-                        </tr>
-                        <tr>
-                          <td>
-                            <div class="d-flex align-items-center">
-                              <div class="avatar avatar-sm me-4">
-                                <img src="../assets/img/avatars/2.png" alt="Avatar" class="rounded-circle" />
-                              </div>
-                              <div>
-                                <h6 class="mb-0 text-truncate">Bentlee Emblin</h6>
-                                <small class="text-truncate">@bemblinf</small>
-                              </div>
-                            </div>
-                          </td>
-                          <td class="text-truncate">milo86@hotmail.com</td>
-                          <td class="text-truncate">
-                            <div class="d-flex align-items-center">
-                              <i class="icon-base ri ri-computer-line text-danger icon-22px me-2"></i>
-                              <span>Author</span>
-                            </div>
-                          </td>
-                          <td><span class="badge bg-label-success rounded-pill">Active</span></td>
-                        </tr>
-                        <tr>
-                          <td>
-                            <div class="d-flex align-items-center">
-                              <div class="avatar avatar-sm me-4">
-                                <img src="../assets/img/avatars/5.png" alt="Avatar" class="rounded-circle" />
-                              </div>
-                              <div>
-                                <h6 class="mb-0 text-truncate">Bertha Biner</h6>
-                                <small class="text-truncate">@bbinerh</small>
-                              </div>
-                            </div>
-                          </td>
-                          <td class="text-truncate">lonnie35@hotmail.com</td>
-                          <td class="text-truncate">
-                            <div class="d-flex align-items-center">
-                              <i class="icon-base ri ri-edit-box-line text-warning icon-22px me-2"></i>
-                              <span>Editor</span>
-                            </div>
-                          </td>
-                          <td><span class="badge bg-label-warning rounded-pill">Pending</span></td>
-                        </tr>
-                        <tr>
-                          <td>
-                            <div class="d-flex align-items-center">
-                              <div class="avatar avatar-sm me-4">
-                                <img src="../assets/img/avatars/4.png" alt="Avatar" class="rounded-circle" />
-                              </div>
-                              <div>
-                                <h6 class="mb-0 text-truncate">Beverlie Krabbe</h6>
-                                <small class="text-truncate">@bkrabbe1d</small>
-                              </div>
-                            </div>
-                          </td>
-                          <td class="text-truncate">ahmad_Collins@yahoo.com</td>
-                          <td class="text-truncate">
-                            <div class="d-flex align-items-center">
-                              <i class="icon-base ri ri-pie-chart-2-line icon-22px text-info me-2"></i>
-                              <span>Maintainer</span>
-                            </div>
-                          </td>
-                          <td><span class="badge bg-label-success rounded-pill">Active</span></td>
-                        </tr>
-                        <tr>
-                          <td>
-                            <div class="d-flex align-items-center">
-                              <div class="avatar avatar-sm me-4">
-                                <img src="../assets/img/avatars/7.png" alt="Avatar" class="rounded-circle" />
-                              </div>
-                              <div>
-                                <h6 class="mb-0 text-truncate">Bradan Rosebotham</h6>
-                                <small class="text-truncate">@brosebothamz</small>
-                              </div>
-                            </div>
-                          </td>
-                          <td class="text-truncate">tillman.Gleason68@hotmail.com</td>
-                          <td class="text-truncate">
-                            <div class="d-flex align-items-center">
-                              <i class="icon-base ri ri-edit-box-line text-warning icon-22px me-2"></i>
-                              <span>Editor</span>
-                            </div>
-                          </td>
-                          <td><span class="badge bg-label-warning rounded-pill">Pending</span></td>
-                        </tr>
-                        <tr>
-                          <td>
-                            <div class="d-flex align-items-center">
-                              <div class="avatar avatar-sm me-4">
-                                <img src="../assets/img/avatars/6.png" alt="Avatar" class="rounded-circle" />
-                              </div>
-                              <div>
-                                <h6 class="mb-0 text-truncate">Bree Kilday</h6>
-                                <small class="text-truncate">@bkildayr</small>
-                              </div>
-                            </div>
-                          </td>
-                          <td class="text-truncate">otho21@gmail.com</td>
-                          <td class="text-truncate">
-                            <div class="d-flex align-items-center">
-                              <i class="icon-base ri ri-user-3-line icon-22px text-success me-2"></i>
-                              <span>Subscriber</span>
-                            </div>
-                          </td>
-                          <td><span class="badge bg-label-success rounded-pill">Active</span></td>
-                        </tr>
-                        <tr class="border-transparent">
-                          <td>
-                            <div class="d-flex align-items-center">
-                              <div class="avatar avatar-sm me-4">
-                                <img src="../assets/img/avatars/1.png" alt="Avatar" class="rounded-circle" />
-                              </div>
-                              <div>
-                                <h6 class="mb-0 text-truncate">Breena Gallemore</h6>
-                                <small class="text-truncate">@bgallemore6</small>
-                              </div>
-                            </div>
-                          </td>
-                          <td class="text-truncate">florencio.Little@hotmail.com</td>
-                          <td class="text-truncate">
-                            <div class="d-flex align-items-center">
-                              <i class="icon-base ri ri-user-3-line icon-22px text-success me-2"></i>
-                              <span>Subscriber</span>
-                            </div>
-                          </td>
-                          <td><span class="badge bg-label-secondary rounded-pill">Inactive</span></td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
-              </div>
-              <!--/ Data Tables -->
             </div>
+
           </div>
           <!-- / Content -->
 

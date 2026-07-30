@@ -49,110 +49,68 @@
     }
   };
 
-  // Weekly Overview Line Chart
+    // Students Overview Charts
   // --------------------------------------------------------------------
-  const weeklyOverviewChartEl = document.querySelector('#weeklyOverviewChart'),
-    weeklyOverviewChartConfig = {
+  const boysChartEl = document.querySelector('#boysChart'),
+    boysChartConfig = {
       chart: {
-        type: 'bar',
-        height: 200,
-        offsetY: -9,
-        offsetX: -16,
-        parentHeightOffset: 0,
-        toolbar: {
-          show: false
-        }
+        height: 180,
+        type: 'radialBar'
       },
-      series: [
-        {
-          name: 'Sales',
-          data: [32, 55, 45, 75, 55, 35, 70]
-        }
-      ],
-      colors: [chartBgColor],
+      series: [53],
+      colors: [config.colors.primary],
       plotOptions: {
-        bar: {
-          borderRadius: 8,
-          columnWidth: '30%',
-          endingShape: 'rounded',
-          startingShape: 'rounded',
-          colors: {
-            ranges: [
-              {
-                from: 75,
-                to: 80,
-                color: config.colors.primary
-              },
-              {
-                from: 0,
-                to: 73,
-                color: chartBgColor
-              }
-            ]
+        radialBar: {
+          hollow: { size: '60%' },
+          track: { background: '#F0F2F8' },
+          dataLabels: {
+            name: { show: false },
+            value: {
+              offsetY: 8,
+              color: config.colors.headingColor,
+              fontSize: '26px',
+              fontWeight: 700,
+              fontFamily: fontFamily
+            }
           }
         }
       },
-      dataLabels: {
-        enabled: false
-      },
-      legend: {
-        show: false
-      },
-      grid: {
-        strokeDashArray: 8,
-        borderColor,
-        padding: {
-          bottom: -10
-        }
-      },
-      xaxis: {
-        axisTicks: { show: false },
-        crosshairs: { opacity: 0 },
-        axisBorder: { show: false },
-        categories: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
-        tickPlacement: 'on',
-        labels: {
-          show: false
-        },
-        axisBorder: {
-          show: false
-        },
-        axisTicks: {
-          show: false
-        }
-      },
-      yaxis: {
-        min: 0,
-        max: 90,
-        show: true,
-        tickAmount: 3,
-        labels: {
-          formatter: function (val) {
-            return parseInt(val) + 'K';
-          },
-          style: {
-            fontSize: '13px',
-            fontFamily: fontFamily,
-            colors: labelColor
-          }
-        }
-      },
-      states: {
-        hover: {
-          filter: {
-            type: 'none'
-          }
-        },
-        active: {
-          filter: {
-            type: 'none'
-          }
-        }
-      }
+      stroke: { lineCap: 'round' }
     };
-  if (typeof weeklyOverviewChartEl !== undefined && weeklyOverviewChartEl !== null) {
-    const weeklyOverviewChart = new ApexCharts(weeklyOverviewChartEl, weeklyOverviewChartConfig);
-    weeklyOverviewChart.render();
+  if (typeof boysChartEl !== undefined && boysChartEl !== null) {
+    const boysChart = new ApexCharts(boysChartEl, boysChartConfig);
+    boysChart.render();
+  }
+
+  const girlsChartEl = document.querySelector('#girlsChart'),
+    girlsChartConfig = {
+      chart: {
+        height: 180,
+        type: 'radialBar'
+      },
+      series: [47],
+      colors: [config.colors.warning],
+      plotOptions: {
+        radialBar: {
+          hollow: { size: '60%' },
+          track: { background: '#F0F2F8' },
+          dataLabels: {
+            name: { show: false },
+            value: {
+              offsetY: 8,
+              color: config.colors.headingColor,
+              fontSize: '26px',
+              fontWeight: 700,
+              fontFamily: fontFamily
+            }
+          }
+        }
+      },
+      stroke: { lineCap: 'round' }
+    };
+  if (typeof girlsChartEl !== undefined && girlsChartEl !== null) {
+    const girlsChart = new ApexCharts(girlsChartEl, girlsChartConfig);
+    girlsChart.render();
   }
 
   // Total Profit line chart
@@ -414,5 +372,82 @@
   if (typeof sessionsColumnChartEl !== undefined && sessionsColumnChartEl !== null) {
     const sessionsColumnChart = new ApexCharts(sessionsColumnChartEl, sessionsColumnChartConfig);
     sessionsColumnChart.render();
+  }
+  // Earnings Line Chart
+  // --------------------------------------------------------------------
+  const earningsLineChartEl = document.querySelector('#earningsLineChart'),
+    earningsLineChartConfig = {
+      chart: {
+        height: 250,
+        type: 'line',
+        parentHeightOffset: 0,
+        zoom: { enabled: false },
+        toolbar: { show: false }
+      },
+      series: [
+        { name: 'Income', data: [560, 800, 520, 700, 850, 480, 500, 750, 700, 850, 500, 600] },
+        { name: 'Expense', data: [400, 550, 350, 550, 400, 200, 300, 400, 350, 550, 350, 400] }
+      ],
+      colors: [config.colors.info, config.colors.primary],
+      dataLabels: { enabled: false },
+      stroke: { curve: 'smooth', width: 3 },
+      legend: { show: false },
+      grid: {
+        strokeDashArray: 5,
+        borderColor: borderColor,
+        xaxis: { lines: { show: false } },
+        yaxis: { lines: { show: true } },
+        padding: { top: -20, bottom: -10, left: 10, right: 10 }
+      },
+      xaxis: {
+        categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+        labels: { style: { colors: labelColor, fontSize: '13px' } },
+        axisBorder: { show: false },
+        axisTicks: { show: false }
+      },
+      yaxis: {
+        labels: {
+          style: { colors: labelColor, fontSize: '13px' },
+          formatter: function (val) { return val + 'K'; }
+        }
+      }
+    };
+  if (typeof earningsLineChartEl !== undefined && earningsLineChartEl !== null) {
+    const earningsLineChart = new ApexCharts(earningsLineChartEl, earningsLineChartConfig);
+    earningsLineChart.render();
+  }
+
+  // Financial Overview Sparklines
+  // --------------------------------------------------------------------
+  const sparklineOptions = {
+    chart: { height: 40, width: 60, type: 'line', sparkline: { enabled: true } },
+    dataLabels: { enabled: false },
+    stroke: { width: 2, curve: 'smooth' },
+    tooltip: {
+      fixed: { enabled: false },
+      x: { show: false },
+      y: { title: { formatter: function (seriesName) { return '' } } },
+      marker: { show: false }
+    }
+  };
+
+  const incomeSparkEl = document.querySelector('#financialIncomeSparkline');
+  if (typeof incomeSparkEl !== undefined && incomeSparkEl !== null) {
+    const incomeSpark = new ApexCharts(incomeSparkEl, {
+      ...sparklineOptions,
+      series: [{ data: [12, 14, 18, 47, 42, 55, 35, 75] }],
+      colors: [config.colors.info]
+    });
+    incomeSpark.render();
+  }
+
+  const expenseSparkEl = document.querySelector('#financialExpenseSparkline');
+  if (typeof expenseSparkEl !== undefined && expenseSparkEl !== null) {
+    const expenseSpark = new ApexCharts(expenseSparkEl, {
+      ...sparklineOptions,
+      series: [{ data: [45, 65, 45, 80, 52, 60, 45, 95] }],
+      colors: [config.colors.info]
+    });
+    expenseSpark.render();
   }
 })();
